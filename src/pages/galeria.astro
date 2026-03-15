@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout title="Galería de fotos — Las Lunas" description="Conocé nuestras instalaciones de 6000m² con fotos del predio, los animales y el equipo.">
+  <Header />
+  <main style="padding-top: calc(var(--pre-header-h) + var(--header-h))">
+    <section class="section">
+      <div class="container">
+        <div style="text-align:center; margin-bottom:3rem">
+          <p class="section-tag">Nuestro predio</p>
+          <h2>Galería de <span class="text-green">fotos</span></h2>
+          <p style="color:var(--gray-mid); margin-top:1rem; font-size:1.05rem">Más de 6.000 m² diseñados para el bienestar de tu mascota.</p>
+        </div>
+
+        <div class="gallery-grid">
+          {Array.from({length: 12}, (_, i) => (
+            <div class="gallery-item reveal">
+              <img
+                src={`https://picsum.photos/seed/gallery${i}/600/450`}
+                alt={`Las Lunas - foto ${i + 1}`}
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+
+        <div style="text-align:center; margin-top:3rem">
+          <a href="/" class="btn btn-primary">← Volver al inicio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-item {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: var(--gray-light);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img { transform: scale(1.05); }
+</style>

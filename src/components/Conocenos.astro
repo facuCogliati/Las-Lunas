@@ -1,0 +1,256 @@
+---
+---
+<section id="conocenos" class="section conocenos">
+  <div class="container">
+    <div class="conocenos__grid">
+      <!-- Slideshow -->
+      <div class="conocenos__media reveal">
+        <div class="slideshow" id="conocenos-slide">
+          <!-- Placeholder images from Google Drive links given in spec -->
+          <div class="slide active">
+            <img src="https://lh3.googleusercontent.com/d/1cncRRFHyKil3Czw4UODAIWdFAuyl5Zeo" alt="Las Lunas - instalaciones" loading="lazy" onerror="this.src='/images/placeholder-green.svg'" />
+          </div>
+          <div class="slide">
+            <img src="https://picsum.photos/seed/laslunas1/800/600" alt="Mascotas en Las Lunas" loading="lazy" />
+          </div>
+          <div class="slide">
+            <img src="https://picsum.photos/seed/laslunas2/800/600" alt="Predio Las Lunas" loading="lazy" />
+          </div>
+          <div class="slide">
+            <img src="https://picsum.photos/seed/laslunas3/800/600" alt="Familia Las Lunas" loading="lazy" />
+          </div>
+          <div class="slideshow__controls">
+            <button class="slide-btn prev" aria-label="Anterior">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="slide-btn next" aria-label="Siguiente">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+          <div class="slideshow__dots" id="slide-dots"></div>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="conocenos__copy">
+        <p class="section-tag reveal">Quiénes somos</p>
+        <h2 class="reveal" style="transition-delay:0.1s">
+          Amantes de los<br /><span class="text-green">animales</span>
+        </h2>
+        <p class="reveal" style="transition-delay:0.2s">
+          En Las Lunas somos amantes de los animales, trabajamos de manera profesional y responsable. Nuestro objetivo es que vos te sientas tranquilo al dejarnos a tu mascota, y que ella esté cuidada, segura y feliz durante su estadía.
+        </p>
+        <p class="reveal" style="transition-delay:0.25s">
+          Queremos ser tu aliado en su educación y bienestar, acompañándote con atención a medida.
+        </p>
+
+        <!-- Valores -->
+        <div class="valores reveal" style="transition-delay:0.3s">
+          <h3>Nuestros valores</h3>
+          <ul class="valores__list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Ética en cada decisión.
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Respeto y buen trato con las personas.
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Cuidado y amor por los animales.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Badges -->
+        <div class="badges reveal-group">
+          <div class="badge">
+            <span class="badge__icon">📅</span>
+            <span class="badge__text">Desde <strong>1985</strong></span>
+          </div>
+          <div class="badge">
+            <span class="badge__icon">🌿</span>
+            <span class="badge__text"><strong>6.000 m²</strong> área verde</span>
+          </div>
+          <div class="badge">
+            <span class="badge__icon">🐾</span>
+            <span class="badge__text">Atención <strong>personalizada</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video institucional -->
+    <div class="video-wrap reveal" style="margin-top:4rem">
+      <div class="video-wrap__inner">
+        <iframe
+          src="https://www.youtube.com/embed/uVR_vt05V0"
+          title="Video institucional Las Lunas"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.conocenos { background: var(--white); }
+
+.conocenos__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .conocenos__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+  }
+}
+
+/* Slideshow */
+.slideshow {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: var(--gray-light);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.slide.active { opacity: 1; z-index: 1; }
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slideshow__controls {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 5;
+  display: flex;
+  gap: 8px;
+}
+
+.slide-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+  color: var(--green-dark);
+}
+.slide-btn:hover { background: var(--white); transform: scale(1.08); }
+
+.slideshow__dots {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 5;
+  display: flex;
+  gap: 6px;
+}
+
+/* Copy */
+.conocenos__copy { display: flex; flex-direction: column; gap: 1.25rem; }
+.conocenos__copy p { color: var(--gray-mid); font-size: 1.05rem; }
+
+/* Valores */
+.valores { background: var(--gray-light); border-radius: var(--radius-lg); padding: 1.5rem; }
+.valores h3 { margin-bottom: 1rem; font-size: 1.05rem; color: var(--green-dark); }
+.valores__list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+.valores__list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: var(--gray-dark);
+}
+
+/* Badges */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--green-pale);
+  border: 1px solid rgba(45,106,79,0.15);
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  font-size: 0.88rem;
+  color: var(--green-dark);
+}
+.badge__icon { font-size: 1rem; }
+
+/* Video */
+.video-wrap { max-width: 800px; margin-inline: auto; }
+.video-wrap__inner {
+  position: relative;
+  padding-top: 56.25%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+.video-wrap__inner iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>
+
+<script>
+const slides = document.querySelectorAll('#conocenos-slide .slide');
+const dotsContainer = document.getElementById('slide-dots');
+let current = 0;
+let timer: ReturnType<typeof setInterval>;
+
+function goTo(n: number) {
+  slides[current].classList.remove('active');
+  current = (n + slides.length) % slides.length;
+  slides[current].classList.add('active');
+  dotsContainer?.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+}
+
+function startTimer() {
+  clearInterval(timer);
+  timer = setInterval(() => goTo(current + 1), 4000);
+}
+
+// Build dots
+slides.forEach((_, i) => {
+  const dot = document.createElement('span');
+  dot.className = 'dot' + (i === 0 ? ' active' : '');
+  dot.style.cssText = `display:inline-block;width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,${i===0?'1':'0.45'});cursor:pointer;transition:.2s;margin:0 2px`;
+  dot.addEventListener('click', () => { goTo(i); startTimer(); });
+  dotsContainer?.appendChild(dot);
+});
+
+document.querySelector('.prev')?.addEventListener('click', () => { goTo(current - 1); startTimer(); });
+document.querySelector('.next')?.addEventListener('click', () => { goTo(current + 1); startTimer(); });
+startTimer();
+</script>

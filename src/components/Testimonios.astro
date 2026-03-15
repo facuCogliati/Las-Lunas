@@ -1,0 +1,278 @@
+---
+const testimonios = [
+  {
+    texto: "Excelente lugar, hace años confiamos en Las Lunas para nuestro perro y gatos, siempre los atienden excelente desde el momento en que los vienen a buscar hasta que vuelven a casa. Nos envían fotos y nos cuentan cómo están. Hasta les festejan el cumpleaños. El perro sale corriendo y se sube solo a la camioneta, lo que demuestra que siempre tiene ganas de volver. ¡Gracias!",
+    autor: "Adriana",
+    año: "2002",
+    mascotas: "Tchavolo, Sausalia y Dímiti",
+  },
+  {
+    texto: "De verdad somos tan felices que tenemos a ustedes como un lugar de amor y cuidado cariñoso para Santi. Parece que él está extrañando su estadía en Las Lunas, a sus amiguitos, a ustedes. ¡Así que hasta pronto!",
+    autor: "Ana Keinan",
+    año: "2025",
+    mascotas: "Santi",
+  },
+  {
+    texto: "¡Espectacular todo! Muy cómodo el transfer y el baño la verdad. Y también los updates diarios del equipo nos encantó para quedarnos tranquilos. Hasta te diría que Duma volvió más tranquila. ¡Muy contentos, muchas gracias!",
+    autor: "Victoria Angelillo",
+    año: "2025",
+    mascotas: "Duma",
+  },
+  {
+    texto: "Siroco es muy feliz en Las Lunas. Disfruta mucho de estar con otros perros y del cariño que le dan Rubén y su equipo. El lugar es impecable, limpio y amplio. Están súper cuidados, jugando en el jardín todo el día. ¡Los súper recomiendo!",
+    autor: "Mora Lennon",
+    año: "2015",
+    mascotas: "Siroco",
+  },
+  {
+    texto: "Hace 20 años los conocí llevando a Thor y lo trataban como propio hasta cuando estaba enfermo. Hoy en día cuidan a Slash y Kira y cuando los vienen a buscar ni dudan en irse con ellos. ¡Son los #1!",
+    autor: "Nicolás Pereira",
+    año: "2025",
+    mascotas: "Thor, Slash y Kira",
+  },
+  {
+    texto: "Los bombones ya están en casa y felices, muchas gracias por haberlos cuidado tan bien. Estamos muy contentos de haberlos encontrado. Por favor hacerle llegar nuestro agradecimiento a Rubén y a todos los que los colmaron de cuidados y mimos.",
+    autor: "Miriam de Meyer",
+    año: "2025",
+    mascotas: "Los bombones",
+  },
+  {
+    texto: "¡Gracias por todo! Realmente Fito volvió feliz. Hasta peinado, jajaja, nunca se había dejado cepillar. ¡Así que gracias de vuelta y estamos al habla para otras veces!",
+    autor: "Sol Magliano",
+    año: "2018",
+    mascotas: "Fito",
+  },
+  {
+    texto: "Mi perro Roque va hace 4 años, ya se siente parte del lugar. Los chicos del predio son súper dedicados y amables. ¡Los recomiendo sin dudas!",
+    autor: "Verónica Roncorini",
+    año: "2024",
+    mascotas: "Roque",
+  },
+];
+---
+<section id="testimonios" class="section testimonios">
+  <div class="container">
+    <div class="testimonios__header reveal">
+      <p class="section-tag">Lo que dicen nuestras familias</p>
+      <h2>Testimonios que <span class="text-green">nos llenan de orgullo</span></h2>
+    </div>
+
+    <div class="testi-carousel" id="testi-carousel">
+      <div class="testi-track" id="testi-track">
+        {testimonios.map((t, i) => (
+          <div class={`testi-card${i === 0 ? ' active' : ''}`} data-index={i}>
+            <div class="testi-quote">"</div>
+            <p class="testi-text">{t.texto}</p>
+            <div class="testi-footer">
+              <div class="testi-avatar">
+                {t.autor.charAt(0).toUpperCase()}
+              </div>
+              <div>
+                <strong class="testi-autor">{t.autor}</strong>
+                <span class="testi-meta">Mascota: {t.mascotas} · {t.año}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="testi-nav">
+        <button class="testi-btn" id="testi-prev" aria-label="Anterior">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="testi-dots" id="testi-dots"></div>
+        <button class="testi-btn" id="testi-next" aria-label="Siguiente">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Stars decoration -->
+    <div class="stars-row reveal">
+      <div class="stars-item">
+        <div class="stars">
+          {[1,2,3,4,5].map(() => <span class="star">★</span>)}
+        </div>
+        <p>+500 familias confían en nosotros</p>
+      </div>
+      <div class="stars-item">
+        <div class="stars">
+          {[1,2,3,4,5].map(() => <span class="star">★</span>)}
+        </div>
+        <p>40 años de trayectoria</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.testimonios { background: var(--green-dark); overflow: hidden; }
+.testimonios__header { text-align: center; margin-bottom: 3rem; }
+.testimonios__header .section-tag { color: var(--accent); }
+.testimonios__header h2 { color: var(--white); }
+.testimonios__header .text-green { color: var(--accent); }
+
+/* Carousel */
+.testi-carousel { position: relative; }
+
+.testi-track {
+  position: relative;
+  min-height: 320px;
+}
+
+.testi-card {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.testi-card.active {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+.testi-card.exit {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.testi-quote {
+  font-family: var(--font-display);
+  font-size: 6rem;
+  color: var(--accent);
+  line-height: 0.6;
+  margin-bottom: 1.5rem;
+  opacity: 0.4;
+}
+
+.testi-text {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.testi-footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.testi-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--green-dark);
+  flex-shrink: 0;
+}
+
+.testi-autor {
+  display: block;
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.testi-meta {
+  display: block;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.55);
+  margin-top: 2px;
+}
+
+/* Nav */
+.testi-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 360px;
+}
+
+@media (max-width: 600px) { .testi-nav { margin-top: 420px; } }
+
+.testi-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  transition: background 0.2s, transform 0.2s;
+}
+.testi-btn:hover { background: rgba(255,255,255,0.2); transform: scale(1.08); }
+
+.testi-dots { display: flex; gap: 8px; }
+
+/* Stars */
+.stars-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.stars-item { text-align: center; }
+.stars { display: flex; gap: 4px; justify-content: center; margin-bottom: 0.5rem; }
+.star { color: #FFD700; font-size: 1.4rem; }
+.stars-item p { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+</style>
+
+<script>
+const cards = document.querySelectorAll('.testi-card');
+const dotsEl = document.getElementById('testi-dots');
+let cur = 0;
+let autoTimer: ReturnType<typeof setInterval>;
+
+function buildDots() {
+  cards.forEach((_, i) => {
+    const d = document.createElement('span');
+    d.style.cssText = `display:inline-block;width:8px;height:8px;border-radius:50%;background:${i===0?'rgba(255,255,255,0.9)':'rgba(255,255,255,0.3)'};cursor:pointer;transition:.25s`;
+    d.addEventListener('click', () => goTo(i));
+    dotsEl?.appendChild(d);
+  });
+}
+
+function goTo(n: number) {
+  cards[cur].classList.add('exit');
+  cards[cur].classList.remove('active');
+  setTimeout(() => cards[cur < cards.length ? cur : 0]?.classList.remove('exit'), 500);
+  cur = (n + cards.length) % cards.length;
+  cards[cur].classList.add('active');
+  dotsEl?.querySelectorAll('span').forEach((d, i) => {
+    (d as HTMLElement).style.background = i === cur ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.3)';
+  });
+}
+
+function start() {
+  clearInterval(autoTimer);
+  autoTimer = setInterval(() => goTo(cur + 1), 5000);
+}
+
+buildDots();
+document.getElementById('testi-prev')?.addEventListener('click', () => { goTo(cur - 1); start(); });
+document.getElementById('testi-next')?.addEventListener('click', () => { goTo(cur + 1); start(); });
+start();
+</script>
