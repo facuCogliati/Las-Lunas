@@ -1,256 +1,503 @@
 ---
+import img1 from "../assets/conocenos/1.jpg";
+import img2 from "../assets/conocenos/2.png";
+import img3 from "../assets/conocenos/3.png";
+import img4 from "../assets/conocenos/4.jpg";
+import img5 from "../assets/conocenos/5.jpg";
+import img6 from "../assets/conocenos/6.jpg";
+import img7 from "../assets/conocenos/7.jpg";
+import img8 from "../assets/conocenos/8.jpeg";
+
+const images = [
+  { src: img1.src, alt: "Equipo Las Lunas" },
+  { src: img2.src, alt: "Instalaciones" },
+  { src: img3.src, alt: "Mascota feliz" },
+  { src: img4.src, alt: "Cuidado de mascotas" },
+  { src: img5.src, alt: "Juegos al aire libre" },
+  { src: img6.src, alt: "Atención personalizada" },
+  { src: img7.src, alt: "Área verde" },
+  { src: img8.src, alt: "Familia Las Lunas" },
+];
 ---
+
 <section id="conocenos" class="section conocenos">
   <div class="container">
-    <div class="conocenos__grid">
-      <!-- Slideshow -->
-      <div class="conocenos__media reveal">
-        <div class="slideshow" id="conocenos-slide">
-          <!-- Placeholder images from Google Drive links given in spec -->
-          <div class="slide active">
-            <img src="https://lh3.googleusercontent.com/d/1cncRRFHyKil3Czw4UODAIWdFAuyl5Zeo" alt="Las Lunas - instalaciones" loading="lazy" onerror="this.src='/images/placeholder-green.svg'" />
-          </div>
-          <div class="slide">
-            <img src="https://picsum.photos/seed/laslunas1/800/600" alt="Mascotas en Las Lunas" loading="lazy" />
-          </div>
-          <div class="slide">
-            <img src="https://picsum.photos/seed/laslunas2/800/600" alt="Predio Las Lunas" loading="lazy" />
-          </div>
-          <div class="slide">
-            <img src="https://picsum.photos/seed/laslunas3/800/600" alt="Familia Las Lunas" loading="lazy" />
-          </div>
-          <div class="slideshow__controls">
-            <button class="slide-btn prev" aria-label="Anterior">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-            </button>
-            <button class="slide-btn next" aria-label="Siguiente">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-            </button>
-          </div>
-          <div class="slideshow__dots" id="slide-dots"></div>
-        </div>
+    <div class="conocenos__header reveal">
+      <div class="header-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-4.5 2.5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm9 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM6.5 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm11 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-5.5 1c-2.8 0-5.3 1.9-6.3 4.5-.4 1.1-.3 2.5.4 3.5.7 1 1.9 1.5 3.1 1.5 1 0 2-.4 2.8-1 .7-.5 1.5-.5 2.2 0 .8.6 1.8 1 2.8 1 1.2 0 2.4-.5 3.1-1.5.7-1 .8-2.4.4-3.5-1-2.6-3.5-4.5-6.3-4.5z"
+          ></path>
+        </svg>
+        <span>QUIÉNES SOMOS</span>
       </div>
 
-      <!-- Text -->
-      <div class="conocenos__copy">
-        <p class="section-tag reveal">Quiénes somos</p>
-        <h2 class="reveal" style="transition-delay:0.1s">
-          Amantes de los<br /><span class="text-green">animales</span>
-        </h2>
-        <p class="reveal" style="transition-delay:0.2s">
-          En Las Lunas somos amantes de los animales, trabajamos de manera profesional y responsable. Nuestro objetivo es que vos te sientas tranquilo al dejarnos a tu mascota, y que ella esté cuidada, segura y feliz durante su estadía.
-        </p>
-        <p class="reveal" style="transition-delay:0.25s">
-          Queremos ser tu aliado en su educación y bienestar, acompañándote con atención a medida.
-        </p>
-
-        <!-- Valores -->
-        <div class="valores reveal" style="transition-delay:0.3s">
-          <h3>Nuestros valores</h3>
-          <ul class="valores__list">
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Ética en cada decisión.
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Respeto y buen trato con las personas.
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Cuidado y amor por los animales.
-            </li>
-          </ul>
+      <div class="header-two-col">
+        <div class="header-left">
+          <h2>Amantes de los <span class="text-accent">animales</span></h2>
+          <p class="header-body">
+            En Las Lunas somos amantes de los animales, trabajamos de manera
+            profesional y responsable. Nuestro objetivo es que vos te sientas
+            tranquilo al dejarnos a tu mascota, y que ella esté cuidada, segura
+            y feliz durante su estadía.
+          </p>
         </div>
-
-        <!-- Badges -->
-        <div class="badges reveal-group">
-          <div class="badge">
-            <span class="badge__icon">📅</span>
-            <span class="badge__text">Desde <strong>1985</strong></span>
-          </div>
-          <div class="badge">
-            <span class="badge__icon">🌿</span>
-            <span class="badge__text"><strong>6.000 m²</strong> área verde</span>
-          </div>
-          <div class="badge">
-            <span class="badge__icon">🐾</span>
-            <span class="badge__text">Atención <strong>personalizada</strong></span>
-          </div>
+        <div class="desc-highlight">
+          <p>
+            Queremos ser tu aliado en su educación y bienestar, acompañándote
+            con atención a medida.
+          </p>
         </div>
       </div>
     </div>
 
-    <!-- Video institucional -->
-    <div class="video-wrap reveal" style="margin-top:4rem">
-      <div class="video-wrap__inner">
+    <!-- CARRUSEL INFINITO -->
+    <div class="carousel-wrapper reveal" style="transition-delay: 0.1s;">
+      <div class="carousel-track">
+        <!-- Primera pasada -->
+        {
+          images.map((img) => (
+            <div class="carousel-item">
+              <img src={img.src} alt={img.alt} loading="lazy" />
+            </div>
+          ))
+        }
+        <!-- Segunda pasada (clon para el loop infinito) -->
+        {
+          images.map((img) => (
+            <div class="carousel-item" aria-hidden="true">
+              <img src={img.src} alt="" loading="lazy" />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- BENTO GRID — sin cambios -->
+    <div class="bento-grid">
+      <div
+        class="bento-item stat-card card-dark reveal"
+        style="transition-delay: 0.2s;"
+      >
+        <span class="stat-icon dark-icon">📅</span>
+        <div class="stat-text">
+          <span class="stat-number">1985</span>
+          <span class="stat-label">Desde este año<br />cuidando mascotas</span>
+        </div>
+      </div>
+
+      <div
+        class="bento-item stat-card card-accent reveal"
+        style="transition-delay: 0.3s;"
+      >
+        <span class="stat-icon accent-icon">🌿</span>
+        <div class="stat-text">
+          <span class="stat-number">6000m²</span>
+          <span class="stat-label">De pura naturaleza<br />y área verde</span>
+        </div>
+      </div>
+
+      <div
+        class="bento-item stat-card card-white reveal"
+        style="transition-delay: 0.4s;"
+      >
+        <span class="stat-icon outline-icon">🐾</span>
+        <div class="stat-text">
+          <span class="stat-number text-green">100%</span>
+          <span class="stat-label">Atención personalizada<br />y familiar</span>
+        </div>
+      </div>
+
+      <div
+        class="bento-item valores-card reveal"
+        style="transition-delay: 0.5s;"
+      >
+        <h3>Nuestros valores</h3>
+        <ul class="valores__list">
+          <li>
+            <div class="val-icon">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="var(--white)"
+                stroke-width="3"
+              >
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <p><strong>Ética</strong> en cada decisión que tomamos.</p>
+          </li>
+          <li>
+            <div class="val-icon">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="var(--white)"
+                stroke-width="3"
+              >
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <p><strong>Respeto</strong> y buen trato con las personas.</p>
+          </li>
+          <li>
+            <div class="val-icon">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="var(--white)"
+                stroke-width="3"
+              >
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <p>
+              <strong>Cuidado y amor</strong> incondicional por los animales.
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bento-item video-card reveal" style="transition-delay: 0.6s;">
         <iframe
-          src="https://www.youtube.com/embed/uVR_vt05V0"
+          src="https://www.youtube.com/embed/uVR_vt05V0?rel=0"
           title="Video institucional Las Lunas"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
-          loading="lazy"
-        ></iframe>
+          loading="lazy"></iframe>
       </div>
     </div>
   </div>
 </section>
 
 <style>
-.conocenos { background: var(--white); }
-
-.conocenos__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-@media (min-width: 900px) {
-  .conocenos__grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+  .conocenos {
+    background: var(--white);
+    padding: 6rem 0;
+    position: relative;
   }
-}
 
-/* Slideshow */
-.slideshow {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  aspect-ratio: 4/3;
-  background: var(--gray-light);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-}
+  /* ── HEADER ── */
+  .conocenos__header {
+    margin-bottom: 4rem;
+  }
 
-.slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
-.slide.active { opacity: 1; z-index: 1; }
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: var(--green-pale);
+    border: 1px solid rgba(45, 106, 79, 0.1);
+    border-radius: 50px;
+    color: var(--green-dark);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.25rem;
+  }
 
-.slideshow__controls {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  z-index: 5;
-  display: flex;
-  gap: 8px;
-}
+  /* Dos columnas: título+texto | destacado */
+  .header-two-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 7rem;
+  }
 
-.slide-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.9);
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s, transform 0.2s;
-  color: var(--green-dark);
-}
-.slide-btn:hover { background: var(--white); transform: scale(1.08); }
+  .header-left {
+    /* flex: 1; */
+  }
 
-.slideshow__dots {
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  z-index: 5;
-  display: flex;
-  gap: 6px;
-}
+  .header-left h2 {
+    /* hereda estilos globales de h2 */
+    margin-bottom: 1rem;
+  }
 
-/* Copy */
-.conocenos__copy { display: flex; flex-direction: column; gap: 1.25rem; }
-.conocenos__copy p { color: var(--gray-mid); font-size: 1.05rem; }
+  .text-accent {
+    color: var(--accent);
+  }
 
-/* Valores */
-.valores { background: var(--gray-light); border-radius: var(--radius-lg); padding: 1.5rem; }
-.valores h3 { margin-bottom: 1rem; font-size: 1.05rem; color: var(--green-dark); }
-.valores__list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
-.valores__list li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.95rem;
-  color: var(--gray-dark);
-}
+  .header-body {
+    color: var(--gray-mid);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 560px;
+  }
 
-/* Badges */
-.badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
+  .desc-highlight {
+    flex: 0 0 280px;
+    padding: 1.5rem;
+    background: var(--green-pale);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    align-self: center;
+  }
+  .desc-highlight p {
+    color: var(--green-dark);
+    font-weight: 500;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
 
-.badge {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--green-pale);
-  border: 1px solid rgba(45,106,79,0.15);
-  border-radius: 50px;
-  padding: 0.5rem 1rem;
-  font-size: 0.88rem;
-  color: var(--green-dark);
-}
-.badge__icon { font-size: 1rem; }
+  /* ── CARRUSEL INFINITO ── */
+  .carousel-wrapper {
+    /* Desborda el container para ir de borde a borde */
+    width: 70vw;
+    margin-left: calc(50% - 35vw);
+    overflow: hidden;
+    margin-bottom: 5rem;
 
-/* Video */
-.video-wrap { max-width: 800px; margin-inline: auto; }
-.video-wrap__inner {
-  position: relative;
-  padding-top: 56.25%;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-}
-.video-wrap__inner iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
+    /* Fade en los bordes */
+    /* -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    ); */
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 14px;
+    width: max-content;
+    /* Velocidad: ajustá los segundos a gusto (más = más lento) */
+    animation: slide-infinite 32s linear infinite;
+  }
+
+  /* Pausa al hacer hover para que el usuario pueda ver bien una foto */
+  .carousel-wrapper:hover .carousel-track {
+    animation-play-state: paused;
+  }
+
+  .carousel-item {
+    flex-shrink: 0;
+    width: 340px;
+    height: 500px;
+    /* border-radius: var(--radius-lg); */
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
+  }
+
+  .carousel-wrapper:hover .carousel-item img {
+    transform: scale(1.04);
+  }
+
+  @keyframes slide-infinite {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      /* Mueve exactamente la mitad del track (los 8 originales) para el loop perfecto */
+      transform: translateX(calc(-50% - 7px));
+    }
+  }
+
+  /* Reduce movimiento si el usuario lo prefiere */
+  @media (prefers-reduced-motion: reduce) {
+    .carousel-track {
+      animation: none;
+    }
+  }
+
+  /* ── BENTO GRID — igual que antes ── */
+  .bento-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 900px) {
+    .bento-grid {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+    }
+    .valores-card {
+      grid-column: 1 / 2;
+    }
+    .video-card {
+      grid-column: 2 / 4;
+    }
+  }
+
+  .bento-item {
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+  .bento-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  }
+
+  .stat-card {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .stat-icon {
+    font-size: 2.5rem;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    flex-shrink: 0;
+  }
+  .stat-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .stat-number {
+    font-size: 2.5rem;
+    font-family: var(--font-display);
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+  .stat-label {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  .card-dark {
+    background: var(--green-dark);
+    color: var(--white);
+  }
+  .card-dark .dark-icon {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .card-dark .stat-label {
+    color: var(--green-pale);
+  }
+
+  .card-accent {
+    background: var(--accent);
+    color: var(--green-dark);
+  }
+  .card-accent .accent-icon {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  .card-accent .stat-label {
+    color: var(--green-dark);
+    opacity: 0.8;
+  }
+
+  .card-white {
+    background: var(--white);
+    color: var(--black);
+    border: 2px solid var(--green-pale);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  }
+  .card-white .outline-icon {
+    background: var(--green-pale);
+  }
+  .card-white .stat-label {
+    color: var(--gray-mid);
+  }
+
+  .valores-card {
+    background: var(--white);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    padding: 2.5rem;
+    justify-content: flex-start;
+  }
+  .valores-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: var(--green-dark);
+  }
+  .valores__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .valores__list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .val-icon {
+    background: var(--green);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .valores__list p {
+    font-size: 1.05rem;
+    color: var(--gray-dark);
+    line-height: 1.5;
+  }
+
+  .video-card {
+    padding: 0;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+  .video-card iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 899px) {
+    .header-two-col {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .desc-highlight {
+      flex: unset;
+      width: 100%;
+      border-left: none;
+      border-bottom: 4px solid var(--accent);
+      border-radius: var(--radius);
+    }
+    .carousel-item {
+      width: 260px;
+      height: 200px;
+    }
+    .stat-card {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }
 </style>
-
-<script>
-const slides = document.querySelectorAll('#conocenos-slide .slide');
-const dotsContainer = document.getElementById('slide-dots');
-let current = 0;
-let timer: ReturnType<typeof setInterval>;
-
-function goTo(n: number) {
-  slides[current].classList.remove('active');
-  current = (n + slides.length) % slides.length;
-  slides[current].classList.add('active');
-  dotsContainer?.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
-}
-
-function startTimer() {
-  clearInterval(timer);
-  timer = setInterval(() => goTo(current + 1), 4000);
-}
-
-// Build dots
-slides.forEach((_, i) => {
-  const dot = document.createElement('span');
-  dot.className = 'dot' + (i === 0 ? ' active' : '');
-  dot.style.cssText = `display:inline-block;width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,${i===0?'1':'0.45'});cursor:pointer;transition:.2s;margin:0 2px`;
-  dot.addEventListener('click', () => { goTo(i); startTimer(); });
-  dotsContainer?.appendChild(dot);
-});
-
-document.querySelector('.prev')?.addEventListener('click', () => { goTo(current - 1); startTimer(); });
-document.querySelector('.next')?.addEventListener('click', () => { goTo(current + 1); startTimer(); });
-startTimer();
-</script>
