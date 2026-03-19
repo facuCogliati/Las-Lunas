@@ -12,6 +12,72 @@ import videoHero from "../assets/video servicios.mp4";
 
   <!-- CONTENIDO LADO DERECHO -->
   <div class="hero__content">
+    <!-- Decoración SVG: arco curvo que abraza el título -->
+    <svg
+      class="hero__deco"
+      viewBox="0 0 600 700"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <!-- Arco principal punteado -->
+      <path
+        d="M 460 80 Q 620 160 620 350 Q 620 540 460 620"
+        fill="none"
+        stroke="#fffff0"
+        stroke-width="2"
+        stroke-dasharray="8 7"
+        stroke-linecap="round"
+        opacity="1"></path>
+      <!-- Arco interior más sutil -->
+      <path
+        d="M 440 110 Q 575 185 575 350 Q 575 515 440 590"
+        fill="none"
+        stroke="#fffff0"
+        stroke-width="1"
+        stroke-linecap="round"
+        opacity="1"></path>
+      <!-- Puntos en los extremos del arco principal -->
+      <circle cx="460" cy="80" r="4" fill="#fffff0" opacity="1"></circle>
+      <circle cx="460" cy="620" r="4" fill="#fffff0" opacity="1"></circle>
+      <!-- Rayitas cortas decorativas al lado del arco -->
+      <line
+        x1="635"
+        y1="280"
+        x2="665"
+        y2="280"
+        stroke="#fffff0"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        opacity="1"></line>
+      <line
+        x1="640"
+        y1="300"
+        x2="660"
+        y2="300"
+        stroke="#fffff0"
+        stroke-width="1"
+        stroke-linecap="round"
+        opacity="1"></line>
+      <line
+        x1="635"
+        y1="400"
+        x2="665"
+        y2="400"
+        stroke="#fffff0"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        opacity="1"></line>
+      <line
+        x1="640"
+        y1="420"
+        x2="660"
+        y2="420"
+        stroke="#fffff0"
+        stroke-width="1"
+        stroke-linecap="round"
+        opacity="1"></line>
+    </svg>
+
     <div class="hero__badge reveal">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
         <path
@@ -97,6 +163,28 @@ import videoHero from "../assets/video servicios.mp4";
     padding: 5rem 5rem 5rem 6rem;
     position: relative;
     z-index: 2;
+  }
+
+  /* ── ARCO DECORATIVO ── */
+  .hero__deco {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: visible;
+    left: -350px;
+  }
+
+  .hero__badge,
+  .hero__eyebrow,
+  .hero__content h1,
+  .hero__title-line,
+  .hero__sub,
+  .hero__ctas {
+    position: relative;
+    z-index: 1;
   }
 
   /* ── BADGE ── */
