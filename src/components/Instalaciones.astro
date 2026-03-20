@@ -1,84 +1,351 @@
 ---
+import img1 from "../assets/instalaciones/1.jpg";
+import img2 from "../assets/instalaciones/2.jpg";
+import img3 from "../assets/instalaciones/3.png";
+import img4 from "../assets/instalaciones/4.png";
+import img5 from "../assets/instalaciones/5.png";
+import img6 from "../assets/instalaciones/6.png";
+import img7 from "../assets/instalaciones/7.jpg";
+import img8 from "../assets/instalaciones/8.jpg";
 ---
+
 <section id="instalaciones" class="section instalaciones">
+  <!-- SVG decorativo fondo — círculos y patitas -->
+  <svg
+    class="inst__deco"
+    viewBox="0 0 1440 900"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <circle
+      cx="1380"
+      cy="100"
+      r="200"
+      fill="none"
+      stroke="rgba(82,183,136,1)"
+      stroke-width="1.5"></circle>
+    <circle
+      cx="1380"
+      cy="100"
+      r="130"
+      fill="none"
+      stroke="rgba(82,183,136,1)"
+      stroke-width="1"></circle>
+    <circle
+      cx="60"
+      cy="820"
+      r="120"
+      fill="none"
+      stroke="rgba(82,183,136,1)"
+      stroke-width="1"></circle>
+    <g
+      transform="translate(1280,40) rotate(-15) scale(2)"
+      opacity="1"
+      fill="rgba(82,183,136,1)"
+    >
+      <ellipse cx="12" cy="6" rx="5" ry="6"></ellipse><ellipse
+        cx="26"
+        cy="4"
+        rx="4"
+        ry="5"></ellipse>
+      <ellipse cx="39" cy="6" rx="4" ry="5"></ellipse><ellipse
+        cx="51"
+        cy="8"
+        rx="3.5"
+        ry="4.5"></ellipse>
+      <ellipse cx="30" cy="28" rx="14" ry="13"></ellipse>
+    </g>
+    <g
+      transform="translate(40,750) rotate(10) scale(1.5)"
+      opacity="0.85"
+      fill="rgba(82,183,136,1)"
+    >
+      <ellipse cx="12" cy="6" rx="5" ry="6"></ellipse><ellipse
+        cx="26"
+        cy="4"
+        rx="4"
+        ry="5"></ellipse>
+      <ellipse cx="39" cy="6" rx="4" ry="5"></ellipse><ellipse
+        cx="51"
+        cy="8"
+        rx="3.5"
+        ry="4.5"></ellipse>
+      <ellipse cx="30" cy="28" rx="14" ry="13"></ellipse>
+    </g>
+  </svg>
+
+  <!-- SVG línea ondulada que recorre todos los bloques -->
+  <svg
+    class="inst__wave"
+    viewBox="0 0 1200 4200"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    preserveAspectRatio="none"
+  >
+    <defs>
+      <style>
+        .inst-wave-path {
+          fill: none;
+          stroke: rgba(82, 183, 136, 1);
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          stroke-width: 4px;
+          stroke-dasharray: 0.33 18;
+          opacity: 1;
+        }
+      </style>
+    </defs>
+    <path
+      class="inst-wave-path"
+      d="
+      M 100 600
+      C 50 300, 1050 300, 1100 600
+      C 1150 900, 80 900, 60 1200
+      C 40 1500, 1100 1500, 1120 1800
+      C 1140 2100, 60 2100, 80 2400
+      C 100 2700, 1100 2700, 1080 3000
+      C 1060 3300, 100 3300, 120 3600
+      C 140 3900, 600 3950, 600 4200
+    "
+    ></path>
+  </svg>
+
   <div class="container">
-    <div class="instalaciones__header reveal">
-      <p class="section-tag">Nuestro predio</p>
-      <h2>Instalaciones <span class="text-green">de primer nivel</span></h2>
-      <p class="instalaciones__intro">Más de 6.000 m² diseñados para el bienestar y la felicidad de tu mascota en Pilar, Buenos Aires.</p>
+    <!-- HEADER -->
+    <div class="inst__header reveal">
+      <div class="inst__badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+          ></path>
+        </svg>
+        Nuestro predio
+      </div>
+      <h2>Instalaciones <span class="text-accent">de primer nivel</span></h2>
+      <p class="inst__intro">
+        Más de 6.000 m² diseñados para el bienestar y la felicidad de tu mascota
+        en Pilar, Buenos Aires.
+      </p>
     </div>
 
-    <!-- Photo mosaic -->
-    <div class="mosaic reveal">
-      <div class="mosaic__big">
-        <img src="https://lh3.googleusercontent.com/d/1vSqgVBtCkioSBiVIXGaYtdQF9kusdRnn" alt="Predio Las Lunas" loading="lazy" onerror="this.src='https://picsum.photos/seed/inst1/800/600'" />
-        <div class="mosaic__label">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          Pilar, Buenos Aires
+    <!-- BLOQUES EDITORIALES -->
+    <div class="blocks reveal" style="transition-delay:0.1s">
+      <!-- Línea de puntos vertical que conecta todos los bloques -->
+      <!-- <div class="blocks__timeline" aria-hidden="true">
+        <div class="blocks__timeline-line"></div>
+        <div class="blocks__timeline-arrow"></div>
+      </div> -->
+
+      <!-- 01 — Foto izquierda -->
+      <div class="block block--left">
+        <div class="block__photo">
+          <img src={img1.src} alt="Predio Las Lunas" loading="lazy" />
+        </div>
+        <div class="block__text" style="border-top: 2px solid white;">
+          <span class="block__num">01</span>
+          <h3>6.000 m² de área verde</h3>
+          <p>
+            Espacio amplio pensado para que tu mascota corra, explore y juegue
+            con supervisión permanente las 24hs del día.
+          </p>
         </div>
       </div>
-      <div class="mosaic__grid">
-        <img src="https://picsum.photos/seed/inst2/400/300" alt="Área verde" loading="lazy" />
-        <img src="https://picsum.photos/seed/inst3/400/300" alt="Pileta" loading="lazy" />
-        <img src="https://picsum.photos/seed/inst4/400/300" alt="Zona techada" loading="lazy" />
-        <img src="https://picsum.photos/seed/inst5/400/300" alt="Gatera" loading="lazy" />
-      </div>
-    </div>
 
-    <!-- Feature cards -->
-    <div class="features reveal-group">
-      <div class="feature-card">
-        <span class="feature-card__icon">🌿</span>
-        <h3>6.000 m² de área verde</h3>
-        <p>Espacio amplio para correr y jugar con supervisión permanente.</p>
+      <!-- 02 — Foto derecha -->
+      <div class="block block--right">
+        <div class="block__text">
+          <span class="block__num">02</span>
+          <h3>Arboleda y pileta</h3>
+          <p>
+            Ambientación natural con árboles, sombra y una pileta para que los
+            días de calor sean un disfrute total.
+          </p>
+        </div>
+        <div class="block__photo">
+          <img src={img2.src} alt="Arboleda y pileta" loading="lazy" />
+        </div>
       </div>
-      <div class="feature-card">
-        <span class="feature-card__icon">🌳</span>
-        <h3>Arboleda y pileta</h3>
-        <p>Ambientación natural para el disfrute y bienestar de cada mascota.</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-card__icon">🏠</span>
-        <h3>Zonas techadas</h3>
-        <p>Refugio cómodo ante cualquier condición climática.</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-card__icon">🐈</span>
-        <h3>Gateras ambientadas</h3>
-        <p>Casitas, troncos y plantas para que los gatos se sientan en casa.</p>
-      </div>
-    </div>
 
-    <!-- Locations -->
-    <div class="locations reveal-group" style="margin-top:3rem">
-      <div class="location-card">
-        <div class="location-card__top">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--green)"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      <!-- 03 — Foto izquierda -->
+      <div class="block block--left">
+        <div class="block__photo">
+          <img src={img3.src} alt="Zonas techadas" loading="lazy" />
+        </div>
+        <div class="block__text">
+          <span class="block__num">03</span>
+          <h3>Zonas techadas</h3>
+          <p>
+            Refugios cómodos y seguros ante cualquier condición climática, para
+            que tu mascota siempre esté protegida.
+          </p>
+        </div>
+      </div>
+
+      <!-- 04 — Foto derecha -->
+      <div class="block block--right">
+        <div class="block__text">
+          <span class="block__num">04</span>
+          <h3>Gateras ambientadas</h3>
+          <p>
+            Espacios exclusivos con casitas, troncos y plantas naturales para
+            que los gatos se sientan completamente en casa.
+          </p>
+        </div>
+        <div class="block__photo">
+          <img src={img4.src} alt="Gateras ambientadas" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- 05 — Foto izquierda -->
+      <div class="block block--left">
+        <div class="block__photo">
+          <img src={img5.src} alt="Área de juego" loading="lazy" />
+        </div>
+        <div class="block__text">
+          <span class="block__num">05</span>
+          <h3>Área de juego y socialización</h3>
+          <p>
+            Sectores especialmente diseñados para que las mascotas interactúen,
+            jueguen y desarrollen vínculos en un ambiente seguro.
+          </p>
+        </div>
+      </div>
+
+      <!-- 06 — Foto derecha -->
+      <div class="block block--right">
+        <div class="block__text">
+          <span class="block__num">06</span>
+          <h3>Atención personalizada</h3>
+          <p>
+            Nuestro equipo acompaña a cada mascota de forma individual, con
+            cariño y responsabilidad profesional durante toda su estadía.
+          </p>
+        </div>
+        <div class="block__photo">
+          <img src={img6.src} alt="Atención personalizada" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- 07 — Foto izquierda -->
+      <div class="block block--left">
+        <div class="block__photo">
+          <img src={img7.src} alt="Área de descanso" loading="lazy" />
+        </div>
+        <div class="block__text">
+          <span class="block__num">07</span>
+          <h3>Área de descanso</h3>
+          <p>
+            Espacios cálidos y tranquilos para que tu mascota descanse
+            plácidamente después de un día lleno de actividad.
+          </p>
+        </div>
+      </div>
+
+      <!-- 08 — Foto derecha -->
+      <div class="block block--right">
+        <div class="block__text">
+          <span class="block__num">08</span>
+          <h3>Vista general del predio</h3>
+          <p>
+            Un entorno verde, amplio y seguro donde cada rincón fue diseñado
+            pensando en la felicidad y el bienestar animal.
+          </p>
+        </div>
+        <div class="block__photo">
+          <img src={img8.src} alt="Vista general" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- UBICACIÓN 1 — Predio Pilar -->
+      <div class="block block--left block--location">
+        <div class="block__photo block__photo--map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3287.9!2d-58.8166836!3d-34.4621712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc99eed1e02425%3A0x3fffff070ad29f91!2sLas%20Lunas%20Hospedaje!5e0!3m2!1ses!2sar!4v1"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="block__text">
+          <span class="block__num block__num--location">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#52b788">
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+              ></path>
+            </svg>
+            Ubicación
+          </span>
           <h3>Predio en Pilar</h3>
+          <p>
+            Nuestro predio principal donde las mascotas disfrutan de todo el
+            espacio verde y las instalaciones completas.
+          </p>
+          <a
+            href="https://www.google.com/maps/place/las+lunas+hospedaje/@-34.4621708,-58.8269619,15z"
+            target="_blank"
+            rel="noopener"
+            class="block__cta-link"
+          >
+            Cómo llegar →
+          </a>
         </div>
-        <p>Nuestro predio principal donde las mascotas disfrutan de todo el espacio verde.</p>
-        <a href="https://maps.google.com/?q=Las+Lunas+Pilar+Buenos+Aires" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:1rem; width:fit-content">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
-          Cómo llegar
-        </a>
       </div>
-      <div class="location-card">
-        <div class="location-card__top">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--green)"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          <h3>Oficina de atención al cliente</h3>
+
+      <!-- UBICACIÓN 2 — Oficina -->
+      <div class="block block--right block--location">
+        <div class="block__text" style="border-bottom: 2px solid white;">
+          <span class="block__num block__num--location">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#52b788">
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+              ></path>
+            </svg>
+            Ubicación
+          </span>
+          <h3>Oficina atención al cliente</h3>
+          <p>
+            Zona norte del GBA para coordinar traslados, consultas y todo lo que
+            necesites de forma personalizada.
+          </p>
+          <a
+            href="https://www.google.com/maps/place/Las+Lunas+-+Oficina/@-34.481253,-58.5386343,15z"
+            target="_blank"
+            rel="noopener"
+            class="block__cta-link"
+          >
+            Cómo llegar →
+          </a>
         </div>
-        <p>Zona norte del GBA para coordinar traslados y consultas personalizadas.</p>
-        <a href="https://maps.google.com/?q=Las+Lunas+oficina+Buenos+Aires" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:1rem; width:fit-content">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
-          Cómo llegar
-        </a>
+        <div class="block__photo block__photo--map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3288.9!2d-58.528356!3d-34.4812534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb1f12ef8f6d9%3A0xde855bf6d08d05bf!2sLas%20Lunas%20-%20Oficina!5e0!3m2!1ses!2sar!4v1"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </div>
     </div>
 
-    <!-- CTA more photos -->
-    <div class="text-center reveal" style="margin-top:3rem">
-      <a href="/galeria" class="btn btn-primary" style="font-size:1rem; padding:0.9rem 2rem">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+    <!-- CTA fotos -->
+    <div class="inst__cta reveal" style="transition-delay:0.2s">
+      <a href="/galeria" class="cta-fotos">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+          <circle cx="8.5" cy="8.5" r="1.5"></circle>
+          <polyline points="21 15 16 10 5 21"></polyline>
+        </svg>
         ¡Más fotos acá!
       </a>
     </div>
@@ -86,118 +353,302 @@
 </section>
 
 <style>
-.instalaciones { background: var(--gray-light); }
+  .instalaciones {
+    background: #1b4332;
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+  }
 
-.instalaciones__header { text-align: center; margin-bottom: 3rem; }
-.instalaciones__intro {
-  font-size: 1.1rem;
-  color: var(--gray-mid);
-  max-width: 560px;
-  margin: 1rem auto 0;
-}
+  .inst__deco {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
 
-/* Mosaic */
-.mosaic {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  margin-bottom: 3rem;
-}
+  /* ── LÍNEA ONDULADA ── */
+  .inst__wave {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: visible;
+  }
 
-@media (min-width: 768px) {
-  .mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: 400px; }
-}
+  .container {
+    position: relative;
+    z-index: 1;
+  }
 
-.mosaic__big {
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--radius-lg);
-  min-height: 280px;
-}
-.mosaic__big img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-.mosaic__big:hover img { transform: scale(1.04); }
+  /* ── HEADER ── */
+  .inst__header {
+    margin-bottom: 3.5rem;
+  }
 
-.mosaic__label {
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  background: rgba(255,255,255,0.92);
-  color: var(--green-dark);
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0.4rem 0.9rem;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
+  .inst__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 16px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50px;
+    color: #95d5b2;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
 
-.mosaic__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
+  .inst__header h2 {
+    color: #fff;
+    margin-bottom: 0.75rem;
+  }
+  .text-accent {
+    color: #52b788;
+  }
 
-.mosaic__grid img {
-  border-radius: var(--radius);
-  object-fit: cover;
-  width: 100%;
-  height: 190px;
-  transition: transform 0.4s;
-}
-.mosaic__grid img:hover { transform: scale(1.03); }
+  .inst__intro {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.55);
+    max-width: 520px;
+    line-height: 1.7;
+  }
 
-/* Feature cards */
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-}
+  /* ── BLOQUES ── */
+  .blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: relative;
+  }
 
-.feature-card {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  padding: 1.75rem 1.5rem;
-  border: 1px solid rgba(45,106,79,0.1);
-  transition: transform 0.25s, box-shadow 0.25s;
-}
-.feature-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(45,106,79,0.12);
-}
-.feature-card__icon { font-size: 2rem; display: block; margin-bottom: 0.75rem; }
-.feature-card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--green-dark); }
-.feature-card p { font-size: 0.9rem; color: var(--gray-mid); line-height: 1.55; }
+  /* ── LÍNEA DE PUNTOS VERTICAL ── */
+  .blocks__timeline {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 2px;
+    z-index: 10;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-/* Locations */
-.locations {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-@media (min-width: 768px) { .locations { grid-template-columns: 1fr 1fr; } }
+  .blocks__timeline-line {
+    flex: 1;
+    width: 2px;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      rgba(82, 183, 136, 0.55) 0px,
+      rgba(82, 183, 136, 0.55) 8px,
+      transparent 8px,
+      transparent 18px
+    );
+  }
 
-.location-card {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  padding: 2rem;
-  border: 1px solid rgba(45,106,79,0.1);
-}
-.location-card__top {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 0.75rem;
-}
-.location-card h3 { font-family: var(--font-body); font-size: 1.1rem; color: var(--green-dark); }
-.location-card p { font-size: 0.95rem; color: var(--gray-mid); }
+  .blocks__timeline-arrow {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 10px solid rgba(82, 183, 136, 0.55);
+    margin-top: -1px;
+  }
 
-.text-center { text-align: center; }
+  .block {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    height: 340px;
+    /* border-radius: 16px; */
+    overflow: hidden;
+  }
+
+  .block--right {
+    grid-template-columns: 1fr 1.6fr;
+  }
+
+  .block__photo {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .block__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+
+  .block:hover .block__photo img {
+    transform: scale(1.04);
+  }
+
+  .block__photo--map {
+    overflow: hidden;
+    filter: grayscale(30%) contrast(0.95);
+    opacity: 0.85;
+  }
+  .block__photo--map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  .block__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2.5rem 3rem;
+    background: #1b4332;
+  }
+
+  .block--left > .block__text {
+    border-right: 2px solid rgba(255, 255, 255, 1);
+  }
+
+  .block--right > .block__text {
+    border-left: 2px solid rgba(255, 255, 255, 1);
+  }
+
+  .block__num {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    color: #52b788;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  .block__num--location {
+    letter-spacing: 0.1em;
+  }
+
+  .block__text h3 {
+    font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 0.9rem;
+    letter-spacing: -0.02em;
+  }
+
+  .block__text p {
+    font-size: clamp(0.88rem, 1.2vw, 1rem);
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.75;
+    max-width: 340px;
+  }
+
+  .block__cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 1.25rem;
+    color: #52b788;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition:
+      color 0.2s,
+      gap 0.2s;
+  }
+  .block__cta-link:hover {
+    color: #74c69d;
+    gap: 10px;
+  }
+
+  /* ── CTA FOTOS ── */
+  .inst__cta {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cta-fotos {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 1rem 2.5rem;
+    background: #52b788;
+    border-radius: 50px;
+    color: #1b4332;
+    font-size: 1.05rem;
+    font-weight: 800;
+    text-decoration: none;
+    transition:
+      background 0.2s,
+      transform 0.2s,
+      box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(82, 183, 136, 0.3);
+  }
+  .cta-fotos:hover {
+    background: #74c69d;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(82, 183, 136, 0.4);
+  }
+  .cta-fotos svg {
+    stroke: #1b4332;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .blocks__timeline {
+      display: none;
+    }
+    .inst__wave {
+      display: none;
+    }
+
+    .block,
+    .block--right {
+      grid-template-columns: 1fr;
+      grid-template-rows: 260px auto;
+      height: auto;
+    }
+
+    .block--right .block__text {
+      order: 2;
+    }
+    .block--right .block__photo {
+      order: 1;
+    }
+
+    .block__photo-overlay--right,
+    .block__photo-overlay--left {
+      background: linear-gradient(
+        to bottom,
+        transparent 50%,
+        rgba(27, 67, 50, 0.98)
+      );
+    }
+
+    .block__text {
+      padding: 2rem 1.75rem;
+    }
+    .block__text p {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .block {
+      grid-template-rows: 220px auto;
+    }
+  }
 </style>
