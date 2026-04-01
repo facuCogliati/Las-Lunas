@@ -60,7 +60,9 @@ const trainingImages = [
               >
             </div>
           </div>
-          <h3 class="service-title">Hospedaje para perros</h3>
+          <h3 class="service-title" style="color: var(--accent);">
+            Hospedaje para perros
+          </h3>
           <p class="service-description">
             Perros en libertad en grupos homogéneos, siempre supervisados.
             Descanso cómodo y seguro por la noche.
@@ -99,7 +101,9 @@ const trainingImages = [
               >
             </div>
           </div>
-          <h3 class="service-title">Hospedaje para gatos</h3>
+          <h3 class="service-title" style="color: white;">
+            Hospedaje para gatos
+          </h3>
           <p class="service-description">
             Gateras amplias e individuales, ambientadas con troncos, plantas y
             casitas para que se sientan en casa.
@@ -388,6 +392,12 @@ const trainingImages = [
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
   }
 
+  .service-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
   .service-header-row {
     display: flex;
     justify-content: space-between;
@@ -413,7 +423,8 @@ const trainingImages = [
     color: var(--white);
   }
   .card-dark .dark-icon {
-    background: rgba(255, 255, 255, 0.1);
+    /* background: rgba(255, 255, 255, 0.1); */
+    background: var(--accent);
     color: var(--white);
   }
   .card-dark .service-description {
@@ -425,7 +436,8 @@ const trainingImages = [
     color: var(--green-dark);
   }
   .card-accent .accent-icon {
-    background: rgba(255, 255, 255, 0.3);
+    /* background: rgba(255, 255, 255, 0.3); */
+    background: white;
     color: var(--green-dark);
   }
   .card-accent .service-description {
@@ -440,8 +452,8 @@ const trainingImages = [
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   }
   .card-white .outline-icon {
-    background: var(--green-pale);
-    color: var(--green-dark);
+    background: var(--green-dark);
+    color: white;
   }
   .card-white .service-description {
     color: var(--gray-mid);
@@ -515,7 +527,8 @@ const trainingImages = [
   }
 
   .service-meta-mini {
-    background: rgba(0, 0, 0, 0.05);
+    /* background: rgba(0, 0, 0, 0.05); */
+    background: var(--green-dark);
     padding: 0.75rem;
     border-radius: var(--radius);
     font-size: 0.8rem;
@@ -525,9 +538,13 @@ const trainingImages = [
     gap: 0.25rem;
   }
 
+  .service-meta-mini span {
+    color: white;
+  }
+
   .meta-link {
     font-weight: bold;
-    color: inherit;
+    color: white;
     text-decoration: underline;
   }
 
