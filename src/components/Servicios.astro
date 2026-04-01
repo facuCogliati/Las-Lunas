@@ -1,382 +1,750 @@
 ---
+// Importar imágenes del programa de adiestramiento
+import train1 from "../assets/servicios/ad 4.jpg";
+import train2 from "../assets/servicios/ad 2.jpg";
+import train3 from "../assets/servicios/ad 3.jpg";
+import train4 from "../assets/servicios/ad 4.jpg";
+import train5 from "../assets/servicios/ad 2.jpg";
+
+const trainingImages = [
+  { src: train1.src, alt: "Adiestramiento profesional" },
+  { src: train2.src, alt: "Entrenamiento canino" },
+  { src: train3.src, alt: "Trabajo con adiestrador" },
+  { src: train4.src, alt: "Comandos básicos" },
+  { src: train5.src, alt: "Educación canina" },
+];
 ---
+
 <section id="servicios" class="section servicios">
   <div class="container">
     <div class="servicios__header reveal">
-      <p class="section-tag">Lo que ofrecemos</p>
-      <h2>Nuestros <span class="text-green">servicios</span></h2>
-    </div>
-
-    <!-- Main cards A B C -->
-    <div class="cards-main reveal-group">
-      <!-- A: Perros -->
-      <div class="svc-card">
-        <div class="svc-card__img">
-          <img src="https://picsum.photos/seed/perros/600/400" alt="Hospedaje perros" loading="lazy" />
-          <span class="svc-card__badge">🐕 Perros</span>
-        </div>
-        <div class="svc-card__body">
-          <h3>Hospedaje para perros</h3>
-          <p>Perros en libertad en grupos homogéneos, siempre supervisados. Descanso cómodo y seguro por la noche.</p>
-          <a href="https://api.whatsapp.com/send?phone=5491150968576&text=Hola!%20Quiero%20informaci%C3%B3n%20de%20hospedaje%20para%20mi%20perro." target="_blank" class="btn btn-primary svc-card__cta">Consultar</a>
-        </div>
+      <div class="header-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+          ></path>
+        </svg>
+        <span>LO QUE OFRECEMOS</span>
       </div>
 
-      <!-- B: Gatos -->
-      <div class="svc-card">
-        <div class="svc-card__img">
-          <img src="https://picsum.photos/seed/gatos1/600/400" alt="Hospedaje gatos" loading="lazy" />
-          <span class="svc-card__badge">🐈 Gatos</span>
-        </div>
-        <div class="svc-card__body">
-          <h3>Hospedaje para gatos</h3>
-          <p>Gateras amplias e individuales, ambientadas con troncos, plantas y casitas para que se sientan en casa.</p>
-          <a href="https://api.whatsapp.com/send?phone=5491150968576&text=Hola!%20Quiero%20informaci%C3%B3n%20de%20hospedaje%20para%20mi%20gato." target="_blank" class="btn btn-primary svc-card__cta">Consultar</a>
-        </div>
-      </div>
-
-      <!-- C: Traslados locales -->
-      <div class="svc-card">
-        <div class="svc-card__img">
-          <img src="https://picsum.photos/seed/traslado/600/400" alt="Traslados" loading="lazy" />
-          <span class="svc-card__badge">🚐 Traslados</span>
-        </div>
-        <div class="svc-card__body">
-          <h3>Traslados a domicilio</h3>
-          <p>Retiro y devolución con camionetas acondicionadas y personal capacitado.</p>
-          <div class="hours">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span>Lunes a viernes: 8:00 a 16:00 hs</span>
-          </div>
-          <a href="https://api.whatsapp.com/send?phone=5491150968576&text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20traslados." target="_blank" class="btn btn-primary svc-card__cta">Consultar</a>
+      <div class="header-two-col">
+        <div class="header-left">
+          <h2>Nuestros <span class="text-accent">servicios</span></h2>
+          <p class="header-body">
+            Todo lo que necesita tu mascota en un entorno seguro, natural y
+            profesional.
+          </p>
         </div>
       </div>
     </div>
 
-    <!-- Card D: Adiestramiento (wider) -->
-    <div class="card-adiest reveal" style="margin-top:1.5rem">
-      <div class="card-adiest__media">
-        <img src="https://drive.google.com/uc?export=view&id=1PuD3h2bmSUsGT3GxdfnZfLG7OH6izvJp" alt="Adiestramiento" loading="lazy" onerror="this.src='https://picsum.photos/seed/adiest/600/500'" />
-      </div>
-      <div class="card-adiest__body">
-        <span class="svc-card__badge" style="position:static; margin-bottom:1rem; display:inline-block">🎓 Adiestramiento</span>
-        <h3>Programa de adiestramiento</h3>
-        <p>Su perro estará hospedado con nosotros <strong>30 días corridos</strong>, donde trabajará diariamente con el adiestrador.</p>
-
-        <h4 style="margin:1.5rem 0 0.75rem; color:var(--green-dark)">Comandos que aprenderá</h4>
-        <div class="commands-table">
-          <div class="cmd-row header">
-            <span>Comando</span>
-            <span>Acción</span>
+    <div class="services-bento-grid">
+      <article
+        class="bento-service card-dark reveal"
+        style="transition-delay: 0.1s;"
+      >
+        <div class="service-content">
+          <div class="service-header-row">
+            <div class="service-number card-a-number">01</div>
+            <div class="stat-icon dark-icon">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                ><path
+                  d="M12 5c2 0 4 2 4 4v2h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2h2V9c0-2 2-4 4-4z"
+                ></path></svg
+              >
+            </div>
           </div>
-          <div class="cmd-row"><span>Junto</span><span>Camina junto al guía, adaptándose a su velocidad y dirección.</span></div>
-          <div class="cmd-row"><span>Sit</span><span>Se sienta.</span></div>
-          <div class="cmd-row"><span>Down</span><span>Se echa.</span></div>
-          <div class="cmd-row"><span>Stá / Parado</span><span>Se para.</span></div>
-          <div class="cmd-row"><span>Vení</span><span>Acude al llamado siempre.</span></div>
-          <div class="cmd-row"><span>Quedate</span><span>Se queda en cualquiera de las posiciones aprendidas.</span></div>
-          <div class="cmd-row"><span>Junto (pasar a)</span><span>Desde cualquier posición asume la posición inicial, sentándose a la izquierda.</span></div>
-          <div class="cmd-row"><span>Off</span><span>Aprende a no saltar sobre la gente.</span></div>
-        </div>
-
-        <div class="includes-grid">
-          <div class="inc-block">
-            <strong>¿Qué incluye?</strong>
-            <ul>
-              <li>Hospedaje por 30 días</li>
-              <li>Traslados incluidos (inicio y fin)</li>
-              <li>Alimento premium</li>
-              <li>Baños sanitarios</li>
-              <li>Asistencia veterinaria permanente</li>
-              <li>Informe de avances + instructivo final</li>
-            </ul>
-          </div>
-          <div class="inc-block guarantee">
-            <strong>🛡️ Garantía</strong>
-            <p>Garantizamos el correcto funcionamiento de los comandos enseñados <strong>durante 3 meses</strong> después de finalizado el programa.</p>
-          </div>
-        </div>
-
-        <a
-          href="https://api.whatsapp.com/send?phone=5491150968576&text=Hola!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20de%20hospedaje%20para%20mi%20mascota%20en%20Las%20Lunas.%20"
-          target="_blank"
-          class="btn btn-wa"
-          style="margin-top:1.5rem"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          ¡Quiero más información!
-        </a>
-      </div>
-    </div>
-
-    <!-- Card E: Traslado Internacional -->
-    <div class="card-intl reveal" style="margin-top:1.5rem">
-      <div class="card-intl__media">
-        <img src="https://picsum.photos/seed/intl/600/400" alt="Traslado internacional" loading="lazy" />
-      </div>
-      <div class="card-intl__body">
-        <span class="svc-card__badge" style="position:static; display:inline-block; margin-bottom:1rem">✈️ Internacional</span>
-        <div class="latam-logo">
-          <a href="https://www.latampettransport.com/es/" target="_blank" rel="noopener">
-            <img src="https://www.latampettransport.com/wp-content/uploads/2021/07/Logo-LATAM-PET-TRANSPORT.png" alt="LATAM Pet Transport" loading="lazy" onerror="this.alt='LATAM Pet Transport'" style="height:40px; object-fit:contain;" />
+          <h3 class="service-title">Hospedaje para perros</h3>
+          <p class="service-description">
+            Perros en libertad en grupos homogéneos, siempre supervisados.
+            Descanso cómodo y seguro por la noche.
+          </p>
+          <a href="#contacto" class="service-cta card-a-btn">
+            <span>Consultar</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              ><path
+                d="M4 10H16M16 10L10 4M16 10L10 16"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"></path></svg
+            >
           </a>
         </div>
-        <h3>Traslado internacional de mascotas</h3>
-        <p>
-          <a href="https://www.latampettransport.com/es/quote/" target="_blank" rel="noopener" class="intl-link">
-            ¿Viajás con tu mascota? Escribinos por acá y te acompañamos paso a paso para organizar su traslado internacional de forma segura.
+      </article>
+
+      <article
+        class="bento-service card-accent reveal"
+        style="transition-delay: 0.2s;"
+      >
+        <div class="service-content">
+          <div class="service-header-row">
+            <div class="service-number card-b-number">02</div>
+            <div class="stat-icon accent-icon">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                ><path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                ></path></svg
+              >
+            </div>
+          </div>
+          <h3 class="service-title">Hospedaje para gatos</h3>
+          <p class="service-description">
+            Gateras amplias e individuales, ambientadas con troncos, plantas y
+            casitas para que se sientan en casa.
+          </p>
+          <a href="#contacto" class="service-cta card-b-btn">
+            <span>Consultar</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              ><path
+                d="M4 10H16M16 10L10 4M16 10L10 16"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"></path></svg
+            >
           </a>
-        </p>
-        <a href="https://www.latampettransport.com/es/quote/" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:1rem">
-          Solicitar cotización →
-        </a>
-      </div>
+        </div>
+      </article>
+
+      <article
+        class="bento-service card-white reveal"
+        style="transition-delay: 0.3s;"
+      >
+        <div class="service-content">
+          <div class="service-header-row">
+            <div class="service-number card-c-number">03</div>
+            <div class="stat-icon outline-icon">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                ><rect x="1" y="3" width="15" height="13"></rect><polygon
+                  points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle
+                  cx="5.5"
+                  cy="18.5"
+                  r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"
+                ></circle></svg
+              >
+            </div>
+          </div>
+          <h3 class="service-title text-dark">Traslados a domicilio</h3>
+          <p class="service-description">
+            Retiro y devolución con camionetas acondicionadas y personal
+            capacitado.
+          </p>
+          <div class="service-meta-mini">
+            <span>Lun a Vie: 8:00 - 16:00 hs</span>
+            <a
+              href="https://docs.google.com/document/d/1nPaS-Ibv_P7T9CQX2_zNQY6iKw26Yw7o2Eo9KqxqQtQ/edit?usp=drive_link"
+              target="_blank"
+              class="meta-link">Requisitos sanitarios →</a
+            >
+          </div>
+          <a href="#contacto" class="service-cta card-c-btn">
+            <span>Consultar</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              ><path
+                d="M4 10H16M16 10L10 4M16 10L10 16"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"></path></svg
+            >
+          </a>
+        </div>
+      </article>
     </div>
 
-    <!-- Card F: Generales -->
-    <div class="card-generales reveal" style="margin-top:1.5rem">
-      <h3 class="card-generales__title">Incluido en todos nuestros servicios</h3>
-      <div class="generales-grid reveal-group">
-        <div class="gen-item">
-          <span class="gen-icon">👁️</span>
-          <span>Supervisión permanente</span>
-        </div>
-        <div class="gen-item">
-          <span class="gen-icon">🧹</span>
-          <span>Limpieza constante</span>
-        </div>
-        <div class="gen-item">
-          <span class="gen-icon">🛁</span>
-          <span>Baños sanitarios</span>
-        </div>
-        <div class="gen-item">
-          <span class="gen-icon">🩺</span>
-          <span>Asistencia veterinaria ante urgencias</span>
-        </div>
-        <div class="gen-item">
-          <span class="gen-icon">🍗</span>
-          <span>Alimento premium</span>
-        </div>
-      </div>
-    </div>
+    <div
+      class="training-full-width card-dark reveal"
+      style="transition-delay: 0.4s;"
+    >
+      <div class="training-content-area">
+        <span class="training-badge">Programa Intensivo</span>
+        <h3 class="training-title">Programas de adiestramiento</h3>
 
-    <!-- Instagram CTA -->
-    <div class="ig-cta reveal" style="margin-top:3rem">
-      <div class="ig-cta__text">
-        <h3>¡Unite a la familia Las Lunas!</h3>
-        <p>Vas a encontrar tips prácticos de adiestramiento, conducta y salud para tu mascota</p>
+        <div class="training-sections-grid">
+          <div class="training-col">
+            <div class="training-section">
+              <h4 class="section-title-small">¿En qué consiste?</h4>
+              <p class="section-text">
+                Su perro estará hospedado con nosotros 30 días corridos, donde
+                trabajará diariamente con el adiestrador.
+              </p>
+            </div>
+
+            <div class="training-section">
+              <h4 class="section-title-small">¿Qué incluye?</h4>
+              <ul class="includes-list">
+                <li>Hospedaje por 30 días.</li>
+                <li>
+                  Traslados incluidos: retiro y devolución a tu domicilio.
+                </li>
+                <li>Alimento premium durante toda la estadía.</li>
+                <li>Baños sanitarios.</li>
+                <li>Asistencia veterinaria permanente.</li>
+                <li>Informe de avances e instructivo final.</li>
+              </ul>
+            </div>
+
+            <div class="training-cta">
+              <a
+                href="https://api.whatsapp.com/send?phone=5491150968576&text=Hola!%20Quiero%20recibir%20m%C3%A1s%20informaci%C3%B3n..."
+                class="btn-whatsapp"
+                target="_blank"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  ><path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                  ></path></svg
+                >
+                ¡Quiero más información!
+              </a>
+            </div>
+          </div>
+
+          <div class="training-col">
+            <div class="training-section">
+              <h4 class="section-title-small">
+                ¿Qué logrará con este programa?
+              </h4>
+              <div class="table-responsive">
+                <table class="commands-table">
+                  <tbody>
+                    <tr
+                      ><td class="cmd-name">Junto</td><td
+                        >Camina junto al guía.</td
+                      ></tr
+                    >
+                    <tr
+                      ><td class="cmd-name">Sit / Down</td><td
+                        >Se sienta / Se echa.</td
+                      ></tr
+                    >
+                    <tr
+                      ><td class="cmd-name">Stá o parado</td><td>Se para.</td
+                      ></tr
+                    >
+                    <tr
+                      ><td class="cmd-name">Vení</td><td
+                        >Acude al llamado siempre.</td
+                      ></tr
+                    >
+                    <tr
+                      ><td class="cmd-name">Varía pos.</td><td
+                        >Se queda en las posiciones aprendidas.</td
+                      ></tr
+                    >
+                    <tr
+                      ><td class="cmd-name">Off</td><td
+                        >Aprende a no saltar sobre la gente.</td
+                      ></tr
+                    >
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="training-section guarantee-box-wrapper">
+              <div class="guarantee-box card-accent">
+                <div class="guarantee-header">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    ><path
+                      d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"
+                    ></path></svg
+                  >
+                  <h5 class="guarantee-title">Garantía de 3 meses</h5>
+                </div>
+                <div class="guarantee-content">
+                  <p>
+                    Garantizamos el correcto funcionamiento de los comandos. Si
+                    alguno falla, lo reforzamos en nuestro predio.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <a href="https://www.instagram.com/hospedaje.laslunas/" target="_blank" rel="noopener" class="btn btn-primary ig-cta__btn">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-        ¡Seguinos en Instagram! @hospedaje.laslunas
-      </a>
+
+      <div class="training-gallery-bottom">
+        <div class="gallery-scroll-track">
+          {
+            trainingImages.map((img) => (
+              <div class="gallery-img-card">
+                <img src={img.src} alt={img.alt} loading="lazy" />
+              </div>
+            ))
+          }
+          {
+            trainingImages.map((img) => (
+              <div class="gallery-img-card" aria-hidden="true">
+                <img src={img.src} alt="" loading="lazy" />
+              </div>
+            ))
+          }
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
-.servicios { background: var(--white); }
-.servicios__header { text-align: center; margin-bottom: 3rem; }
+  /* ══════════════════════════════════════════════════════════════════
+     SERVICIOS SECTION (Sincronizado con Conocenos)
+     ══════════════════════════════════════════════════════════════════ */
+  .servicios {
+    background: var(--white);
+    padding: 6rem 0;
+    position: relative;
+  }
 
-/* Main cards */
-.cards-main {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.25rem;
-}
+  /* ── HEADER ── */
+  .servicios__header {
+    margin-bottom: 4rem;
+  }
 
-.svc-card {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  border: 1px solid rgba(45,106,79,0.1);
-  background: var(--white);
-  transition: transform 0.25s, box-shadow 0.25s;
-}
-.svc-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 50px rgba(45,106,79,0.12);
-}
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: var(--green-pale);
+    border: 1px solid rgba(45, 106, 79, 0.1);
+    border-radius: 50px;
+    color: var(--green-dark);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.25rem;
+  }
 
-.svc-card__img {
-  position: relative;
-  height: 220px;
-  overflow: hidden;
-  background: var(--gray-light);
-}
-.svc-card__img img { width:100%; height:100%; object-fit:cover; transition:transform 0.4s; }
-.svc-card:hover .svc-card__img img { transform: scale(1.06); }
+  .header-two-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 7rem;
+  }
 
-.svc-card__badge {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  background: rgba(255,255,255,0.92);
-  color: var(--green-dark);
-  font-size: 0.8rem;
-  font-weight: 600;
-  padding: 0.3rem 0.75rem;
-  border-radius: 50px;
-  backdrop-filter: blur(4px);
-}
+  .header-left h2 {
+    margin-bottom: 1rem;
+  }
 
-.svc-card__body { padding: 1.5rem; }
-.svc-card__body h3 { margin-bottom: 0.75rem; color: var(--green-dark); }
-.svc-card__body p { font-size: 0.92rem; color: var(--gray-mid); margin-bottom: 1rem; }
+  .text-accent {
+    color: var(--accent);
+  }
 
-.hours {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.85rem;
-  color: var(--green);
-  background: var(--green-pale);
-  padding: 0.4rem 0.75rem;
-  border-radius: var(--radius);
-  margin-bottom: 1rem;
-}
+  .header-body {
+    color: var(--gray-mid);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 560px;
+  }
 
-/* Adiestramiento card */
-.card-adiest {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  border: 1px solid rgba(45,106,79,0.1);
-  background: var(--white);
-}
-@media (min-width: 900px) {
-  .card-adiest { grid-template-columns: 380px 1fr; }
-}
+  /* ══════════════════════════════════════════════════════════════════
+     BENTO GRID DE SERVICIOS
+     ══════════════════════════════════════════════════════════════════ */
+  .services-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
 
-.card-adiest__media { min-height: 300px; background: var(--gray-light); }
-.card-adiest__media img { width:100%; height:100%; object-fit:cover; }
-.card-adiest__body { padding: 2rem 2.5rem; }
-.card-adiest__body h3 { font-size: 1.5rem; color: var(--green-dark); margin-bottom: 0.75rem; }
-.card-adiest__body > p { color: var(--gray-mid); }
+  .bento-service {
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+    height: 100%;
+  }
 
-/* Commands table */
-.commands-table {
-  border: 1px solid var(--green-pale);
-  border-radius: var(--radius);
-  overflow: hidden;
-  font-size: 0.85rem;
-}
-.cmd-row {
-  display: grid;
-  grid-template-columns: 130px 1fr;
-  border-bottom: 1px solid var(--green-pale);
-}
-.cmd-row:last-child { border-bottom: none; }
-.cmd-row span { padding: 0.5rem 0.75rem; }
-.cmd-row span:first-child {
-  background: var(--green-pale);
-  font-weight: 600;
-  color: var(--green-dark);
-  border-right: 1px solid var(--green-pale);
-}
-.cmd-row span:last-child { color: var(--gray-dark); }
-.cmd-row.header span {
-  background: var(--green);
-  color: var(--white);
-  font-weight: 600;
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
+  .bento-service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  }
 
-/* Includes */
-.includes-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-@media (min-width: 640px) { .includes-grid { grid-template-columns: 1fr 1fr; } }
+  .service-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
 
-.inc-block { padding: 1.25rem; background: var(--gray-light); border-radius: var(--radius); }
-.inc-block strong { display: block; margin-bottom: 0.75rem; color: var(--green-dark); }
-.inc-block ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
-.inc-block ul li::before { content: '✓ '; color: var(--green); font-weight: 700; }
-.inc-block ul li { font-size: 0.88rem; color: var(--gray-dark); }
+  .service-number {
+    font-size: 3.5rem;
+    font-family: var(--font-display);
+    font-weight: 800;
+    line-height: 1;
+    opacity: 1 !important; /* Ahora 100% de opacidad para que resalten */
+  }
 
-.guarantee { background: var(--green-pale); border: 1px solid rgba(45,106,79,0.2); }
-.guarantee strong { color: var(--green-dark); }
-.guarantee p { font-size: 0.88rem; color: var(--green-dark); line-height: 1.6; }
+  .text-dark {
+    color: var(--green-dark);
+  }
 
-/* International card */
-.card-intl {
-  display: grid;
-  grid-template-columns: 1fr;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  border: 1px solid rgba(45,106,79,0.1);
-  background: var(--white);
-}
-@media (min-width: 768px) {
-  .card-intl { grid-template-columns: 1fr 1.5fr; }
-}
-.card-intl__media img { width:100%; height:260px; object-fit:cover; }
-.card-intl__body { padding: 2rem; }
-.card-intl__body h3 { font-size: 1.35rem; color: var(--green-dark); margin-bottom: 0.75rem; }
-.latam-logo { margin-bottom: 1rem; }
-.intl-link { color: var(--gray-mid); font-size: 0.95rem; text-decoration: underline; text-decoration-color: var(--green); text-underline-offset: 3px; }
-.intl-link:hover { color: var(--green); }
+  /* --- DEFINICIÓN DE COLORES BASE DE CADA TARJETA --- */
+  .card-dark {
+    background: var(--green-dark);
+    color: var(--white);
+  }
+  .card-dark .dark-icon {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+  }
+  .card-dark .service-description {
+    color: var(--green-pale);
+  }
 
-/* Generales card */
-.card-generales {
-  background: var(--green-dark);
-  border-radius: var(--radius-lg);
-  padding: 2.5rem;
-}
-.card-generales__title {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  color: var(--white);
-  text-align: center;
-  margin-bottom: 2rem;
-}
+  .card-accent {
+    background: var(--accent);
+    color: var(--green-dark);
+  }
+  .card-accent .accent-icon {
+    background: rgba(255, 255, 255, 0.3);
+    color: var(--green-dark);
+  }
+  .card-accent .service-description {
+    color: var(--green-dark);
+    opacity: 0.85;
+  }
 
-.generales-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
+  .card-white {
+    background: var(--white);
+    color: var(--black);
+    border: 2px solid var(--green-pale);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  }
+  .card-white .outline-icon {
+    background: var(--green-pale);
+    color: var(--green-dark);
+  }
+  .card-white .service-description {
+    color: var(--gray-mid);
+  }
 
-.gen-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 50px;
-  padding: 0.65rem 1.25rem;
-  color: rgba(255,255,255,0.9);
-  font-size: 0.9rem;
-  transition: background 0.2s;
-}
-.gen-item:hover { background: rgba(255,255,255,0.18); }
-.gen-icon { font-size: 1.25rem; }
+  /* --- EL HILO VISUAL (Cruces de colores según instrucciones) --- */
 
-/* IG CTA */
-.ig-cta {
-  background: var(--green-pale);
-  border-radius: var(--radius-lg);
-  padding: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1.5rem;
-  border: 1px solid rgba(45,106,79,0.15);
-}
-@media (min-width: 768px) {
-  .ig-cta { flex-direction: row; text-align: left; }
-  .ig-cta__text { flex: 1; }
-}
-.ig-cta h3 { font-size: 1.35rem; color: var(--green-dark); margin-bottom: 0.5rem; }
-.ig-cta p { color: var(--gray-mid); font-size: 0.95rem; }
+  /* Card A usa el color de Card B (Accent) */
+  .card-a-number {
+    color: var(--accent);
+  }
+  .card-a-btn {
+    background: var(--accent);
+    color: var(--green-dark);
+  }
+  .card-a-btn:hover {
+    background: var(--white);
+    color: var(--green-dark);
+  }
 
-.svc-card__cta { width: 100%; justify-content: center; }
+  /* Card B usa el color de Card C (White) */
+  .card-b-number {
+    color: var(--white);
+  }
+  .card-b-btn {
+    background: var(--white);
+    color: var(--green-dark);
+  }
+  .card-b-btn:hover {
+    background: var(--green-dark);
+    color: var(--white);
+  }
+
+  /* Card C usa el color de Card A (Dark Green) */
+  .card-c-number {
+    color: var(--green-dark);
+  }
+  .card-c-btn {
+    background: var(--green-dark);
+    color: var(--white);
+  }
+  .card-c-btn:hover {
+    background: var(--accent);
+    color: var(--green-dark);
+  }
+
+  /* Estilos internos de las tarjetas de servicio */
+  .stat-icon {
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    flex-shrink: 0;
+  }
+
+  .service-title {
+    font-size: 1.5rem;
+    font-family: var(--font-display);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .service-description {
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    flex-grow: 1;
+  }
+
+  .service-meta-mini {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 0.75rem;
+    border-radius: var(--radius);
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .meta-link {
+    font-weight: bold;
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  .service-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+
+  /* ══════════════════════════════════════════════════════════════════
+     PROGRAMA DE ADIESTRAMIENTO
+     ══════════════════════════════════════════════════════════════════ */
+  .training-full-width {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .training-content-area {
+    padding: 3rem 4rem;
+  }
+
+  .training-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--accent);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .training-title {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    color: var(--white) !important; /* Título 100% blanco */
+  }
+
+  .training-sections-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .training-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .section-title-small {
+    color: var(--accent);
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-text {
+    line-height: 1.6;
+    color: var(--green-pale);
+  }
+
+  .includes-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .includes-list li {
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--green-pale);
+    font-size: 0.95rem;
+  }
+
+  .includes-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+  }
+
+  .table-responsive {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius);
+    padding: 1rem;
+  }
+  .commands-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .commands-table td {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    color: var(--green-pale);
+  }
+  .commands-table tr:last-child td {
+    border-bottom: none;
+  }
+  .cmd-name {
+    font-weight: bold;
+    color: var(--white) !important;
+    width: 40%;
+  }
+
+  .guarantee-box-wrapper {
+    margin-top: auto;
+  }
+  .guarantee-box {
+    padding: 1.5rem;
+    border-radius: var(--radius);
+  }
+  .guarantee-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+  }
+  .guarantee-title {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+  .guarantee-content p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  .btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25d366;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: transform 0.3s ease;
+  }
+  .btn-whatsapp:hover {
+    transform: translateY(-3px);
+  }
+
+  /* --- GALERÍA CARRUSEL INFINITO --- */
+  .training-gallery-bottom {
+    width: 100%;
+    padding: 0 0 2rem 0;
+    overflow: hidden; /* Oculta la barra de scroll y el sobrante */
+  }
+
+  .gallery-scroll-track {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+    padding-left: 1rem;
+    /* Animación infinita lineal */
+    animation: scroll-gallery 20s linear infinite;
+  }
+
+  /* Si el usuario pone el mouse arriba, el carrusel se pausa */
+  .gallery-scroll-track:hover {
+    animation-play-state: paused;
+  }
+
+  .gallery-img-card {
+    width: 280px;
+    height: 200px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .gallery-img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* La magia del loop: se mueve exactamente el 50% de la pista (porque clonamos las fotos) */
+  @keyframes scroll-gallery {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-50% - 0.5rem));
+    }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .header-two-col {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .services-bento-grid {
+      grid-template-columns: 1fr;
+    }
+    .training-content-area {
+      padding: 2rem;
+    }
+    .training-sections-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
 </style>
