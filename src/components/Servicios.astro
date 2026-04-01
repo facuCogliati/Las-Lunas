@@ -6,12 +6,36 @@ import train3 from "../assets/servicios/ad 3.jpg";
 import train4 from "../assets/servicios/ad 4.jpg";
 import train5 from "../assets/servicios/ad 2.jpg";
 
+import intTransport1 from "../assets/servicios/ad 2.jpg";
+import intTransport2 from "../assets/servicios/ad 2.jpg";
+import intTransport3 from "../assets/servicios/ad 2.jpg";
+import intTransport4 from "../assets/servicios/ad 2.jpg";
+
+// Importar imágenes de traslado internacional
+// import intTransport1 from "../assets/servicios/internacional/1.jpg";
+// import intTransport2 from "../assets/servicios/internacional/2.jpg";
+// import intTransport3 from "../assets/servicios/internacional/3.jpg";
+// import intTransport4 from "../assets/servicios/internacional/4.jpg";
+
+// Importar logo de Latam Pet Transport
+// import latamLogo from "../assets/servicios/latam-pet-logo.png";
+
+// Importar imagen de veterinario
+// import vetImage from "../assets/servicios/veterinario.jpg";
+
 const trainingImages = [
   { src: train1.src, alt: "Adiestramiento profesional" },
   { src: train2.src, alt: "Entrenamiento canino" },
   { src: train3.src, alt: "Trabajo con adiestrador" },
   { src: train4.src, alt: "Comandos básicos" },
   { src: train5.src, alt: "Educación canina" },
+];
+
+const internationalImages = [
+  { src: intTransport1.src, alt: "Traslado internacional de mascotas" },
+  { src: intTransport2.src, alt: "Transporte seguro" },
+  { src: intTransport3.src, alt: "Documentación internacional" },
+  { src: intTransport4.src, alt: "Viaje con mascotas" },
 ];
 ---
 
@@ -38,7 +62,9 @@ const trainingImages = [
       </div>
     </div>
 
+    <!-- BENTO GRID CARDS A, B, C -->
     <div class="services-bento-grid">
+      <!-- Card A: Hospedaje Perros -->
       <article
         class="bento-service card-dark reveal"
         style="transition-delay: 0.1s;"
@@ -80,6 +106,7 @@ const trainingImages = [
         </div>
       </article>
 
+      <!-- Card B: Hospedaje Gatos -->
       <article
         class="bento-service card-accent reveal"
         style="transition-delay: 0.2s;"
@@ -121,6 +148,7 @@ const trainingImages = [
         </div>
       </article>
 
+      <!-- Card C: Traslados -->
       <article
         class="bento-service card-white reveal"
         style="transition-delay: 0.3s;"
@@ -172,6 +200,7 @@ const trainingImages = [
       </article>
     </div>
 
+    <!-- CARD D: Programa de Adiestramiento -->
     <div
       class="training-full-width card-dark reveal"
       style="transition-delay: 0.4s;"
@@ -311,6 +340,190 @@ const trainingImages = [
         </div>
       </div>
     </div>
+
+    <!-- CARD E: Traslado Internacional -->
+    <div
+      class="international-transport-card reveal"
+      style="transition-delay: 0.5s;"
+    >
+      <div class="international-content">
+        <div class="international-text-area">
+          <a
+            href="https://www.latampettransport.com/es/"
+            target="_blank"
+            class="latam-logo-link"
+          >
+            <!-- <img
+              src={latamLogo.src}
+              alt="Latam Pet Transport"
+              class="latam-logo"
+            /> -->
+          </a>
+
+          <h3 class="international-title">
+            Traslado internacional de mascotas
+          </h3>
+
+          <p class="international-description">
+            ¿Viajás con tu mascota? Te acompañamos paso a paso para organizar su
+            traslado internacional de forma segura y profesional.
+          </p>
+
+          <a
+            href="https://www.latampettransport.com/es/quote/"
+            target="_blank"
+            class="btn-international"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            Solicitar cotización
+          </a>
+        </div>
+
+        <div class="international-gallery">
+          <div class="int-gallery-grid">
+            {
+              internationalImages.map((img, index) => (
+                <div class={`int-img-card int-img-${index + 1}`}>
+                  <img src={img.src} alt={img.alt} loading="lazy" />
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD F: Servicios Generales -->
+    <div class="general-services-card reveal" style="transition-delay: 0.6s;">
+      <div class="general-services-grid">
+        <div class="general-service-item">
+          <div class="general-icon">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+          </div>
+          <h4 class="general-service-title">Supervisión permanente</h4>
+          <p class="general-service-desc">
+            Monitoreo continuo 24/7 para garantizar el bienestar de tu mascota.
+          </p>
+        </div>
+
+        <div class="general-service-item">
+          <div class="general-icon">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          </div>
+          <h4 class="general-service-title">Limpieza constante</h4>
+          <p class="general-service-desc">
+            Higiene y desinfección diaria de todas las instalaciones.
+          </p>
+        </div>
+
+        <div class="general-service-item">
+          <div class="general-icon">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+            </svg>
+          </div>
+          <h4 class="general-service-title">Baños sanitarios</h4>
+          <p class="general-service-desc">
+            Servicio de higiene y cuidado estético profesional.
+          </p>
+        </div>
+
+        <div class="general-service-item general-service-highlight">
+          <div class="highlight-content">
+            <div class="highlight-left">
+              <div class="general-icon highlight-icon">
+                <svg
+                  width="36"
+                  height="36"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+              </div>
+              <div>
+                <h4
+                  class="general-service-title"
+                  style="margin-bottom: 0.25rem;"
+                >
+                  Asistencia veterinaria
+                </h4>
+                <p class="general-service-desc">
+                  Atención profesional ante cualquier urgencia.
+                </p>
+              </div>
+            </div>
+            <div class="highlight-image">
+              <!-- <img
+                src={vetImage.src}
+                alt="Veterinario profesional"
+                loading="lazy"
+              /> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="general-service-item">
+          <div class="general-icon">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+              ></path>
+            </svg>
+          </div>
+          <h4 class="general-service-title">Alimento premium</h4>
+          <p class="general-service-desc">
+            Nutrición balanceada de la más alta calidad.
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -366,7 +579,7 @@ const trainingImages = [
   }
 
   /* ══════════════════════════════════════════════════════════════════
-     BENTO GRID DE SERVICIOS
+     BENTO GRID DE SERVICIOS (Cards A, B, C)
      ══════════════════════════════════════════════════════════════════ */
   .services-bento-grid {
     display: grid;
@@ -410,7 +623,7 @@ const trainingImages = [
     font-family: var(--font-display);
     font-weight: 800;
     line-height: 1;
-    opacity: 1 !important; /* Ahora 100% de opacidad para que resalten */
+    opacity: 1 !important;
   }
 
   .text-dark {
@@ -423,7 +636,6 @@ const trainingImages = [
     color: var(--white);
   }
   .card-dark .dark-icon {
-    /* background: rgba(255, 255, 255, 0.1); */
     background: var(--accent);
     color: var(--white);
   }
@@ -436,7 +648,6 @@ const trainingImages = [
     color: var(--green-dark);
   }
   .card-accent .accent-icon {
-    /* background: rgba(255, 255, 255, 0.3); */
     background: white;
     color: var(--green-dark);
   }
@@ -459,9 +670,7 @@ const trainingImages = [
     color: var(--gray-mid);
   }
 
-  /* --- EL HILO VISUAL (Cruces de colores según instrucciones) --- */
-
-  /* Card A usa el color de Card B (Accent) */
+  /* --- EL HILO VISUAL (Cruces de colores) --- */
   .card-a-number {
     color: var(--accent);
   }
@@ -474,7 +683,6 @@ const trainingImages = [
     color: var(--green-dark);
   }
 
-  /* Card B usa el color de Card C (White) */
   .card-b-number {
     color: var(--white);
   }
@@ -487,7 +695,6 @@ const trainingImages = [
     color: var(--white);
   }
 
-  /* Card C usa el color de Card A (Dark Green) */
   .card-c-number {
     color: var(--green-dark);
   }
@@ -500,7 +707,6 @@ const trainingImages = [
     color: var(--green-dark);
   }
 
-  /* Estilos internos de las tarjetas de servicio */
   .stat-icon {
     font-size: 2rem;
     width: 60px;
@@ -527,7 +733,6 @@ const trainingImages = [
   }
 
   .service-meta-mini {
-    /* background: rgba(0, 0, 0, 0.05); */
     background: var(--green-dark);
     padding: 0.75rem;
     border-radius: var(--radius);
@@ -561,7 +766,7 @@ const trainingImages = [
   }
 
   /* ══════════════════════════════════════════════════════════════════
-     PROGRAMA DE ADIESTRAMIENTO
+     CARD D: PROGRAMA DE ADIESTRAMIENTO
      ══════════════════════════════════════════════════════════════════ */
   .training-full-width {
     border-radius: var(--radius-lg);
@@ -590,7 +795,7 @@ const trainingImages = [
     font-family: var(--font-display);
     font-size: 2.5rem;
     margin-bottom: 2.5rem;
-    color: var(--white) !important; /* Título 100% blanco */
+    color: var(--white) !important;
   }
 
   .training-sections-grid {
@@ -702,11 +907,10 @@ const trainingImages = [
     transform: translateY(-3px);
   }
 
-  /* --- GALERÍA CARRUSEL INFINITO --- */
   .training-gallery-bottom {
     width: 100%;
     padding: 0 0 2rem 0;
-    overflow: hidden; /* Oculta la barra de scroll y el sobrante */
+    overflow: hidden;
   }
 
   .gallery-scroll-track {
@@ -714,11 +918,9 @@ const trainingImages = [
     gap: 1rem;
     width: max-content;
     padding-left: 1rem;
-    /* Animación infinita lineal */
     animation: scroll-gallery 20s linear infinite;
   }
 
-  /* Si el usuario pone el mouse arriba, el carrusel se pausa */
   .gallery-scroll-track:hover {
     animation-play-state: paused;
   }
@@ -737,7 +939,6 @@ const trainingImages = [
     object-fit: cover;
   }
 
-  /* La magia del loop: se mueve exactamente el 50% de la pista (porque clonamos las fotos) */
   @keyframes scroll-gallery {
     0% {
       transform: translateX(0);
@@ -747,8 +948,219 @@ const trainingImages = [
     }
   }
 
+  /* ══════════════════════════════════════════════════════════════════
+     CARD E: TRASLADO INTERNACIONAL
+     ══════════════════════════════════════════════════════════════════ */
+  .international-transport-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-top: 2rem;
+    border: 2px solid var(--green-pale);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  }
+
+  .international-content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 0;
+  }
+
+  .international-text-area {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--white);
+  }
+
+  .latam-logo-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+  }
+
+  .latam-logo {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease;
+  }
+
+  .latam-logo-link:hover .latam-logo {
+    transform: scale(1.05);
+  }
+
+  .international-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--green-dark);
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+  }
+
+  .international-description {
+    color: var(--gray-mid);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+  }
+
+  .btn-international {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: var(--green-dark);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+  }
+
+  .btn-international:hover {
+    background: var(--accent);
+    color: var(--green-dark);
+    transform: translateX(4px);
+  }
+
+  .international-gallery {
+    background: var(--green-pale);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .int-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .int-img-card {
+    border-radius: var(--radius);
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+  }
+
+  .int-img-card:hover {
+    transform: scale(1.03);
+  }
+
+  .int-img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ══════════════════════════════════════════════════════════════════
+     CARD F: SERVICIOS GENERALES
+     ══════════════════════════════════════════════════════════════════ */
+  .general-services-card {
+    margin-top: 2rem;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    border: 2px solid var(--green-pale);
+  }
+
+  .general-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .general-service-item {
+    background: var(--green-pale);
+    padding: 2rem;
+    border-radius: var(--radius);
+    transition: all 0.3s ease;
+  }
+
+  .general-service-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .general-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--green);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    color: white;
+  }
+
+  .general-service-title {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    color: var(--green-dark);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+
+  .general-service-desc {
+    color: var(--gray-mid);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Destacado con imagen de veterinario */
+  .general-service-highlight {
+    grid-column: span 2;
+    background: var(--green-dark);
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .highlight-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+  }
+
+  .highlight-left {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .highlight-icon {
+    background: var(--accent);
+  }
+
+  .general-service-highlight .general-service-title {
+    color: white;
+  }
+
+  .general-service-highlight .general-service-desc {
+    color: var(--green-pale);
+  }
+
+  .highlight-image {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .highlight-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
   /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     .header-two-col {
       flex-direction: column;
       gap: 1.5rem;
@@ -762,6 +1174,27 @@ const trainingImages = [
     .training-sections-grid {
       grid-template-columns: 1fr;
       gap: 2rem;
+    }
+    .international-content {
+      grid-template-columns: 1fr;
+    }
+    .general-services-grid {
+      grid-template-columns: 1fr;
+    }
+    .general-service-highlight {
+      grid-column: span 1;
+    }
+    .highlight-content {
+      grid-template-columns: 1fr;
+    }
+    .highlight-image {
+      min-height: 250px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .int-gallery-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>
