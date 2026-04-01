@@ -47,7 +47,9 @@ const {
       /* Staggered children */
       document.querySelectorAll(".reveal-group").forEach((group) => {
         group.querySelectorAll(":scope > *").forEach((child, i) => {
-          child.style.transitionDelay = `${i * 0.1}s`;
+          if (child instanceof HTMLElement) {
+            child.style.transitionDelay = `${i * 0.1}s`;
+          }
           child.classList.add("reveal");
           observer.observe(child);
         });
