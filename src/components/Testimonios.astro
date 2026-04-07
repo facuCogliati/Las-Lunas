@@ -1,278 +1,539 @@
 ---
+import test2 from "../assets/testimonios/test2.jpg";
+import test4 from "../assets/testimonios/test4.jpg";
+import test5 from "../assets/testimonios/test5.jpg";
+import test6 from "../assets/testimonios/test6.jpg";
+import test7 from "../assets/testimonios/test7.jpg";
+import test8 from "../assets/testimonios/test8.jpg";
+
 const testimonios = [
   {
-    texto: "Excelente lugar, hace años confiamos en Las Lunas para nuestro perro y gatos, siempre los atienden excelente desde el momento en que los vienen a buscar hasta que vuelven a casa. Nos envían fotos y nos cuentan cómo están. Hasta les festejan el cumpleaños. El perro sale corriendo y se sube solo a la camioneta, lo que demuestra que siempre tiene ganas de volver. ¡Gracias!",
+    texto:
+      "Excelente lugar, hace años confiamos en Las Lunas para nuestro perro y gatos, siempre los atienden excelente desde el momento en que los vienen a buscar hasta que vuelven a casa. Nos envían fotos y nos cuentan cómo están. Hasta les festejan el cumpleaños. El perro sale corriendo y se sube solo a la camioneta, lo que demuestra que siempre tiene ganas de volver. ¡Gracias!",
     autor: "Adriana",
     año: "2002",
     mascotas: "Tchavolo, Sausalia y Dímiti",
+    foto: null, // Sin foto, mostrará la inicial "A"
   },
   {
-    texto: "De verdad somos tan felices que tenemos a ustedes como un lugar de amor y cuidado cariñoso para Santi. Parece que él está extrañando su estadía en Las Lunas, a sus amiguitos, a ustedes. ¡Así que hasta pronto!",
+    texto:
+      "De verdad somos tan felices que tenemos a ustedes como un lugar de amor y cuidado cariñoso para Santi. Parece que él está extrañando su estadía en Las Lunas, a sus amiguitos, a ustedes. ¡Así que hasta pronto!",
     autor: "Ana Keinan",
     año: "2025",
     mascotas: "Santi",
+    foto: test2.src,
   },
   {
-    texto: "¡Espectacular todo! Muy cómodo el transfer y el baño la verdad. Y también los updates diarios del equipo nos encantó para quedarnos tranquilos. Hasta te diría que Duma volvió más tranquila. ¡Muy contentos, muchas gracias!",
+    texto:
+      "¡Espectacular todo! Muy cómodo el transfer y el baño la verdad. Y también los updates diarios del equipo nos encantó para quedarnos tranquilos. Hasta te diría que Duma volvió más tranquila. ¡Muy contentos, muchas gracias!",
     autor: "Victoria Angelillo",
     año: "2025",
     mascotas: "Duma",
+    foto: null,
   },
   {
-    texto: "Siroco es muy feliz en Las Lunas. Disfruta mucho de estar con otros perros y del cariño que le dan Rubén y su equipo. El lugar es impecable, limpio y amplio. Están súper cuidados, jugando en el jardín todo el día. ¡Los súper recomiendo!",
+    texto:
+      "Siroco es muy feliz en Las Lunas. Disfruta mucho de estar con otros perros y del cariño que le dan Rubén y su equipo. El lugar es impecable, limpio y amplio. Están súper cuidados, jugando en el jardín todo el día. ¡Los súper recomiendo!",
     autor: "Mora Lennon",
     año: "2015",
     mascotas: "Siroco",
+    foto: test4.src,
   },
   {
-    texto: "Hace 20 años los conocí llevando a Thor y lo trataban como propio hasta cuando estaba enfermo. Hoy en día cuidan a Slash y Kira y cuando los vienen a buscar ni dudan en irse con ellos. ¡Son los #1!",
+    texto:
+      "Hace 20 años los conocí llevando a Thor y lo trataban como propio hasta cuando estaba enfermo. Hoy en día cuidan a Slash y Kira y cuando los vienen a buscar ni dudan en irse con ellos. ¡Son los #1!",
     autor: "Nicolás Pereira",
     año: "2025",
     mascotas: "Thor, Slash y Kira",
+    foto: test5.src,
   },
   {
-    texto: "Los bombones ya están en casa y felices, muchas gracias por haberlos cuidado tan bien. Estamos muy contentos de haberlos encontrado. Por favor hacerle llegar nuestro agradecimiento a Rubén y a todos los que los colmaron de cuidados y mimos.",
+    texto:
+      "Los bombones ya están en casa y felices, muchas gracias por haberlos cuidado tan bien. Estamos muy contentos de haberlos encontrado. Por favor hacerle llegar nuestro agradecimiento a Rubén y a todos los que los colmaron de cuidados y mimos.",
     autor: "Miriam de Meyer",
     año: "2025",
     mascotas: "Los bombones",
+    foto: test6.src,
   },
   {
-    texto: "¡Gracias por todo! Realmente Fito volvió feliz. Hasta peinado, jajaja, nunca se había dejado cepillar. ¡Así que gracias de vuelta y estamos al habla para otras veces!",
+    texto:
+      "¡Gracias por todo! Realmente Fito volvió feliz. Hasta peinado, jajaja, nunca se había dejado cepillar. ¡Así que gracias de vuelta y estamos al habla para otras veces!",
     autor: "Sol Magliano",
     año: "2018",
     mascotas: "Fito",
+    foto: test7.src,
   },
   {
-    texto: "Mi perro Roque va hace 4 años, ya se siente parte del lugar. Los chicos del predio son súper dedicados y amables. ¡Los recomiendo sin dudas!",
+    texto:
+      "Mi perro Roque va hace 4 años, ya se siente parte del lugar. Los chicos del predio son súper dedicados y amables. ¡Los recomiendo sin dudas!",
     autor: "Verónica Roncorini",
     año: "2024",
     mascotas: "Roque",
+    foto: test8.src,
   },
 ];
 ---
+
 <section id="testimonios" class="section testimonios">
   <div class="container">
     <div class="testimonios__header reveal">
-      <p class="section-tag">Lo que dicen nuestras familias</p>
-      <h2>Testimonios que <span class="text-green">nos llenan de orgullo</span></h2>
+      <div class="header-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"
+          ></path>
+        </svg>
+        <span>OPINIONES REALES</span>
+      </div>
+      <h2>
+        Testimonios que <span class="text-green">nos llenan de orgullo</span>
+      </h2>
     </div>
 
-    <div class="testi-carousel" id="testi-carousel">
-      <div class="testi-track" id="testi-track">
-        {testimonios.map((t, i) => (
-          <div class={`testi-card${i === 0 ? ' active' : ''}`} data-index={i}>
-            <div class="testi-quote">"</div>
-            <p class="testi-text">{t.texto}</p>
-            <div class="testi-footer">
-              <div class="testi-avatar">
-                {t.autor.charAt(0).toUpperCase()}
-              </div>
-              <div>
-                <strong class="testi-autor">{t.autor}</strong>
-                <span class="testi-meta">Mascota: {t.mascotas} · {t.año}</span>
-              </div>
-            </div>
-          </div>
-        ))}
+    <div
+      class="testi-carousel reveal"
+      id="testi-carousel"
+      style="transition-delay: 0.1s;"
+    >
+      <div class="testi-viewport">
+        <div class="testi-track" id="testi-track">
+          {
+            testimonios.map((t) => (
+              <article class="testi-card">
+                <div class="testi-card-content">
+                  <div class="testi-quote">“</div>
+                  <p class="testi-text">{t.texto}</p>
+                </div>
+                <div class="testi-footer">
+                  <div class="testi-avatar">
+                    {/* LÓGICA DE LA FOTO AQUÍ */}
+                    {t.foto ? (
+                      <img
+                        src={t.foto}
+                        alt={`Foto de ${t.autor}`}
+                        class="avatar-img"
+                      />
+                    ) : (
+                      t.autor.charAt(0).toUpperCase()
+                    )}
+                  </div>
+                  <div>
+                    <strong class="testi-autor">{t.autor}</strong>
+                    <span class="testi-meta">
+                      Mascota: {t.mascotas} · {t.año}
+                    </span>
+                  </div>
+                </div>
+              </article>
+            ))
+          }
+        </div>
       </div>
 
       <div class="testi-nav">
         <button class="testi-btn" id="testi-prev" aria-label="Anterior">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg
+          >
         </button>
         <div class="testi-dots" id="testi-dots"></div>
         <button class="testi-btn" id="testi-next" aria-label="Siguiente">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg
+          >
         </button>
       </div>
     </div>
 
-    <!-- Stars decoration -->
-    <div class="stars-row reveal">
-      <div class="stars-item">
-        <div class="stars">
-          {[1,2,3,4,5].map(() => <span class="star">★</span>)}
+    <div class="stars-badge reveal" style="transition-delay: 0.2s;">
+      <div class="stars-content">
+        <div class="stars-group">
+          <div class="stars">
+            {[1, 2, 3, 4, 5].map(() => <span class="star">★</span>)}
+          </div>
+          <p>40 años de trayectoria impecable</p>
         </div>
-        <p>+500 familias confían en nosotros</p>
-      </div>
-      <div class="stars-item">
-        <div class="stars">
-          {[1,2,3,4,5].map(() => <span class="star">★</span>)}
+        <div class="stars-divider"></div>
+        <div class="stars-group">
+          <div class="stars">
+            {[1, 2, 3, 4, 5].map(() => <span class="star">★</span>)}
+          </div>
+          <p>+500 familias confían sus mascotas</p>
         </div>
-        <p>40 años de trayectoria</p>
       </div>
     </div>
   </div>
 </section>
 
 <style>
-.testimonios { background: var(--green-dark); overflow: hidden; }
-.testimonios__header { text-align: center; margin-bottom: 3rem; }
-.testimonios__header .section-tag { color: var(--accent); }
-.testimonios__header h2 { color: var(--white); }
-.testimonios__header .text-green { color: var(--accent); }
+  .testimonios {
+    background: var(--green-dark); /* var(--green-dark, #1b4332) */
+    padding: 8rem 0;
+    position: relative;
+    overflow: hidden;
+  }
 
-/* Carousel */
-.testi-carousel { position: relative; }
+  /* patterns orgánicos de huellas sutiles */
+  .testimonios::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/assets/pattern-paws-light.svg"); /* Necesitarás este SVG */
+    opacity: 0.03;
+    pointer-events: none;
+  }
 
-.testi-track {
-  position: relative;
-  min-height: 320px;
-}
+  /* --- HEADER REDISEÑADO --- */
+  .testimonios__header {
+    text-align: center;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.testi-card {
-  position: absolute;
-  inset: 0;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: var(--radius-lg);
-  padding: 2.5rem;
-  backdrop-filter: blur(4px);
-  opacity: 0;
-  transform: translateX(40px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  pointer-events: none;
-  max-width: 800px;
-  margin: 0 auto;
-}
-.testi-card.active {
-  opacity: 1;
-  transform: none;
-  pointer-events: auto;
-}
-.testi-card.exit {
-  opacity: 0;
-  transform: translateX(-40px);
-}
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    background: rgba(163, 230, 53, 0.1); /* var(--accent) con opacidad */
+    border-radius: 50px;
+    color: var(--accent); /* var(--accent, #a3e635) */
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+  }
 
-.testi-quote {
-  font-family: var(--font-display);
-  font-size: 6rem;
-  color: var(--accent);
-  line-height: 0.6;
-  margin-bottom: 1.5rem;
-  opacity: 0.4;
-}
+  .testimonios__header h2 {
+    color: var(--white);
+    max-width: 600px;
+  }
 
-.testi-text {
-  font-size: 1.05rem;
-  color: rgba(255,255,255,0.88);
-  line-height: 1.8;
-  font-style: italic;
-  margin-bottom: 2rem;
-}
+  .testimonios__header .text-green {
+    color: var(--accent);
+  }
 
-.testi-footer {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
+  /* --- CARRUSEL CORREGIDO (Flexbox logic para altura dinámica) --- */
+  .testi-carousel {
+    position: relative;
+    max-width: 900px; /* Un poco más ancho para dar aire vertical */
+    margin: 0 auto;
+  }
 
-.testi-avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: var(--green-dark);
-  flex-shrink: 0;
-}
+  /* Viewport recorta el contenido y se adapta a la altura del track */
+  .testi-viewport {
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    /* No hay altura fija aquí */
+  }
 
-.testi-autor {
-  display: block;
-  color: var(--white);
-  font-size: 1rem;
-}
+  /* Track contiene las tarjetas una al lado de la otra */
+  .testi-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    width: 100%;
+    align-items: stretch; /* Centrado vertical automático si las tarjetas difieren */
+  }
 
-.testi-meta {
-  display: block;
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.55);
-  margin-top: 2px;
-}
+  /* TARJETA - Diseño Original Mantenido */
+  .testi-card {
+    flex: 0 0 100%; /* Cada tarjeta ocupa el 100% del viewport */
+    width: 100%;
+    background: rgba(255, 255, 255, 0.06); /* Translúcido original */
+    border: 1px solid rgba(255, 255, 255, 0.12); /* Borde original */
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empuja el footer abajo */
+    box-sizing: border-box;
+    /* Sin sombras pesadas */
+  }
 
-/* Nav */
-.testi-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 360px;
-}
+  .testi-card-content {
+    flex-grow: 1;
+  }
 
-@media (max-width: 600px) { .testi-nav { margin-top: 420px; } }
+  .testi-quote {
+    font-family: var(--font-display);
+    font-size: 6rem;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: -1rem; /* Acercar al texto */
+    margin-left: -0.5rem;
+    opacity: 0.3; /* Opacidad original */
+  }
 
-.testi-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--white);
-  transition: background 0.2s, transform 0.2s;
-}
-.testi-btn:hover { background: rgba(255,255,255,0.2); transform: scale(1.08); }
+  .testi-text {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.9); /* Blanco translúcido original */
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    font-style: italic; /* Itálica original */
+  }
 
-.testi-dots { display: flex; gap: 8px; }
+  .testi-footer {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Separador original */
+    padding-top: 1.5rem;
+  }
 
-/* Stars */
-.stars-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 4rem;
-  padding-top: 3rem;
-  border-top: 1px solid rgba(255,255,255,0.1);
-}
+  .testi-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--green-dark);
+    flex-shrink: 0;
+    font-family: var(--font-display);
+    overflow: hidden; /* AGREGADO: Para que la foto no se salga del círculo */
+  }
 
-.stars-item { text-align: center; }
-.stars { display: flex; gap: 4px; justify-content: center; margin-bottom: 0.5rem; }
-.star { color: #FFD700; font-size: 1.4rem; }
-.stars-item p { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+  /* AGREGADO: Estilo para la imagen dentro del círculo */
+  .avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .testi-autor {
+    display: block;
+    color: var(--white);
+    font-size: 1.1rem;
+    margin-bottom: 2px;
+  }
+
+  .testi-meta {
+    display: block;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6); /* Meta original */
+  }
+
+  /* --- NAVEGACIÓN Y DOTS CORREGIDOS (No usa márgenes fijos gigantes) --- */
+  .testi-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2.5rem; /* Margen estándar respecto al viewport */
+    /* No hay margin-top gigante en media queries */
+  }
+
+  .testi-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05); /* Botón original */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde original */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    transition: all 0.3s ease;
+  }
+
+  .testi-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+    color: var(--accent);
+  }
+
+  .testi-dots {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  /* Estilos para los dots gestionados por JS (sin estilo inline) */
+  :global(.testi-dot) {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3); /* Dot original */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+  }
+
+  :global(.testi-dot.active) {
+    background: var(--accent); /* Dot activo original */
+    transform: scale(1.3);
+  }
+
+  /* --- STARS BADGE (Nuevo diseño tipo Bento para el pie) --- */
+  .stars-badge {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    max-width: 800px;
+    margin: 6rem auto 0;
+    border-radius: 100px; /* Redondeado Bento */
+    padding: 1.5rem 3rem;
+  }
+
+  .stars-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .stars-group {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .stars {
+    display: flex;
+    gap: 4px;
+    color: #ffd700;
+    font-size: 1.1rem;
+  }
+
+  .stars-group p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .stars-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* --- RESPONSIVE --- */
+  @media (max-width: 900px) {
+    .stars-badge {
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+    .stars-content {
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: center;
+    }
+    .stars-group {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .stars-divider {
+      width: 100%;
+      height: 1px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .testimonios {
+      padding: 5rem 0;
+    }
+    .testimonios__header {
+      margin-bottom: 3.5rem;
+    }
+    .testi-card {
+      padding: 2rem;
+    }
+    .testi-text {
+      font-size: 1.05rem;
+    }
+    .testi-quote {
+      font-size: 4rem;
+    }
+  }
 </style>
 
 <script>
-const cards = document.querySelectorAll('.testi-card');
-const dotsEl = document.getElementById('testi-dots');
-let cur = 0;
-let autoTimer: ReturnType<typeof setInterval>;
+  // Script refactorizado: Más limpio, dinámico y centrado
+  const track = document.getElementById("testi-track");
+  const slides = document.querySelectorAll(".testi-card");
+  const dotsEl = document.getElementById("testi-dots");
+  const prevBtn = document.getElementById("testi-prev");
+  const nextBtn = document.getElementById("testi-next");
 
-function buildDots() {
-  cards.forEach((_, i) => {
-    const d = document.createElement('span');
-    d.style.cssText = `display:inline-block;width:8px;height:8px;border-radius:50%;background:${i===0?'rgba(255,255,255,0.9)':'rgba(255,255,255,0.3)'};cursor:pointer;transition:.25s`;
-    d.addEventListener('click', () => goTo(i));
-    dotsEl?.appendChild(d);
-  });
-}
+  let cur = 0;
+  let autoTimer: ReturnType<typeof setInterval>;
 
-function goTo(n: number) {
-  cards[cur].classList.add('exit');
-  cards[cur].classList.remove('active');
-  setTimeout(() => cards[cur < cards.length ? cur : 0]?.classList.remove('exit'), 500);
-  cur = (n + cards.length) % cards.length;
-  cards[cur].classList.add('active');
-  dotsEl?.querySelectorAll('span').forEach((d, i) => {
-    (d as HTMLElement).style.background = i === cur ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.3)';
-  });
-}
+  function buildDots() {
+    if (!dotsEl) return;
+    slides.forEach((_, i) => {
+      const d = document.createElement("button");
+      d.className = `testi-dot ${i === 0 ? "active" : ""}`;
+      d.setAttribute("aria-label", `Ir al testimonio ${i + 1}`);
+      d.addEventListener("click", () => {
+        cur = i;
+        updateSlider();
+        startAuto(); // Reiniciar timer
+      });
+      dotsEl.appendChild(d);
+    });
+  }
 
-function start() {
-  clearInterval(autoTimer);
-  autoTimer = setInterval(() => goTo(cur + 1), 5000);
-}
+  function updateSlider() {
+    if (!track || !dotsEl) return;
 
-buildDots();
-document.getElementById('testi-prev')?.addEventListener('click', () => { goTo(cur - 1); start(); });
-document.getElementById('testi-next')?.addEventListener('click', () => { goTo(cur + 1); start(); });
-start();
+    // Deslizar el track
+    track.style.transform = `translateX(-${cur * 100}%)`;
+
+    // Actualizar dots (usando clases CSS, no inline style)
+    dotsEl.querySelectorAll(".testi-dot").forEach((d, i) => {
+      if (i === cur) d.classList.add("active");
+      else d.classList.remove("active");
+    });
+
+    // Asegurar centrado vertical recalculando altura si necesario (gracias a Flexbox track)
+    track.style.height = slides[cur].scrollHeight + "px";
+  }
+
+  function nextSlide() {
+    cur = (cur + 1) % slides.length;
+    updateSlider();
+  }
+
+  function prevSlide() {
+    cur = (cur - 1 + slides.length) % slides.length;
+    updateSlider();
+  }
+
+  function startAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(nextSlide, 7000); // 7 segundos para textos largos
+  }
+
+  // Inicializar
+  if (track && slides.length > 0) {
+    buildDots();
+    updateSlider(); // Asegurar estado inicial
+    startAuto();
+
+    // Event listeners
+    prevBtn?.addEventListener("click", () => {
+      prevSlide();
+      startAuto();
+    });
+    nextBtn?.addEventListener("click", () => {
+      nextSlide();
+      startAuto();
+    });
+  }
 </script>

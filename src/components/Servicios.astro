@@ -3,25 +3,18 @@
 import train1 from "../assets/servicios/ad 4.jpg";
 import train2 from "../assets/servicios/ad 2.jpg";
 import train3 from "../assets/servicios/ad 3.jpg";
-import train4 from "../assets/servicios/ad 4.jpg";
-import train5 from "../assets/servicios/ad 2.jpg";
+import train4 from "../assets/servicios/ad 5.jpg";
+import train5 from "../assets/servicios/ad 6.jpg";
+import train6 from "../assets/servicios/ad 7.jpg";
+import train7 from "../assets/servicios/ad 8.jpg";
 
-import intTransport1 from "../assets/servicios/ad 2.jpg";
-import intTransport2 from "../assets/servicios/ad 2.jpg";
-import intTransport3 from "../assets/servicios/ad 2.jpg";
-import intTransport4 from "../assets/servicios/ad 2.jpg";
-
-// Importar imágenes de traslado internacional
-// import intTransport1 from "../assets/servicios/internacional/1.jpg";
-// import intTransport2 from "../assets/servicios/internacional/2.jpg";
-// import intTransport3 from "../assets/servicios/internacional/3.jpg";
-// import intTransport4 from "../assets/servicios/internacional/4.jpg";
+import intTransport1 from "../assets/servicios/tras1.jpg";
+import intTransport2 from "../assets/servicios/tras2.jpg";
+import intTransport3 from "../assets/servicios/tras3.jpg";
+import intTransport4 from "../assets/servicios/tras4.jpg";
 
 // Importar logo de Latam Pet Transport
-// import latamLogo from "../assets/servicios/latam-pet-logo.png";
-
-// Importar imagen de veterinario
-// import vetImage from "../assets/servicios/veterinario.jpg";
+import latamLogo from "../assets/servicios/latam logo.png";
 
 const trainingImages = [
   { src: train1.src, alt: "Adiestramiento profesional" },
@@ -29,6 +22,8 @@ const trainingImages = [
   { src: train3.src, alt: "Trabajo con adiestrador" },
   { src: train4.src, alt: "Comandos básicos" },
   { src: train5.src, alt: "Educación canina" },
+  { src: train6.src, alt: "Programa intensivo de adiestramiento" },
+  { src: train7.src, alt: "Perro entrenado en nuestro predio" },
 ];
 
 const internationalImages = [
@@ -341,38 +336,55 @@ const internationalImages = [
       </div>
     </div>
 
-    <!-- CARD E: Traslado Internacional -->
+    <!-- CARD E: Traslado Internacional - REDISEÑADO -->
     <div
       class="international-transport-card reveal"
       style="transition-delay: 0.5s;"
     >
-      <div class="international-content">
-        <div class="international-text-area">
+      <div class="international-header">
+        <div class="int-header-left">
           <a
             href="https://www.latampettransport.com/es/"
             target="_blank"
-            class="latam-logo-link"
+            class="latam-logo-container"
           >
-            <!-- <img
+            <img
               src={latamLogo.src}
               alt="Latam Pet Transport"
               class="latam-logo"
-            /> -->
+            />
           </a>
+          <span class="partner-badge">Partner Oficial</span>
+        </div>
+        <div class="int-header-icon">
+          <svg
+            width="48"
+            height="48"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          >
+            <path
+              d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"
+            ></path>
+          </svg>
+        </div>
+      </div>
 
-          <h3 class="international-title">
-            Traslado internacional de mascotas
-          </h3>
-
-          <p class="international-description">
-            ¿Viajás con tu mascota? Te acompañamos paso a paso para organizar su
-            traslado internacional de forma segura y profesional.
+      <div class="international-content-new">
+        <div class="int-text-main">
+          <h3 class="int-title-large">Traslado internacional de mascotas</h3>
+          <p class="int-subtitle">¿Viajás con tu mascota?</p>
+          <p class="int-description">
+            Te acompañamos paso a paso para organizar su traslado internacional
+            de forma segura y profesional.
           </p>
 
           <a
             href="https://www.latampettransport.com/es/quote/"
             target="_blank"
-            class="btn-international"
+            class="btn-quote-international"
           >
             <svg
               width="20"
@@ -385,32 +397,45 @@ const internationalImages = [
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
               <circle cx="12" cy="10" r="3"></circle>
             </svg>
-            Solicitar cotización
+            <span>Solicitar cotización</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M1 8H15M15 8L8 1M15 8L8 15"
+                stroke="currentColor"
+                stroke-width="2"></path>
+            </svg>
           </a>
         </div>
 
-        <div class="international-gallery">
-          <div class="int-gallery-grid">
-            {
-              internationalImages.map((img, index) => (
-                <div class={`int-img-card int-img-${index + 1}`}>
-                  <img src={img.src} alt={img.alt} loading="lazy" />
-                </div>
-              ))
-            }
-          </div>
+        <div class="int-gallery-mosaic">
+          {
+            internationalImages.map((img, index) => (
+              <div class={`mosaic-img mosaic-img-${index + 1}`}>
+                <img src={img.src} alt={img.alt} loading="lazy" />
+                <div class="mosaic-overlay" />
+              </div>
+            ))
+          }
         </div>
       </div>
     </div>
 
-    <!-- CARD F: Servicios Generales -->
-    <div class="general-services-card reveal" style="transition-delay: 0.6s;">
-      <div class="general-services-grid">
-        <div class="general-service-item">
-          <div class="general-icon">
+    <!-- CARD F: Servicios Generales - REDISEÑADO -->
+    <div
+      class="general-services-card-new reveal"
+      style="transition-delay: 0.6s;"
+    >
+      <div class="general-header-new">
+        <h3 class="general-title-main">Servicios incluidos</h3>
+        <p class="general-subtitle">Cuidado integral para tu mascota</p>
+      </div>
+
+      <div class="general-grid-new">
+        <div class="general-card-item supervision-card">
+          <div class="general-card-icon">
             <svg
-              width="32"
-              height="32"
+              width="40"
+              height="40"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -420,37 +445,33 @@ const internationalImages = [
               <circle cx="12" cy="12" r="3"></circle>
             </svg>
           </div>
-          <h4 class="general-service-title">Supervisión permanente</h4>
-          <p class="general-service-desc">
-            Monitoreo continuo 24/7 para garantizar el bienestar de tu mascota.
-          </p>
+          <h4 class="general-card-title">Supervisión permanente</h4>
+          <p class="general-card-desc">Monitoreo continuo 24/7</p>
         </div>
 
-        <div class="general-service-item">
-          <div class="general-icon">
+        <div class="general-card-item cleaning-card">
+          <div class="general-card-icon">
             <svg
-              width="32"
-              height="32"
+              width="40"
+              height="40"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               stroke-width="2"
             >
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 6v6l4 2"></path>
             </svg>
           </div>
-          <h4 class="general-service-title">Limpieza constante</h4>
-          <p class="general-service-desc">
-            Higiene y desinfección diaria de todas las instalaciones.
-          </p>
+          <h4 class="general-card-title">Limpieza constante</h4>
+          <p class="general-card-desc">Higiene y desinfección diaria</p>
         </div>
 
-        <div class="general-service-item">
-          <div class="general-icon">
+        <div class="general-card-item bath-card">
+          <div class="general-card-icon">
             <svg
-              width="32"
-              height="32"
+              width="40"
+              height="40"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -459,19 +480,17 @@ const internationalImages = [
               <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
             </svg>
           </div>
-          <h4 class="general-service-title">Baños sanitarios</h4>
-          <p class="general-service-desc">
-            Servicio de higiene y cuidado estético profesional.
-          </p>
+          <h4 class="general-card-title">Baños sanitarios</h4>
+          <p class="general-card-desc">Cuidado estético profesional</p>
         </div>
 
-        <div class="general-service-item general-service-highlight">
-          <div class="highlight-content">
-            <div class="highlight-left">
-              <div class="general-icon highlight-icon">
+        <div class="general-card-item vet-card featured-card">
+          <div class="featured-content">
+            <div class="featured-left">
+              <div class="general-card-icon featured-icon">
                 <svg
-                  width="36"
-                  height="36"
+                  width="48"
+                  height="48"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -480,33 +499,34 @@ const internationalImages = [
                   <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
                 </svg>
               </div>
-              <div>
-                <h4
-                  class="general-service-title"
-                  style="margin-bottom: 0.25rem;"
-                >
-                  Asistencia veterinaria
-                </h4>
-                <p class="general-service-desc">
-                  Atención profesional ante cualquier urgencia.
+              <div class="featured-text">
+                <h4 class="general-card-title">Asistencia veterinaria</h4>
+                <p class="general-card-desc">
+                  Atención profesional ante urgencias
                 </p>
               </div>
             </div>
-            <div class="highlight-image">
-              <!-- <img
-                src={vetImage.src}
-                alt="Veterinario profesional"
-                loading="lazy"
-              /> -->
+            <div class="featured-badge">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                ></path>
+              </svg>
+              <span>Servicio destacado</span>
             </div>
           </div>
         </div>
 
-        <div class="general-service-item">
-          <div class="general-icon">
+        <div class="general-card-item food-card">
+          <div class="general-card-icon">
             <svg
-              width="32"
-              height="32"
+              width="40"
+              height="40"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -517,10 +537,8 @@ const internationalImages = [
               ></path>
             </svg>
           </div>
-          <h4 class="general-service-title">Alimento premium</h4>
-          <p class="general-service-desc">
-            Nutrición balanceada de la más alta calidad.
-          </p>
+          <h4 class="general-card-title">Alimento premium</h4>
+          <p class="general-card-desc">Nutrición balanceada de calidad</p>
         </div>
       </div>
     </div>
@@ -529,7 +547,7 @@ const internationalImages = [
 
 <style>
   /* ══════════════════════════════════════════════════════════════════
-     SERVICIOS SECTION (Sincronizado con Conocenos)
+     SERVICIOS SECTION - BASE STYLES
      ══════════════════════════════════════════════════════════════════ */
   .servicios {
     background: var(--white);
@@ -537,7 +555,6 @@ const internationalImages = [
     position: relative;
   }
 
-  /* ── HEADER ── */
   .servicios__header {
     margin-bottom: 4rem;
   }
@@ -579,7 +596,7 @@ const internationalImages = [
   }
 
   /* ══════════════════════════════════════════════════════════════════
-     BENTO GRID DE SERVICIOS (Cards A, B, C)
+     CARDS A, B, C - BENTO GRID
      ══════════════════════════════════════════════════════════════════ */
   .services-bento-grid {
     display: grid;
@@ -630,7 +647,6 @@ const internationalImages = [
     color: var(--green-dark);
   }
 
-  /* --- DEFINICIÓN DE COLORES BASE DE CADA TARJETA --- */
   .card-dark {
     background: var(--green-dark);
     color: var(--white);
@@ -670,7 +686,6 @@ const internationalImages = [
     color: var(--gray-mid);
   }
 
-  /* --- EL HILO VISUAL (Cruces de colores) --- */
   .card-a-number {
     color: var(--accent);
   }
@@ -918,7 +933,7 @@ const internationalImages = [
     gap: 1rem;
     width: max-content;
     padding-left: 1rem;
-    animation: scroll-gallery 20s linear infinite;
+    animation: scroll-gallery 25s linear infinite;
   }
 
   .gallery-scroll-track:hover {
@@ -949,214 +964,338 @@ const internationalImages = [
   }
 
   /* ══════════════════════════════════════════════════════════════════
-     CARD E: TRASLADO INTERNACIONAL
+     CARD E: TRASLADO INTERNACIONAL - REDISEÑADO
      ══════════════════════════════════════════════════════════════════ */
   .international-transport-card {
     background: var(--white);
     border-radius: var(--radius-lg);
     overflow: hidden;
     margin-top: 2rem;
-    border: 2px solid var(--green-pale);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 2px solid var(--green-dark);
+    box-shadow: 0 12px 40px rgba(45, 106, 79, 0.12);
   }
 
-  .international-content {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 0;
-  }
-
-  .international-text-area {
-    padding: 3rem;
+  .international-header {
+    background: linear-gradient(135deg, var(--green-dark) 0%, #1a3a2e 100%);
+    padding: 1.75rem 3rem;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: var(--white);
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--accent);
   }
 
-  .latam-logo-link {
-    display: inline-block;
-    margin-bottom: 2rem;
+  .int-header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
   }
 
-  .latam-logo {
-    height: 50px;
-    width: auto;
+  .latam-logo-container {
+    display: block;
     transition: transform 0.3s ease;
   }
 
-  .latam-logo-link:hover .latam-logo {
+  .latam-logo-container:hover {
     transform: scale(1.05);
   }
 
-  .international-title {
-    font-family: var(--font-display);
-    font-size: 2rem;
+  .latam-logo {
+    height: 70px;
+
+    width: auto;
+    display: block;
+  }
+
+  .partner-badge {
+    background: var(--accent);
     color: var(--green-dark);
-    margin-bottom: 1.25rem;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .int-header-icon {
+    width: 72px;
+    height: 72px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+  }
+
+  .international-content-new {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .int-text-main {
+    padding: 3rem;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .int-title-large {
+    font-family: var(--font-display);
+    font-size: 2.25rem;
+    color: var(--green-dark);
+    margin-bottom: 1rem;
     line-height: 1.2;
+    font-weight: 800;
   }
 
-  .international-description {
+  .int-subtitle {
+    font-size: 1.25rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .int-description {
     color: var(--gray-mid);
-    line-height: 1.7;
+    line-height: 1.8;
     margin-bottom: 2rem;
-    font-size: 1.05rem;
+    font-size: 1.0625rem;
   }
 
-  .btn-international {
+  .btn-quote-international {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.75rem;
-    padding: 1rem 2rem;
+    padding: 1.125rem 2.25rem;
     background: var(--green-dark);
     color: white;
     text-decoration: none;
     border-radius: var(--radius);
-    font-weight: 600;
-    font-size: 1rem;
+    font-weight: 700;
+    font-size: 1.0625rem;
     transition: all 0.3s ease;
     align-self: flex-start;
+    box-shadow: 0 4px 12px rgba(45, 106, 79, 0.25);
   }
 
-  .btn-international:hover {
+  .btn-quote-international:hover {
     background: var(--accent);
     color: var(--green-dark);
-    transform: translateX(4px);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(122, 181, 92, 0.35);
   }
 
-  .international-gallery {
+  .int-gallery-mosaic {
+    /* background: var(--green-pale); */
     background: var(--green-pale);
-    padding: 2rem;
-    display: flex;
-    align-items: center;
-  }
-
-  .int-gallery-grid {
+    /* padding: 2rem; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    width: 100%;
+    /* gap: 1rem; */
   }
 
-  .int-img-card {
-    border-radius: var(--radius);
+  .mosaic-img {
+    position: relative;
+    /* border-radius: var(--radius); */
     overflow: hidden;
-    aspect-ratio: 4/3;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    aspect-ratio: 1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
   }
 
-  .int-img-card:hover {
-    transform: scale(1.03);
-  }
+  /* .mosaic-img:hover {
+    transform: scale(1.05);
+    z-index: 2;
+  } */
 
-  .int-img-card img {
+  .mosaic-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
   }
 
+  .mosaic-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      transparent 50%,
+      rgba(45, 106, 79, 0.3) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .mosaic-img:hover .mosaic-overlay {
+    opacity: 1;
+  }
+
   /* ══════════════════════════════════════════════════════════════════
-     CARD F: SERVICIOS GENERALES
+     CARD F: SERVICIOS GENERALES - REDISEÑADO
      ══════════════════════════════════════════════════════════════════ */
-  .general-services-card {
+  .general-services-card-new {
     margin-top: 2rem;
-    background: var(--white);
+    background: linear-gradient(
+      135deg,
+      var(--white) 0%,
+      var(--green-pale) 100%
+    );
     border-radius: var(--radius-lg);
     padding: 3rem;
     border: 2px solid var(--green-pale);
   }
 
-  .general-services-grid {
+  .general-header-new {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .general-title-main {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    color: var(--green-dark);
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+  }
+
+  .general-subtitle {
+    color: var(--gray-mid);
+    font-size: 1.125rem;
+  }
+
+  .general-grid-new {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
   }
 
-  .general-service-item {
-    background: var(--green-pale);
-    padding: 2rem;
-    border-radius: var(--radius);
+  .general-card-item {
+    background: white;
+    padding: 2.25rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
     transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
   }
 
-  .general-service-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  }
-
-  .general-icon {
-    width: 64px;
-    height: 64px;
+  .general-card-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
     background: var(--green);
-    border-radius: 16px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .general-card-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(45, 106, 79, 0.15);
+    border-color: var(--green);
+  }
+
+  .general-card-item:hover::before {
+    transform: scaleX(1);
+  }
+
+  .general-card-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--green-pale);
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.25rem;
-    color: white;
+    margin: 0 auto 1.5rem;
+    color: var(--green);
+    transition: all 0.3s ease;
   }
 
-  .general-service-title {
+  .general-card-item:hover .general-card-icon {
+    background: var(--green);
+    color: white;
+    transform: rotate(5deg) scale(1.05);
+  }
+
+  .general-card-title {
     font-family: var(--font-display);
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     color: var(--green-dark);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     font-weight: 700;
   }
 
-  .general-service-desc {
+  .general-card-desc {
     color: var(--gray-mid);
     font-size: 0.9375rem;
     line-height: 1.6;
     margin: 0;
   }
 
-  /* Destacado con imagen de veterinario */
-  .general-service-highlight {
+  /* Card destacada de Veterinaria */
+  .featured-card {
     grid-column: span 2;
     background: var(--green-dark);
+    text-align: left;
     padding: 0;
-    overflow: hidden;
   }
 
-  .highlight-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 100%;
-  }
-
-  .highlight-left {
-    padding: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-  }
-
-  .highlight-icon {
+  .featured-card::before {
     background: var(--accent);
   }
 
-  .general-service-highlight .general-service-title {
-    color: white;
+  .featured-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 2.5rem;
+    gap: 2rem;
   }
 
-  .general-service-highlight .general-service-desc {
+  .featured-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .featured-icon {
+    background: var(--accent);
+    color: var(--green-dark);
+  }
+
+  .featured-text {
+    flex: 1;
+  }
+
+  .featured-card .general-card-title {
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  .featured-card .general-card-desc {
     color: var(--green-pale);
   }
 
-  .highlight-image {
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .highlight-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  .featured-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(122, 181, 92, 0.15);
+    color: var(--accent);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    align-self: flex-start;
   }
 
   /* ── RESPONSIVE ── */
@@ -1165,35 +1304,52 @@ const internationalImages = [
       flex-direction: column;
       gap: 1.5rem;
     }
+
     .services-bento-grid {
       grid-template-columns: 1fr;
     }
+
     .training-content-area {
       padding: 2rem;
     }
+
     .training-sections-grid {
       grid-template-columns: 1fr;
       gap: 2rem;
     }
-    .international-content {
+
+    .international-header {
+      padding: 1.5rem 2rem;
+    }
+
+    .international-content-new {
       grid-template-columns: 1fr;
     }
-    .general-services-grid {
-      grid-template-columns: 1fr;
+
+    .int-gallery-mosaic {
+      padding: 1.5rem;
     }
-    .general-service-highlight {
+
+    .featured-card {
       grid-column: span 1;
     }
-    .highlight-content {
-      grid-template-columns: 1fr;
-    }
-    .highlight-image {
-      min-height: 250px;
+
+    .featured-left {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 
   @media (max-width: 768px) {
-    .int-gallery-grid {
+    .int-header-icon {
+      display: none;
+    }
+
+    .int-gallery-mosaic {
+      grid-template-columns: 1fr;
+    }
+
+    .general-grid-new {
       grid-template-columns: 1fr;
     }
   }
