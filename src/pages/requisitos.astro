@@ -1,0 +1,695 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
+// Importa tus imágenes aquí. Asegúrate de que las rutas sean correctas.
+import imgIzq from "../assets/requisitos/requi.jpg";
+import imgDer from "../assets/requisitos/Veterinario.jpg";
+---
+
+<Layout title="Requisitos Sanitarios | Las Lunas">
+  <main class="page-requisitos">
+    <header class="page-header">
+      <svg
+        class="req-paw header-paw header-paw-1"
+        viewBox="0 0 60 40"
+        aria-hidden="true"
+        ><g fill="currentColor"
+          ><ellipse cx="12" cy="6" rx="5" ry="6"></ellipse><ellipse
+            cx="26"
+            cy="4"
+            rx="4"
+            ry="5"></ellipse><ellipse cx="39" cy="6" rx="4" ry="5"
+          ></ellipse><ellipse cx="51" cy="8" rx="3.5" ry="4.5"
+          ></ellipse><ellipse cx="30" cy="28" rx="14" ry="13"></ellipse></g
+        ></svg
+      >
+      <svg
+        class="req-paw header-paw header-paw-2"
+        viewBox="0 0 60 40"
+        aria-hidden="true"
+        ><g fill="currentColor"
+          ><ellipse cx="12" cy="6" rx="5" ry="6"></ellipse><ellipse
+            cx="26"
+            cy="4"
+            rx="4"
+            ry="5"></ellipse><ellipse cx="39" cy="6" rx="4" ry="5"
+          ></ellipse><ellipse cx="51" cy="8" rx="3.5" ry="4.5"
+          ></ellipse><ellipse cx="30" cy="28" rx="14" ry="13"></ellipse></g
+        ></svg
+      >
+
+      <div class="container">
+        <div class="header-badge reveal">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+            ></path>
+          </svg>
+          <span>INFORMACIÓN IMPORTANTE</span>
+        </div>
+        <h1 class="reveal" style="transition-delay: 0.1s;">
+          Requisitos sanitarios para el <span class="text-accent"
+            >ingreso al predio</span
+          >
+        </h1>
+        <p class="lead-text reveal" style="transition-delay: 0.2s;">
+          En Las Lunas nuestra prioridad es la salud de todos los huéspedes. Por
+          eso, antes de ingresar, te pedimos cumplir con estos requisitos
+          sanitarios. Así podemos mantener el predio seguro y prevenir
+          contagios.
+        </p>
+        <p class="gracias-text reveal" style="transition-delay: 0.3s;">
+          ¡Gracias por tu colaboración y por confiar en nosotros! 💚
+        </p>
+      </div>
+    </header>
+
+    <section class="section req-content">
+      <svg
+        class="req-paw content-paw content-paw-1"
+        viewBox="0 0 60 40"
+        aria-hidden="true"
+        ><g fill="currentColor"
+          ><ellipse cx="12" cy="6" rx="5" ry="6"></ellipse><ellipse
+            cx="26"
+            cy="4"
+            rx="4"
+            ry="5"></ellipse><ellipse cx="39" cy="6" rx="4" ry="5"
+          ></ellipse><ellipse cx="51" cy="8" rx="3.5" ry="4.5"
+          ></ellipse><ellipse cx="30" cy="28" rx="14" ry="13"></ellipse></g
+        ></svg
+      >
+      <svg
+        class="req-paw content-paw content-paw-2"
+        viewBox="0 0 60 40"
+        aria-hidden="true"
+        ><g fill="currentColor"
+          ><ellipse cx="12" cy="6" rx="5" ry="6"></ellipse><ellipse
+            cx="26"
+            cy="4"
+            rx="4"
+            ry="5"></ellipse><ellipse cx="39" cy="6" rx="4" ry="5"
+          ></ellipse><ellipse cx="51" cy="8" rx="3.5" ry="4.5"
+          ></ellipse><ellipse cx="30" cy="28" rx="14" ry="13"></ellipse></g
+        ></svg
+      >
+      <svg
+        class="req-paw content-paw content-paw-3"
+        viewBox="0 0 60 40"
+        aria-hidden="true"
+        ><g fill="currentColor"
+          ><ellipse cx="12" cy="6" rx="5" ry="6"></ellipse><ellipse
+            cx="26"
+            cy="4"
+            rx="4"
+            ry="5"></ellipse><ellipse cx="39" cy="6" rx="4" ry="5"
+          ></ellipse><ellipse cx="51" cy="8" rx="3.5" ry="4.5"
+          ></ellipse><ellipse cx="30" cy="28" rx="14" ry="13"></ellipse></g
+        ></svg
+      >
+
+      <svg
+        class="req-paw content-paw content-paw-4"
+        viewBox="0 0 60 40"
+        aria-hidden="true"
+        ><g fill="currentColor"
+          ><ellipse cx="12" cy="6" rx="5" ry="6"></ellipse><ellipse
+            cx="26"
+            cy="4"
+            rx="4"
+            ry="5"></ellipse><ellipse cx="39" cy="6" rx="4" ry="5"
+          ></ellipse><ellipse cx="51" cy="8" rx="3.5" ry="4.5"
+          ></ellipse><ellipse cx="30" cy="28" rx="14" ry="13"></ellipse></g
+        ></svg
+      >
+
+      <div class="req-layout container-wide">
+        <div
+          class="req-side-image left-img reveal"
+          style="transition-delay: 0.4s;"
+        >
+          <img src={imgIzq.src} alt="Mascota en Las Lunas" />
+        </div>
+
+        <div class="req-grid reveal" style="transition-delay: 0.2s;">
+          <article class="req-card">
+            <div class="req-card-body">
+              <div class="req-icon-title">
+                <span class="emoji-icon">🐶</span>
+                <h2>Perros</h2>
+              </div>
+              <p class="req-subtitle">Para ingresar, tu perro debe tener:</p>
+
+              <ul class="check-list">
+                <li>
+                  <svg
+                    class="check-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    ><polyline points="20 6 9 17 4 12"></polyline></svg
+                  >
+                  <span
+                    ><strong>Vacunación completa anual:</strong> Antirrábica y Séxtuple.</span
+                  >
+                </li>
+                <li>
+                  <svg
+                    class="check-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    ><polyline points="20 6 9 17 4 12"></polyline></svg
+                  >
+                  <span>Libre de pulgas y garrapatas.</span>
+                </li>
+                <li>
+                  <svg
+                    class="check-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    ><polyline points="20 6 9 17 4 12"></polyline></svg
+                  >
+                  <span>Desparasitación interna al día.</span>
+                </li>
+                <li class="optional-item">
+                  <svg
+                    class="info-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    ><circle cx="12" cy="12" r="10"></circle><line
+                      x1="12"
+                      y1="16"
+                      x2="12"
+                      y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"
+                    ></line></svg
+                  >
+                  <span
+                    ><strong>Traqueobronquitis infecciosa (Tos Seca):</strong> vacuna
+                    opcional, pero fuertemente recomendada.</span
+                  >
+                </li>
+              </ul>
+
+              <div class="alert-box alert-warning">
+                <h3>Importante</h3>
+                <p>
+                  Si tu perro no recibió la vacuna contra la Tos Seca, estará
+                  expuesto a contraerla. Si la contrajera durante su estadía en
+                  Las Lunas, el dueño/a deberá afrontar los gastos de
+                  tratamiento incurridos por nosotros.
+                </p>
+                <p>
+                  La desparasitación interna debe realizarse con la frecuencia
+                  que indique tu veterinario. Tené en cuenta que, al estar en
+                  contacto con otros perros, puede ser necesario desparasitar
+                  con mayor frecuencia.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="req-card">
+            <div class="req-card-body">
+              <div class="req-icon-title">
+                <span class="emoji-icon">🐱</span>
+                <h2>Gatos</h2>
+              </div>
+              <p class="req-subtitle">Para ingresar, tu gato debe tener:</p>
+
+              <ul class="check-list">
+                <li>
+                  <svg
+                    class="check-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    ><polyline points="20 6 9 17 4 12"></polyline></svg
+                  >
+                  <span><strong>Vacuna antirrábica</strong> anual.</span>
+                </li>
+                <li>
+                  <svg
+                    class="check-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    ><polyline points="20 6 9 17 4 12"></polyline></svg
+                  >
+                  <span><strong>Triple felina</strong> anual.</span>
+                </li>
+                <li>
+                  <svg
+                    class="check-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    ><polyline points="20 6 9 17 4 12"></polyline></svg
+                  >
+                  <span>Libre de pulgas y garrapatas.</span>
+                </li>
+                <li>
+                  <svg
+                    class="check-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    ><polyline points="20 6 9 17 4 12"></polyline></svg
+                  >
+                  <span>Desparasitación interna al día.</span>
+                </li>
+              </ul>
+
+              <div class="alert-box alert-info">
+                <h3>Recomendación general</h3>
+                <p>
+                  Consultá a tu médico veterinario de confianza para
+                  cumplimentar estos requisitos de forma segura y adecuada para
+                  tu mascota.
+                </p>
+                <p class="alert-thanks">¡Gracias por su colaboración! 🐾</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div
+          class="req-side-image right-img reveal"
+          style="transition-delay: 0.5s;"
+        >
+          <img src={imgDer.src} alt="Veterinario revisando mascota" />
+        </div>
+      </div>
+
+      <div class="back-action reveal" style="transition-delay: 0.6s;">
+        <a href="/" class="btn-outline"> ← Volver al inicio </a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  /* Usamos tus variables globales: 
+    var(--green), var(--green-light), var(--green-pale), var(--green-dark),
+    var(--accent), var(--black), var(--gray-dark), var(--gray-mid), 
+    var(--gray-light), var(--white), var(--radius), var(--radius-lg)
+  */
+
+  .page-requisitos {
+    background: var(--gray-light);
+    min-height: 100vh;
+  }
+
+  /* --- HEADER DE PÁGINA --- */
+  .page-header {
+    background: var(--green-dark);
+    color: var(--white);
+    padding: 6rem 1rem 10rem; /* Más padding abajo para que las tarjetas suban */
+    text-align: center;
+    position: relative; /* Crucial para absolute positioned paws */
+    overflow: hidden; /* Mantenemos esto para que no rompa el layout horizontal, pero ajustamos las patas */
+  }
+
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    background: rgba(82, 183, 136, 0.15); /* var(--accent) con opacidad */
+    border: 1px solid rgba(82, 183, 136, 0.3);
+    border-radius: 50px;
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1; /* Above paws */
+  }
+
+  .page-header h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    color: var(--white);
+    position: relative;
+    z-index: 1; /* Above paws */
+  }
+
+  .text-accent {
+    color: var(--accent);
+  }
+
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+    position: relative;
+    z-index: 1; /* Above paws */
+  }
+
+  .gracias-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--accent);
+    position: relative;
+    z-index: 1; /* Above paws */
+  }
+
+  /* Base style for scattered paws */
+  .req-paw {
+    position: absolute;
+    width: 120px; /* Adjust size as needed */
+    height: auto;
+    pointer-events: none;
+    z-index: 0; /* Behind everything */
+  }
+
+  /* Header Specific styles (Dark Green BG) */
+  .header-paw {
+    color: var(--accent);
+  }
+  .header-paw-1 {
+    /* CORRECCIÓN: Ajustamos para que no se corten arriba */
+    top: 15%; /* Bajada un poco */
+    left: 5%;
+    transform: rotate(-15deg);
+    width: 120px;
+  }
+  .header-paw-2 {
+    /* CORRECCIÓN: Ajustamos para que no se corten arriba */
+    top: 25%; /* Bajada un poco */
+    right: 8%;
+    transform: rotate(10deg);
+    width: 120px;
+  }
+
+  /* --- CONTENIDO PRINCIPAL Y LAYOUT --- */
+  .req-content {
+    padding: 0 1rem 6rem;
+    margin-top: -6rem; /* Sube las tarjetas sobre el fondo verde oscuro */
+    position: relative;
+    z-index: 2; /* Main section content is higher z-index to stay above background paws on light BG */
+  }
+
+  /* Content Specific styles (Light Gray BG) */
+  .content-paw {
+    color: var(--accent); /* matching palette */
+    z-index: -1; /* Place them behind content layout on light BG */
+  }
+  .content-paw-1 {
+    top: 0%;
+    left: 10%;
+    transform: rotate(-25deg);
+    width: 120px;
+  }
+  .content-paw-2 {
+    top: 0%;
+    right: 5%;
+    transform: rotate(15deg);
+    width: 120px;
+  }
+  .content-paw-3 {
+    bottom: 25%; /* Subida un poco para que no quede tan pegada abajo */
+    left: 15%;
+    transform: rotate(-10deg);
+    width: 120px;
+    color: var(--green-dark);
+  }
+
+  /* NUEVA: Posicionamiento abajo a la derecha */
+  .content-paw-4 {
+    bottom: 5%;
+    right: 10%;
+    transform: rotate(20deg);
+    width: 120px;
+    color: var(--green-dark);
+  }
+
+  /* Un contenedor más ancho para acomodar las imágenes laterales */
+  .container-wide {
+    max-width: 1800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    justify-content: center;
+    position: relative;
+    z-index: 1; /* Elements within layout stay above paws in this context */
+  }
+
+  /* --- IMÁGENES LATERALES --- */
+  .req-side-image {
+    display: none; /* Ocultas en móvil por defecto */
+    flex: 1;
+    max-width: 450px;
+    height: 600px; /* Altura sugerida para que acompañe a las tarjetas */
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 150px; /* Hace que la imagen siga el scroll suavemente */
+  }
+
+  .req-side-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition);
+  }
+
+  .req-side-image:hover img {
+    transform: scale(1.05);
+  }
+
+  /* --- TARJETAS --- */
+  .req-grid {
+    flex: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 800px;
+  }
+
+  @media (min-width: 850px) {
+    .req-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .req-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    transition:
+      transform var(--transition),
+      box-shadow var(--transition);
+  }
+
+  .req-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  }
+
+  .req-card-body {
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .req-icon-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .emoji-icon {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .req-card-body h2 {
+    font-size: 2rem;
+    color: var(--green-dark);
+    margin: 0;
+  }
+
+  .req-subtitle {
+    color: var(--gray-dark);
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Listas */
+  .check-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--gray-dark);
+  }
+
+  .check-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .optional-item {
+    background: var(--gray-light);
+    padding: 1.25rem;
+    border-radius: var(--radius);
+    border-left: 4px solid var(--accent);
+    margin-top: 0.5rem;
+  }
+
+  .info-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--green-light);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* Alertas */
+  .alert-box {
+    margin-top: auto;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .alert-box h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .alert-box p {
+    margin-bottom: 0.75rem;
+    color: var(--gray-dark);
+  }
+  .alert-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Warning (Amarillo/Naranja sutil) */
+  .alert-warning {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+  }
+  .alert-warning h3 {
+    color: #b45309;
+  }
+
+  /* Info (Verde) */
+  .alert-info {
+    background: var(--green-pale);
+    border: 1px solid rgba(82, 183, 136, 0.3);
+  }
+  .alert-info h3 {
+    color: var(--green-dark);
+  }
+
+  .alert-thanks {
+    font-weight: 600;
+    color: var(--green-dark) !important;
+    margin-top: 1rem !important;
+  }
+
+  /* Botón Volver */
+  .back-action {
+    text-align: center;
+    margin-top: 5rem;
+    position: relative;
+    z-index: 1; /* Above paws */
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    border: 2px solid var(--green-dark);
+    color: var(--green-dark);
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: var(--transition);
+  }
+
+  .btn-outline:hover {
+    background: var(--green-dark);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(27, 67, 50, 0.15);
+  }
+
+  /* --- RESPONSIVE --- */
+
+  /* Desktop Grande (Aparecen las imágenes laterales) */
+  @media (min-width: 1100px) {
+    .req-side-image {
+      display: block;
+    }
+  }
+
+  /* Tablets / Laptops pequeñas */
+  @media (max-width: 1099px) {
+    .container-wide {
+      padding: 0 1.5rem;
+    }
+  }
+
+  /* Móviles */
+  @media (max-width: 768px) {
+    .page-header {
+      padding: 4rem 1rem 8rem;
+    }
+    .req-content {
+      margin-top: -4rem;
+    }
+    .req-card-body {
+      padding: 2rem 1.5rem;
+    }
+    .page-header h1 {
+      font-size: clamp(2rem, 8vw, 2.5rem);
+    }
+  }
+</style>
