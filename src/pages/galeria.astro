@@ -1,61 +1,277 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import '../styles/global.css';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
-<Layout title="Galería de fotos — Las Lunas" description="Conocé nuestras instalaciones de 6000m² con fotos del predio, los animales y el equipo.">
-  <Header />
-  <main style="padding-top: calc(var(--pre-header-h) + var(--header-h))">
-    <section class="section">
+
+<Layout
+  title="Galería de fotos | Las Lunas"
+  description="Conocé nuestras instalaciones de 6000m² con fotos del predio, los animales y el equipo."
+>
+  <!-- <Header /> -->
+
+  <main class="page-galeria">
+    <header class="gallery-header">
+      <svg
+        class="gallery-paw header-paw-1 hide-on-mobile"
+        viewBox="0 -2 60 45"
+        aria-hidden="true"
+      >
+        <g fill="currentColor">
+          <ellipse cx="12" cy="6" rx="5" ry="6"></ellipse>
+          <ellipse cx="26" cy="4" rx="4" ry="5"></ellipse>
+          <ellipse cx="39" cy="6" rx="4" ry="5"></ellipse>
+          <ellipse cx="51" cy="8" rx="3.5" ry="4.5"></ellipse>
+          <ellipse cx="30" cy="28" rx="14" ry="13"></ellipse>
+        </g>
+      </svg>
+      <svg
+        class="gallery-paw header-paw-2 hide-on-mobile"
+        viewBox="0 -2 60 45"
+        aria-hidden="true"
+      >
+        <g fill="currentColor">
+          <ellipse cx="12" cy="6" rx="5" ry="6"></ellipse>
+          <ellipse cx="26" cy="4" rx="4" ry="5"></ellipse>
+          <ellipse cx="39" cy="6" rx="4" ry="5"></ellipse>
+          <ellipse cx="51" cy="8" rx="3.5" ry="4.5"></ellipse>
+          <ellipse cx="30" cy="28" rx="14" ry="13"></ellipse>
+        </g>
+      </svg>
+
       <div class="container">
-        <div style="text-align:center; margin-bottom:3rem">
-          <p class="section-tag">Nuestro predio</p>
-          <h2>Galería de <span class="text-green">fotos</span></h2>
-          <p style="color:var(--gray-mid); margin-top:1rem; font-size:1.05rem">Más de 6.000 m² diseñados para el bienestar de tu mascota.</p>
+        <div class="header-badge reveal">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+          <span>NUESTRO PREDIO</span>
         </div>
 
+        <h1 class="reveal" style="transition-delay: 0.1s;">
+          Galería de <span class="text-accent">fotos</span>
+        </h1>
+
+        <p class="lead-text reveal" style="transition-delay: 0.2s;">
+          Más de 6.000 m² diseñados para el bienestar de tu mascota. Descubrí
+          los espacios donde vienen a correr, jugar y descansar.
+        </p>
+      </div>
+    </header>
+
+    <section class="gallery-content">
+      <div class="container">
         <div class="gallery-grid">
-          {Array.from({length: 12}, (_, i) => (
-            <div class="gallery-item reveal">
-              <img
-                src={`https://picsum.photos/seed/gallery${i}/600/450`}
-                alt={`Las Lunas - foto ${i + 1}`}
-                loading="lazy"
-              />
-            </div>
-          ))}
+          {
+            Array.from({ length: 12 }, (_, i) => (
+              <div
+                class="gallery-item reveal"
+                style={`transition-delay: ${0.1 * (i % 4)}s;`}
+              >
+                <div class="img-wrapper">
+                  <img
+                    src={`https://picsum.photos/seed/gallery${i}/800/600`}
+                    alt={`Las Lunas - foto de las instalaciones ${i + 1}`}
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            ))
+          }
         </div>
 
-        <div style="text-align:center; margin-top:3rem">
-          <a href="/" class="btn btn-primary">← Volver al inicio</a>
+        <div class="back-action reveal" style="transition-delay: 0.4s;">
+          <a href="/" class="btn-outline"> ← Volver al inicio </a>
         </div>
       </div>
     </section>
   </main>
+
   <Footer />
 </Layout>
 
 <style>
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1rem;
-}
+  .page-galeria {
+    background: var(--gray-light);
+    min-height: 100vh;
+    /* padding-top: calc(var(--pre-header-h) + var(--header-h)); */
+  }
 
-.gallery-item {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  aspect-ratio: 4/3;
-  background: var(--gray-light);
-}
+  /* --- HEADER DE PÁGINA (Estilo idéntico a Requisitos) --- */
+  .gallery-header {
+    background: var(--green-dark);
+    color: var(--white);
+    padding: 6rem 1rem 12rem; /* Mucho padding abajo para solapar la grilla */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
 
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    background: rgba(82, 183, 136, 0.15);
+    border: 1px solid rgba(82, 183, 136, 0.3);
+    border-radius: 50px;
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
 
-.gallery-item:hover img { transform: scale(1.05); }
+  .gallery-header h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    color: var(--white);
+    position: relative;
+    z-index: 1;
+  }
+
+  .text-accent {
+    color: var(--accent);
+  }
+
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* --- PATITAS DECORATIVAS --- */
+  .gallery-paw {
+    position: absolute;
+    height: auto;
+    pointer-events: none;
+    z-index: 0;
+    color: var(--accent);
+    opacity: 0.15;
+  }
+  .header-paw-1 {
+    top: 15%;
+    left: 10%;
+    transform: rotate(-15deg);
+    width: 120px;
+  }
+  .header-paw-2 {
+    top: 25%;
+    right: 12%;
+    transform: rotate(20deg);
+    width: 100px;
+  }
+
+  /* --- CONTENIDO Y GRILLA --- */
+  .gallery-content {
+    padding: 0 1rem 6rem;
+    margin-top: -8rem; /* Superpone las fotos sobre el fondo verde oscuro */
+    position: relative;
+    z-index: 2;
+  }
+
+  .gallery-grid {
+    display: grid;
+    /* Ajuste para que las tarjetas sean un poco más anchas y se vean más premium */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .gallery-item {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    /* Borde blanco para darle efecto "marco de foto" */
+    padding: 8px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+    transition:
+      transform var(--transition),
+      box-shadow var(--transition);
+  }
+
+  .gallery-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.12);
+  }
+
+  .img-wrapper {
+    border-radius: calc(var(--radius-lg) - 4px);
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background: var(--gray-light);
+    position: relative;
+  }
+
+  .img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .gallery-item:hover .img-wrapper img {
+    transform: scale(1.08);
+  }
+
+  /* --- BOTÓN VOLVER --- */
+  .back-action {
+    text-align: center;
+    margin-top: 5rem;
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    border: 2px solid var(--green-dark);
+    color: var(--green-dark);
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: var(--transition);
+  }
+
+  .btn-outline:hover {
+    background: var(--green-dark);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(27, 67, 50, 0.15);
+  }
+
+  /* --- RESPONSIVE --- */
+  @media (max-width: 768px) {
+    .gallery-header {
+      padding: 4rem 1rem 10rem;
+    }
+    .gallery-content {
+      margin-top: -6rem;
+    }
+    .gallery-grid {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .hide-on-mobile {
+      display: none;
+    }
+  }
 </style>
