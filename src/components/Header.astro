@@ -78,7 +78,7 @@ import logoLasLunas from "../assets/Las lunas.png";
           <a
             href="https://api.whatsapp.com/send?phone=5491150968576&text=Hola!%20Quiero%20reservar%20hospedaje%20para%20mi%20mascota%20en%20Las%20Lunas."
             target="_blank"
-            class="btn btn-primary nav__reserve"
+            class="btn nav__reserve"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path
@@ -94,11 +94,14 @@ import logoLasLunas from "../assets/Las lunas.png";
 </header>
 
 <style>
-  /* Variables locales para el header (Ajusta estos valores si quieres cambiar la altura general) */
   :root {
     --pre-header-h: 36px;
-    --header-h-desktop: 80px; /* Altura principal en PC */
-    --header-h-mobile: 70px; /* Altura principal en Celulares */
+    --header-h-desktop: 90px; /* Aumentado de 80 a 90 para más aire */
+    --header-h-mobile: 75px; /* Aumentado un poquito en móvil también */
+
+    /* Variables de colores inyectadas localmente */
+    --green: #95bc3a; /* Verde Claro (Principal) */
+    --brown: #4a3f35; /* Marrón Tierra (Secundario) */
   }
 
   #site-header {
@@ -110,9 +113,8 @@ import logoLasLunas from "../assets/Las lunas.png";
     transition: box-shadow 0.3s ease;
   }
 
-  /* Pre-header */
   .pre-header {
-    background: var(--green-dark);
+    background: var(--green);
     height: var(--pre-header-h);
     overflow: hidden;
     transition:
@@ -130,13 +132,14 @@ import logoLasLunas from "../assets/Las lunas.png";
     display: flex;
     align-items: center;
     gap: 6px;
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--brown);
     font-size: 0.88rem;
+    font-weight: 600;
     transition: color 0.2s;
     text-decoration: none;
   }
   .pre-header__link:hover {
-    color: var(--green-pale);
+    color: var(--white);
   }
   .pre-header__link span {
     display: none;
@@ -147,10 +150,9 @@ import logoLasLunas from "../assets/Las lunas.png";
     }
   }
 
-  /* Main nav */
   .nav {
     background: var(--white);
-    height: var(--header-h-mobile); /* Altura base para mobile */
+    height: var(--header-h-mobile);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     transition:
       height 0.3s ease,
@@ -160,34 +162,32 @@ import logoLasLunas from "../assets/Las lunas.png";
   @media (min-width: 900px) {
     .nav {
       height: var(--header-h-desktop);
-    } /* Altura para desktop */
+    }
   }
 
   .nav__inner {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Asegura que el logo y el menú estén separados */
+    justify-content: space-between;
     gap: 1rem;
   }
 
-  /* ─── LOGO (Control de tamaño) ─── */
   .nav__logo {
     display: flex;
     align-items: center;
-    height: 100%; /* El contenedor ocupa todo el alto disponible del header */
-    padding: 10px 0; /* Pequeño margen arriba y abajo para que el logo no toque los bordes */
+    height: 100%;
+    padding: 8px 0; /* Padding reducido para que la imagen ocupe más espacio real */
     text-decoration: none;
   }
 
   .nav__logo-img {
-    height: 100%; /* La imagen se adapta al alto del padding anterior */
-    width: auto; /* Mantiene la proporción original */
-    max-height: 60px; /* Un límite máximo por seguridad */
-    object-fit: contain; /* Asegura que el logo no se deforme */
+    height: 100%;
+    width: auto;
+    max-height: 75px; /* Aumentado para que el logo se vea más grande y con más presencia */
+    object-fit: contain;
   }
 
-  /* Links */
   .nav__links {
     display: none;
     list-style: none;
@@ -203,33 +203,48 @@ import logoLasLunas from "../assets/Las lunas.png";
   .nav__link {
     padding: 0.5rem 0.85rem;
     font-size: 1rem;
-    font-weight: 500;
-    color: var(--gray-dark);
+    font-weight: 600;
+    color: var(--brown);
     border-radius: var(--radius);
     text-decoration: none;
     transition:
       color 0.2s,
       background 0.2s;
   }
+
   .nav__link:hover {
     color: var(--green);
-    background: var(--green-pale);
+    background: rgba(149, 188, 58, 0.15);
   }
 
-  /* Reserve button */
   .nav__cta {
     margin-left: 0.5rem;
   }
   .nav__reserve {
-    font-size: 0.88rem;
-    padding: 0.6rem 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 0.6rem 1.4rem;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     text-decoration: none;
+    background: var(--green);
+    color: var(--brown);
+    border-radius: 50px;
+    transition:
+      transform 0.2s,
+      background 0.2s,
+      color 0.2s,
+      box-shadow 0.2s;
   }
 
-  /* Burger */
+  .nav__reserve:hover {
+    background: var(--brown);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(74, 63, 53, 0.3);
+  }
+
   .nav__burger {
     display: flex;
     flex-direction: column;
@@ -248,36 +263,30 @@ import logoLasLunas from "../assets/Las lunas.png";
     display: block;
     width: 24px;
     height: 2px;
-    background: var(--gray-dark);
+    background: var(--brown);
     border-radius: 2px;
     transition:
       transform 0.3s ease,
       opacity 0.3s ease;
   }
 
-  /* ─── Compact mode (Cuando el usuario hace scroll) ─── */
   #site-header.compact .pre-header {
-    height: 0; /* Oculta la barra superior verde */
+    height: 0;
     opacity: 0;
   }
   #site-header.compact .nav {
-    /* Mantenemos una altura un poco más pequeña que la inicial, pero fija y controlada */
-    height: 60px;
+    height: 65px; /* Ligeramente más grande en scroll para que el logo no desaparezca */
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
   }
-
-  /* El logo se achica un poco automáticamente al reducirse el height de .nav */
   #site-header.compact .nav__logo {
-    padding: 8px 0;
+    padding: 5px 0;
   }
 
-  /* ─── Mobile menu open ─── */
   @media (max-width: 899px) {
     .nav__links.open {
       display: flex;
       flex-direction: column;
       position: fixed;
-      /* Top calcula la altura actual del header (pre-header + nav) */
       top: calc(var(--pre-header-h) + var(--header-h-mobile));
       left: 0;
       right: 0;
@@ -285,12 +294,11 @@ import logoLasLunas from "../assets/Las lunas.png";
       padding: 1.5rem;
       gap: 0.5rem;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-      border-top: 1px solid var(--green-pale);
+      border-top: 1px solid rgba(149, 188, 58, 0.2);
     }
 
-    /* Si el menú se abre mientras está compacto (con scroll) */
     #site-header.compact .nav__links.open {
-      top: 60px; /* Coincide con la altura de .nav en modo compacto */
+      top: 65px;
     }
   }
 </style>
@@ -300,13 +308,11 @@ import logoLasLunas from "../assets/Las lunas.png";
   const navLinks = document.getElementById("nav-links");
   const header = document.getElementById("site-header");
 
-  // Lógica del menú hamburguesa
   burger?.addEventListener("click", () => {
     const open = navLinks?.classList.toggle("open");
     burger.setAttribute("aria-expanded", String(open));
   });
 
-  // Cerrar menú al hacer clic en un enlace
   navLinks?.querySelectorAll("a").forEach((a) => {
     a.addEventListener("click", () => {
       navLinks.classList.remove("open");
@@ -314,8 +320,6 @@ import logoLasLunas from "../assets/Las lunas.png";
     });
   });
 
-  // Opcional: Lógica para el modo "compacto" al hacer scroll
-  // (Si ya lo tienes en otro archivo global, puedes omitir esto)
   window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
       header?.classList.add("compact");

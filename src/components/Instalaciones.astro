@@ -10,7 +10,6 @@ import img8 from "../assets/instalaciones/8.jpg";
 ---
 
 <section id="instalaciones" class="section instalaciones">
-  <!-- SVG decorativo fondo — círculos y patitas -->
   <svg
     class="inst__deco"
     viewBox="0 0 1440 900"
@@ -22,27 +21,23 @@ import img8 from "../assets/instalaciones/8.jpg";
       cy="100"
       r="200"
       fill="none"
-      stroke="rgba(82,183,136,1)"
+      stroke="var(--green)"
       stroke-width="1.5"></circle>
     <circle
       cx="1380"
       cy="100"
       r="130"
       fill="none"
-      stroke="rgba(82,183,136,1)"
+      stroke="var(--green)"
       stroke-width="1"></circle>
     <circle
       cx="60"
       cy="820"
       r="120"
       fill="none"
-      stroke="rgba(82,183,136,1)"
+      stroke="var(--green)"
       stroke-width="1"></circle>
-    <g
-      transform="translate(1280,40) rotate(-15) scale(2)"
-      opacity="1"
-      fill="rgba(82,183,136,1)"
-    >
+    <g transform="translate(1280,40) rotate(-15) scale(2)" fill="var(--green)">
       <ellipse cx="12" cy="6" rx="5" ry="6"></ellipse><ellipse
         cx="26"
         cy="4"
@@ -55,11 +50,7 @@ import img8 from "../assets/instalaciones/8.jpg";
         ry="4.5"></ellipse>
       <ellipse cx="30" cy="28" rx="14" ry="13"></ellipse>
     </g>
-    <g
-      transform="translate(40,750) rotate(10) scale(1.5)"
-      opacity="0.85"
-      fill="rgba(82,183,136,1)"
-    >
+    <g transform="translate(40,750) rotate(10) scale(1.5)" fill="var(--green)">
       <ellipse cx="12" cy="6" rx="5" ry="6"></ellipse><ellipse
         cx="26"
         cy="4"
@@ -74,7 +65,6 @@ import img8 from "../assets/instalaciones/8.jpg";
     </g>
   </svg>
 
-  <!-- SVG línea ondulada que recorre todos los bloques -->
   <svg
     class="inst__wave"
     viewBox="0 0 1200 4200"
@@ -86,12 +76,12 @@ import img8 from "../assets/instalaciones/8.jpg";
       <style>
         .inst-wave-path {
           fill: none;
-          stroke: rgba(82, 183, 136, 1);
+          stroke: var(--green);
           stroke-linecap: round;
           stroke-linejoin: round;
           stroke-width: 4px;
           stroke-dasharray: 0.33 18;
-          opacity: 1;
+          opacity: 1; /* Opacidad al 100% para que sea nítida */
         }
       </style>
     </defs>
@@ -110,8 +100,7 @@ import img8 from "../assets/instalaciones/8.jpg";
     ></path>
   </svg>
 
-  <div class="container">
-    <!-- HEADER -->
+  <div class="container Relative-z">
     <div class="inst__header reveal">
       <div class="inst__badge">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
@@ -119,144 +108,92 @@ import img8 from "../assets/instalaciones/8.jpg";
             d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
           ></path>
         </svg>
-        Nuestro predio
+        NUESTRO PREDIO
       </div>
       <h2>Instalaciones <span class="text-accent">de primer nivel</span></h2>
-      <p class="inst__intro">
-        Más de 6.000 m² diseñados para el bienestar y la felicidad de tu mascota
-        en Pilar, Buenos Aires.
-      </p>
     </div>
 
-    <!-- BLOQUES EDITORIALES -->
     <div class="blocks reveal" style="transition-delay:0.1s">
-      <!-- Línea de puntos vertical que conecta todos los bloques -->
-      <!-- <div class="blocks__timeline" aria-hidden="true">
-        <div class="blocks__timeline-line"></div>
-        <div class="blocks__timeline-arrow"></div>
-      </div> -->
-
-      <!-- 01 — Foto izquierda -->
       <div class="block block--left">
         <div class="block__photo">
           <img src={img1.src} alt="Predio Las Lunas" loading="lazy" />
         </div>
         <div class="block__text" style="border-top: 2px solid white;">
-          <span class="block__num">01</span>
+          <span class="block__num">—</span>
           <h3>6.000 m² de área verde</h3>
-          <p>
-            Espacio amplio pensado para que tu mascota corra, explore y juegue
-            con supervisión permanente las 24hs del día.
-          </p>
         </div>
       </div>
 
-      <!-- 02 — Foto derecha -->
       <div class="block block--right">
         <div class="block__text">
-          <span class="block__num">02</span>
+          <span class="block__num">—</span>
           <h3>Arboleda y pileta</h3>
-          <p>
-            Ambientación natural con árboles, sombra y una pileta para que los
-            días de calor sean un disfrute total.
-          </p>
         </div>
         <div class="block__photo">
           <img src={img2.src} alt="Arboleda y pileta" loading="lazy" />
         </div>
       </div>
 
-      <!-- 03 — Foto izquierda -->
       <div class="block block--left">
         <div class="block__photo">
           <img src={img3.src} alt="Zonas techadas" loading="lazy" />
         </div>
         <div class="block__text">
-          <span class="block__num">03</span>
+          <span class="block__num">—</span>
           <h3>Zonas techadas</h3>
-          <p>
-            Refugios cómodos y seguros ante cualquier condición climática, para
-            que tu mascota siempre esté protegida.
-          </p>
         </div>
       </div>
 
-      <!-- 04 — Foto derecha -->
       <div class="block block--right">
         <div class="block__text">
-          <span class="block__num">04</span>
-          <h3>Gateras ambientadas</h3>
-          <p>
-            Espacios exclusivos con casitas, troncos y plantas naturales para
-            que los gatos se sientan completamente en casa.
-          </p>
+          <span class="block__num">—</span>
+          <h3>Gateras ambientadas con casitas y troncos</h3>
         </div>
         <div class="block__photo">
           <img src={img4.src} alt="Gateras ambientadas" loading="lazy" />
         </div>
       </div>
 
-      <!-- 05 — Foto izquierda -->
       <div class="block block--left">
         <div class="block__photo">
           <img src={img5.src} alt="Área de juego" loading="lazy" />
         </div>
         <div class="block__text">
-          <span class="block__num">05</span>
+          <span class="block__num">—</span>
           <h3>Área de juego y socialización</h3>
-          <p>
-            Sectores especialmente diseñados para que las mascotas interactúen,
-            jueguen y desarrollen vínculos en un ambiente seguro.
-          </p>
         </div>
       </div>
 
-      <!-- 06 — Foto derecha -->
       <div class="block block--right">
         <div class="block__text">
-          <span class="block__num">06</span>
+          <span class="block__num">—</span>
           <h3>Atención personalizada</h3>
-          <p>
-            Nuestro equipo acompaña a cada mascota de forma individual, con
-            cariño y responsabilidad profesional durante toda su estadía.
-          </p>
         </div>
         <div class="block__photo">
           <img src={img6.src} alt="Atención personalizada" loading="lazy" />
         </div>
       </div>
 
-      <!-- 07 — Foto izquierda -->
       <div class="block block--left">
         <div class="block__photo">
           <img src={img7.src} alt="Área de descanso" loading="lazy" />
         </div>
         <div class="block__text">
-          <span class="block__num">07</span>
+          <span class="block__num">—</span>
           <h3>Área de descanso</h3>
-          <p>
-            Espacios cálidos y tranquilos para que tu mascota descanse
-            plácidamente después de un día lleno de actividad.
-          </p>
         </div>
       </div>
 
-      <!-- 08 — Foto derecha -->
       <div class="block block--right">
         <div class="block__text">
-          <span class="block__num">08</span>
+          <span class="block__num">—</span>
           <h3>Vista general del predio</h3>
-          <p>
-            Un entorno verde, amplio y seguro donde cada rincón fue diseñado
-            pensando en la felicidad y el bienestar animal.
-          </p>
         </div>
         <div class="block__photo">
           <img src={img8.src} alt="Vista general" loading="lazy" />
         </div>
       </div>
 
-      <!-- UBICACIÓN 1 — Predio Pilar -->
       <div class="block block--left block--location">
         <div class="block__photo block__photo--map">
           <iframe
@@ -270,7 +207,7 @@ import img8 from "../assets/instalaciones/8.jpg";
         </div>
         <div class="block__text">
           <span class="block__num block__num--location">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="#52b788">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path
                 d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
               ></path>
@@ -278,10 +215,6 @@ import img8 from "../assets/instalaciones/8.jpg";
             Ubicación
           </span>
           <h3>Predio en Pilar</h3>
-          <p>
-            Nuestro predio principal donde las mascotas disfrutan de todo el
-            espacio verde y las instalaciones completas.
-          </p>
           <a
             href="https://www.google.com/maps/place/las+lunas+hospedaje/@-34.4621708,-58.8269619,15z"
             target="_blank"
@@ -293,11 +226,10 @@ import img8 from "../assets/instalaciones/8.jpg";
         </div>
       </div>
 
-      <!-- UBICACIÓN 2 — Oficina -->
       <div class="block block--right block--location">
         <div class="block__text" style="border-bottom: 2px solid white;">
           <span class="block__num block__num--location">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="#52b788">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path
                 d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
               ></path>
@@ -305,12 +237,8 @@ import img8 from "../assets/instalaciones/8.jpg";
             Ubicación
           </span>
           <h3>Oficina atención al cliente</h3>
-          <p>
-            Zona norte del GBA para coordinar traslados, consultas y todo lo que
-            necesites de forma personalizada.
-          </p>
           <a
-            href="https://www.google.com/maps/place/Las+Lunas+-+Oficina/@-34.481253,-58.5386343,15z"
+            href="maps.google.com/6"
             target="_blank"
             rel="noopener"
             class="block__cta-link"
@@ -331,7 +259,6 @@ import img8 from "../assets/instalaciones/8.jpg";
       </div>
     </div>
 
-    <!-- CTA fotos -->
     <div class="inst__cta reveal" style="transition-delay:0.2s">
       <a href="/galeria" class="cta-fotos">
         <svg
@@ -353,8 +280,14 @@ import img8 from "../assets/instalaciones/8.jpg";
 </section>
 
 <style>
+  :root {
+    --green: #95bc3a; /* Verde Claro */
+    --brown: #4a3f35; /* Marrón Tierra */
+    --white: #ffffff;
+  }
+
   .instalaciones {
-    background: #1b4332;
+    background: #1b4332; /* Fondo verde oscuro */
     padding: 6rem 0;
     position: relative;
     overflow: hidden;
@@ -380,7 +313,7 @@ import img8 from "../assets/instalaciones/8.jpg";
     overflow: visible;
   }
 
-  .container {
+  .Relative-z {
     position: relative;
     z-index: 1;
   }
@@ -388,6 +321,10 @@ import img8 from "../assets/instalaciones/8.jpg";
   /* ── HEADER ── */
   .inst__header {
     margin-bottom: 3.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .inst__badge {
@@ -398,7 +335,7 @@ import img8 from "../assets/instalaciones/8.jpg";
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 50px;
-    color: #95d5b2;
+    color: var(--white);
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.06em;
@@ -407,18 +344,11 @@ import img8 from "../assets/instalaciones/8.jpg";
   }
 
   .inst__header h2 {
-    color: #fff;
+    color: var(--white);
     margin-bottom: 0.75rem;
   }
   .text-accent {
-    color: #52b788;
-  }
-
-  .inst__intro {
-    font-size: 1.05rem;
-    color: rgba(255, 255, 255, 0.55);
-    max-width: 520px;
-    line-height: 1.7;
+    color: var(--green);
   }
 
   /* ── BLOQUES ── */
@@ -429,47 +359,10 @@ import img8 from "../assets/instalaciones/8.jpg";
     position: relative;
   }
 
-  /* ── LÍNEA DE PUNTOS VERTICAL ── */
-  .blocks__timeline {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 2px;
-    z-index: 10;
-    pointer-events: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .blocks__timeline-line {
-    flex: 1;
-    width: 2px;
-    background-image: repeating-linear-gradient(
-      to bottom,
-      rgba(82, 183, 136, 0.55) 0px,
-      rgba(82, 183, 136, 0.55) 8px,
-      transparent 8px,
-      transparent 18px
-    );
-  }
-
-  .blocks__timeline-arrow {
-    width: 0;
-    height: 0;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-top: 10px solid rgba(82, 183, 136, 0.55);
-    margin-top: -1px;
-  }
-
   .block {
     display: grid;
     grid-template-columns: 1.6fr 1fr;
     height: 340px;
-    /* border-radius: 16px; */
     overflow: hidden;
   }
 
@@ -515,43 +408,36 @@ import img8 from "../assets/instalaciones/8.jpg";
   }
 
   .block--left > .block__text {
-    border-right: 2px solid rgba(255, 255, 255, 1);
+    border-right: 2px solid white;
   }
 
   .block--right > .block__text {
-    border-left: 2px solid rgba(255, 255, 255, 1);
+    border-left: 2px solid white;
   }
 
   .block__num {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-size: 0.72rem;
+    font-size: 1.5rem; /* Agrandado para que el guion resalte */
     font-weight: 800;
-    letter-spacing: 0.18em;
-    color: #52b788;
-    text-transform: uppercase;
-    margin-bottom: 0.75rem;
+    color: var(--green); /* Mantiene tu color verde */
+    margin-bottom: 0.5rem;
   }
 
   .block__num--location {
+    font-size: 0.72rem; /* El texto Ubicación queda de su tamaño original */
     letter-spacing: 0.1em;
+    text-transform: uppercase;
   }
 
   .block__text h3 {
     font-size: clamp(1.3rem, 2.2vw, 1.8rem);
     font-weight: 900;
-    color: #ffffff;
+    color: var(--white);
     line-height: 1.1;
     margin-bottom: 0.9rem;
     letter-spacing: -0.02em;
-  }
-
-  .block__text p {
-    font-size: clamp(0.88rem, 1.2vw, 1rem);
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.75;
-    max-width: 340px;
   }
 
   .block__cta-link {
@@ -559,7 +445,7 @@ import img8 from "../assets/instalaciones/8.jpg";
     align-items: center;
     gap: 6px;
     margin-top: 1.25rem;
-    color: #52b788;
+    color: var(--green);
     font-size: 0.9rem;
     font-weight: 700;
     text-decoration: none;
@@ -569,7 +455,7 @@ import img8 from "../assets/instalaciones/8.jpg";
       gap 0.2s;
   }
   .block__cta-link:hover {
-    color: #74c69d;
+    color: white;
     gap: 10px;
   }
 
@@ -585,9 +471,9 @@ import img8 from "../assets/instalaciones/8.jpg";
     align-items: center;
     gap: 10px;
     padding: 1rem 2.5rem;
-    background: #52b788;
+    background: var(--green);
     border-radius: 50px;
-    color: #1b4332;
+    color: var(--brown);
     font-size: 1.05rem;
     font-weight: 800;
     text-decoration: none;
@@ -595,22 +481,20 @@ import img8 from "../assets/instalaciones/8.jpg";
       background 0.2s,
       transform 0.2s,
       box-shadow 0.2s;
-    box-shadow: 0 4px 20px rgba(82, 183, 136, 0.3);
+    box-shadow: 0 4px 20px rgba(149, 188, 58, 0.3);
   }
   .cta-fotos:hover {
-    background: #74c69d;
+    background: white;
+    color: var(--brown);
     transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(82, 183, 136, 0.4);
+    box-shadow: 0 8px 28px rgba(255, 255, 255, 0.4);
   }
   .cta-fotos svg {
-    stroke: #1b4332;
+    stroke: var(--brown);
   }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    .blocks__timeline {
-      display: none;
-    }
     .inst__wave {
       display: none;
     }
@@ -629,20 +513,8 @@ import img8 from "../assets/instalaciones/8.jpg";
       order: 1;
     }
 
-    .block__photo-overlay--right,
-    .block__photo-overlay--left {
-      background: linear-gradient(
-        to bottom,
-        transparent 50%,
-        rgba(27, 67, 50, 0.98)
-      );
-    }
-
     .block__text {
       padding: 2rem 1.75rem;
-    }
-    .block__text p {
-      max-width: 100%;
     }
   }
 

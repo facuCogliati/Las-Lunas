@@ -5,539 +5,557 @@ import img3 from "../assets/conocenos/3.png";
 import img4 from "../assets/conocenos/4.jpg";
 import img5 from "../assets/conocenos/5.jpg";
 import img6 from "../assets/conocenos/6.jpg";
-// import img7 from "../assets/conocenos/7.jpg";
 import img8 from "../assets/conocenos/8.jpeg";
 
-const images = [
-  { src: img1.src, alt: "Equipo Las Lunas" },
-  { src: img2.src, alt: "Instalaciones" },
-  { src: img3.src, alt: "Mascota feliz" },
-  { src: img4.src, alt: "Cuidado de mascotas" },
-  { src: img5.src, alt: "Juegos al aire libre" },
-  { src: img6.src, alt: "Atención personalizada" },
-  // { src: img7.src, alt: "Área verde" },
-  { src: img8.src, alt: "Familia Las Lunas" },
+const collageImages = [
+  { src: img1.src, class: "pic-1", rot: "-3deg" },
+  { src: img2.src, class: "pic-2", rot: "2deg" },
+  { src: img3.src, class: "pic-3", rot: "-2deg" },
+  { src: img4.src, class: "pic-4", rot: "4deg" },
+  { src: img5.src, class: "pic-5", rot: "-4deg" },
+  { src: img6.src, class: "pic-6", rot: "1deg" },
+  { src: img8.src, class: "pic-7", rot: "3deg" },
 ];
 ---
 
 <section id="conocenos" class="section conocenos">
-  <div class="container">
-    <div class="conocenos__header reveal">
-      <div class="header-badge">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M12 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-4.5 2.5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm9 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM6.5 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm11 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-5.5 1c-2.8 0-5.3 1.9-6.3 4.5-.4 1.1-.3 2.5.4 3.5.7 1 1.9 1.5 3.1 1.5 1 0 2-.4 2.8-1 .7-.5 1.5-.5 2.2 0 .8.6 1.8 1 2.8 1 1.2 0 2.4-.5 3.1-1.5.7-1 .8-2.4.4-3.5-1-2.6-3.5-4.5-6.3-4.5z"
-          ></path>
-        </svg>
-        <span>QUIÉNES SOMOS</span>
-      </div>
+  <svg class="bg-deco deco-tl" viewBox="0 -2 60 45" aria-hidden="true"
+    ><g fill="currentColor"
+      ><ellipse cx="12" cy="6" rx="5" ry="6"></ellipse><ellipse
+        cx="26"
+        cy="4"
+        rx="4"
+        ry="5"></ellipse><ellipse cx="39" cy="6" rx="4" ry="5"
+      ></ellipse><ellipse cx="51" cy="8" rx="3.5" ry="4.5"></ellipse><ellipse
+        cx="30"
+        cy="28"
+        rx="14"
+        ry="13"></ellipse></g
+    ></svg
+  >
+  <svg class="bg-deco deco-tr" viewBox="0 -2 60 45" aria-hidden="true"
+    ><g fill="currentColor"
+      ><ellipse cx="12" cy="6" rx="5" ry="6"></ellipse><ellipse
+        cx="26"
+        cy="4"
+        rx="4"
+        ry="5"></ellipse><ellipse cx="39" cy="6" rx="4" ry="5"
+      ></ellipse><ellipse cx="51" cy="8" rx="3.5" ry="4.5"></ellipse><ellipse
+        cx="30"
+        cy="28"
+        rx="14"
+        ry="13"></ellipse></g
+    ></svg
+  >
+  <svg class="bg-deco deco-ml" viewBox="0 -2 60 45" aria-hidden="true"
+    ><g fill="currentColor"
+      ><ellipse cx="12" cy="6" rx="5" ry="6"></ellipse><ellipse
+        cx="26"
+        cy="4"
+        rx="4"
+        ry="5"></ellipse><ellipse cx="39" cy="6" rx="4" ry="5"
+      ></ellipse><ellipse cx="51" cy="8" rx="3.5" ry="4.5"></ellipse><ellipse
+        cx="30"
+        cy="28"
+        rx="14"
+        ry="13"></ellipse></g
+    ></svg
+  >
+  <svg class="bg-deco deco-br" viewBox="0 -2 60 45" aria-hidden="true"
+    ><g fill="currentColor"
+      ><ellipse cx="12" cy="6" rx="5" ry="6"></ellipse><ellipse
+        cx="26"
+        cy="4"
+        rx="4"
+        ry="5"></ellipse><ellipse cx="39" cy="6" rx="4" ry="5"
+      ></ellipse><ellipse cx="51" cy="8" rx="3.5" ry="4.5"></ellipse><ellipse
+        cx="30"
+        cy="28"
+        rx="14"
+        ry="13"></ellipse></g
+    ></svg
+  >
 
-      <div class="header-two-col">
-        <div class="header-left">
-          <h2>Amantes de los <span class="text-accent">animales</span></h2>
-          <p class="header-body">
-            En Las Lunas trabajamos de manera profesional y responsable. Nuestro
-            objetivo es que vos te sientas tranquilo al dejarnos a tu mascota, y
-            que ella esté cuidada, segura y feliz durante su estadía.
-          </p>
-        </div>
-        <div class="desc-highlight">
-          <p>
-            Queremos ser tu aliado en su educación y bienestar, acompañándote
-            con atención a medida.
-          </p>
-        </div>
-      </div>
+  <div class="container relative-z">
+    <div class="header-badge reveal">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M12 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-4.5 2.5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm9 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM6.5 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm11 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-5.5 1c-2.8 0-5.3 1.9-6.3 4.5-.4 1.1-.3 2.5.4 3.5.7 1 1.9 1.5 3.1 1.5 1 0 2-.4 2.8-1 .7-.5 1.5-.5 2.2 0 .8.6 1.8 1 2.8 1 1.2 0 2.4-.5 3.1-1.5.7-1 .8-2.4.4-3.5-1-2.6-3.5-4.5-6.3-4.5z"
+        ></path>
+      </svg>
+      <span>QUIÉNES SOMOS</span>
     </div>
 
-    <!-- CARRUSEL INFINITO -->
-    <div class="carousel-wrapper reveal" style="transition-delay: 0.1s;">
-      <div class="carousel-track">
-        <!-- Primera pasada -->
-        {
-          images.map((img) => (
-            <div class="carousel-item">
-              <img src={img.src} alt={img.alt} loading="lazy" />
-            </div>
-          ))
-        }
-        <!-- Segunda pasada (clon para el loop infinito) -->
-        {
-          images.map((img) => (
-            <div class="carousel-item" aria-hidden="true">
-              <img src={img.src} alt="" loading="lazy" />
-            </div>
-          ))
-        }
-      </div>
-    </div>
+    <div class="conocenos__layout">
+      <div class="conocenos__text-col reveal">
+        <p class="conocenos__main-text">
+          En Las Lunas somos <strong>amantes de los animales</strong>,
+          trabajamos de manera <strong>profesional y responsable</strong>.<br
+          /><br />
+          Nuestro objetivo es que vos te sientas <strong>tranquilo</strong> al dejarnos
+          a tu mascota, y que ella esté <strong>cuidada, segura y feliz</strong> durante
+          su estadía. Queremos ser tu aliado en su educación y bienestar, acompañándote
+          con atención a medida.
+        </p>
 
-    <!-- BENTO GRID — sin cambios -->
-    <div class="bento-grid">
-      <div
-        class="bento-item stat-card card-dark reveal"
-        style="transition-delay: 0.2s;"
-      >
-        <span class="stat-icon dark-icon">
-          <svg
-            width="32"
-            height="32"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-            <line x1="16" y1="2" x2="16" y2="6"></line>
-            <line x1="8" y1="2" x2="8" y2="6"></line>
-            <line x1="3" y1="10" x2="21" y2="10"></line>
-          </svg>
-        </span>
-        <div class="stat-text">
-          <span class="stat-number">1985</span>
-          <span class="stat-label">Desde este año<br />cuidando mascotas</span>
+        <div class="valores-section">
+          <h3>Nuestros valores</h3>
+          <ul class="valores__list">
+            <li>
+              <div class="val-icon">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="3"
+                  ><polyline points="20 6 9 17 4 12"></polyline></svg
+                >
+              </div>
+              <p><strong>Ética</strong> en cada decisión.</p>
+            </li>
+            <li>
+              <div class="val-icon">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="3"
+                  ><polyline points="20 6 9 17 4 12"></polyline></svg
+                >
+              </div>
+              <p><strong>Respeto</strong> y buen trato con las personas.</p>
+            </li>
+            <li>
+              <div class="val-icon">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="3"
+                  ><polyline points="20 6 9 17 4 12"></polyline></svg
+                >
+              </div>
+              <p><strong>Cuidado y amor</strong> por los animales.</p>
+            </li>
+          </ul>
         </div>
       </div>
 
-      <div
-        class="bento-item stat-card card-accent reveal"
-        style="transition-delay: 0.3s;"
-      >
-        <span class="stat-icon accent-icon">
-          <svg
-            width="32"
-            height="32"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path
-              d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"
-            ></path>
-            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
-          </svg>
-        </span>
-        <div class="stat-text">
-          <span class="stat-number">6000m²</span>
-          <span class="stat-label">De pura naturaleza<br />y área verde</span>
+      <div class="conocenos__stats-col">
+        <div class="stat-box box-brown reveal" style="transition-delay: 0.1s;">
+          <span class="stat-number">Desde 1985</span>
+          <span class="stat-label">cuidando mascotas</span>
         </div>
-      </div>
-
-      <div
-        class="bento-item stat-card card-white reveal"
-        style="transition-delay: 0.4s;"
-      >
-        <span class="stat-icon outline-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-            ></path>
-            <circle cx="7.5" cy="5.5" r="1.5"></circle>
-            <circle cx="16.5" cy="5.5" r="1.5"></circle>
-            <circle cx="11" cy="4" r="1.5"></circle>
-          </svg>
-        </span>
-        <div class="stat-text">
+        <div class="stat-box box-green reveal" style="transition-delay: 0.2s;">
+          <span class="stat-number">6000 m²</span>
+          <span class="stat-label">De área verde</span>
+        </div>
+        <div class="stat-box box-white reveal" style="transition-delay: 0.3s;">
           <span class="stat-number text-green">100%</span>
-          <span class="stat-label">Atención personalizada<br />y familiar</span>
+          <span class="stat-label">Atención personalizada</span>
         </div>
       </div>
+    </div>
 
-      <div
-        class="bento-item valores-card reveal"
-        style="transition-delay: 0.5s;"
-      >
-        <h3>Nuestros valores</h3>
-        <ul class="valores__list">
-          <li>
-            <div class="val-icon">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="var(--white)"
-                stroke-width="3"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
+    <div class="collage-wrapper reveal">
+      <div class="collage-grid">
+        {
+          collageImages.map((img, index) => (
+            <div
+              class={`polaroid ${img.class}`}
+              style={`--rot: ${img.rot}; transition-delay: ${index * 0.1}s;`}
+            >
+              <div class="polaroid-tape" />
+
+              <div class="polaroid-inner">
+                <img src={img.src} alt="Mascotas en Las Lunas" loading="lazy" />
+              </div>
+
+              <div class="polaroid-frame-deco">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-4.5 2.5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm9 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM6.5 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm11 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-5.5 1c-2.8 0-5.3 1.9-6.3 4.5-.4 1.1-.3 2.5.4 3.5.7 1 1.9 1.5 3.1 1.5 1 0 2-.4 2.8-1 .7-.5 1.5-.5 2.2 0 .8.6 1.8 1 2.8 1 1.2 0 2.4-.5 3.1-1.5.7-1 .8-2.4.4-3.5-1-2.6-3.5-4.5-6.3-4.5z" />
+                </svg>
+              </div>
             </div>
-            <p><strong>Ética</strong> en cada decisión que tomamos.</p>
-          </li>
-          <li>
-            <div class="val-icon">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="var(--white)"
-                stroke-width="3"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-            </div>
-            <p><strong>Respeto</strong> y buen trato con las personas.</p>
-          </li>
-          <li>
-            <div class="val-icon">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="var(--white)"
-                stroke-width="3"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-            </div>
-            <p>
-              <strong>Cuidado y amor</strong> incondicional por los animales.
-            </p>
-          </li>
-        </ul>
+          ))
+        }
       </div>
+    </div>
 
-      <div class="bento-item video-card reveal" style="transition-delay: 0.6s;">
+    <div class="video-section reveal">
+      <div class="video-card">
         <iframe
           src="https://www.youtube.com/embed/uVR_vt05V00?si=HzGvff6rUsIleZQq"
           title="Video institucional Las Lunas"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen></iframe>
+          allowfullscreen
+        >
+        </iframe>
       </div>
     </div>
   </div>
 </section>
 
 <style>
+  :root {
+    --green: #95bc3a;
+    --brown: #4a3f35;
+    --off-white: #fbfbf9;
+  }
+
   .conocenos {
-    background: var(--white);
-    padding: 6rem 0;
+    background: var(--off-white);
+    padding: 8rem 0;
     position: relative;
+    overflow: hidden;
+  }
+
+  .relative-z {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ── DECORACIÓN DE FONDO ── */
+  .bg-deco {
+    position: absolute;
+    color: var(--green);
+    /* opacity: 0.06; */
+    pointer-events: none;
+    z-index: 1;
+  }
+  .deco-tl {
+    top: 2%;
+    left: 20%;
+    width: 200px;
+    transform: rotate(-15deg);
+  }
+  .deco-tr {
+    top: 10%;
+    right: 20%;
+    width: 180px;
+    transform: rotate(20deg);
+  }
+  .deco-ml {
+    top: 45%;
+    left: 15%;
+    width: 200px;
+    transform: rotate(10deg);
+    /* opacity: 0.04; */
+  }
+  .deco-br {
+    bottom: 15%;
+    right: 20%;
+    width: 220px;
+    transform: rotate(-10deg);
   }
 
   /* ── HEADER ── */
-  .conocenos__header {
-    margin-bottom: 4rem;
-  }
-
   .header-badge {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     padding: 6px 16px;
-    background: var(--green-pale);
-    border: 1px solid rgba(45, 106, 79, 0.1);
+    background: rgba(149, 188, 58, 0.15);
+    border: 1px solid rgba(149, 188, 58, 0.3);
     border-radius: 50px;
-    color: var(--green-dark);
+    color: var(--brown);
     font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    margin-bottom: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
   }
 
-  /* Dos columnas: título+texto | destacado */
-  .header-two-col {
-    display: flex;
-    align-items: flex-start;
-    gap: 7rem;
-  }
-
-  .header-left {
-    /* flex: 1; */
-  }
-
-  .header-left h2 {
-    /* hereda estilos globales de h2 */
-    margin-bottom: 1rem;
-  }
-
-  .text-accent {
-    color: var(--accent);
-  }
-
-  .header-body {
-    color: var(--gray-mid);
-    font-size: 1.1rem;
-    line-height: 1.7;
-    max-width: 560px;
-  }
-
-  .desc-highlight {
-    flex: 0 0 280px;
-    padding: 1.5rem;
-    background: var(--green-pale);
-    border-left: 4px solid var(--accent);
-    border-radius: 0 var(--radius) var(--radius) 0;
-    align-self: center;
-  }
-  .desc-highlight p {
-    color: var(--green-dark);
-    font-weight: 500;
-    margin: 0;
-    font-size: 1rem;
-    line-height: 1.65;
-  }
-
-  /* ── CARRUSEL INFINITO ── */
-  .carousel-wrapper {
-    /* Desborda el container para ir de borde a borde */
-    width: 70vw;
-    margin-left: calc(50% - 35vw);
-    overflow: hidden;
-    margin-bottom: 5rem;
-
-    /* Fade en los bordes */
-    /* -webkit-mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      black 8%,
-      black 92%,
-      transparent 100%
-    );
-    mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      black 8%,
-      black 92%,
-      transparent 100%
-    ); */
-  }
-
-  .carousel-track {
-    display: flex;
-    gap: 14px;
-    width: max-content;
-    /* Velocidad: ajustá los segundos a gusto (más = más lento) */
-    animation: slide-infinite 32s linear infinite;
-  }
-
-  /* Pausa al hacer hover para que el usuario pueda ver bien una foto */
-  .carousel-wrapper:hover .carousel-track {
-    animation-play-state: paused;
-  }
-
-  .carousel-item {
-    flex-shrink: 0;
-    width: 340px;
-    height: 500px;
-    /* border-radius: var(--radius-lg); */
-    overflow: hidden;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
-  }
-
-  .carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-    display: block;
-  }
-
-  .carousel-wrapper:hover .carousel-item img {
-    transform: scale(1.04);
-  }
-
-  @keyframes slide-infinite {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      /* Mueve exactamente la mitad del track (los 8 originales) para el loop perfecto */
-      transform: translateX(calc(-50% - 7px));
-    }
-  }
-
-  /* Reduce movimiento si el usuario lo prefiere */
-  @media (prefers-reduced-motion: reduce) {
-    .carousel-track {
-      animation: none;
-    }
-  }
-
-  /* ── BENTO GRID — igual que antes ── */
-  .bento-grid {
+  .conocenos__layout {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  @media (min-width: 900px) {
-    .bento-grid {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto auto;
-    }
-    .valores-card {
-      grid-column: 1 / 2;
-    }
-    .video-card {
-      grid-column: 2 / 4;
-    }
-  }
-
-  .bento-item {
-    border-radius: var(--radius-lg);
-    padding: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
-  }
-  .bento-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-  }
-
-  .stat-card {
-    flex-direction: row;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 5rem;
     align-items: center;
-    gap: 1.5rem;
-  }
-  .stat-icon {
-    font-size: 2.5rem;
-    width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px;
-    flex-shrink: 0;
-  }
-  .stat-text {
-    display: flex;
-    flex-direction: column;
-  }
-  .stat-number {
-    font-size: 2.5rem;
-    font-family: var(--font-display);
-    font-weight: 800;
-    line-height: 1;
-    margin-bottom: 0.25rem;
-  }
-  .stat-label {
-    font-size: 0.95rem;
-    line-height: 1.4;
-    font-weight: 500;
+    margin-bottom: 6rem;
   }
 
-  .card-dark {
-    background: var(--green-dark);
-    color: var(--white);
+  .conocenos__main-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--gray-dark);
   }
-  .card-dark .dark-icon {
-    background: rgba(255, 255, 255, 0.1);
-  }
-  .card-dark .stat-label {
-    color: var(--green-pale);
+  .conocenos__main-text strong {
+    color: var(--green);
   }
 
-  .card-accent {
-    background: var(--accent);
-    color: var(--green-dark);
+  .valores-section {
+    margin-top: 2.5rem;
   }
-  .card-accent .accent-icon {
-    background: rgba(255, 255, 255, 0.3);
-  }
-  .card-accent .stat-label {
-    color: var(--green-dark);
-    opacity: 0.8;
-  }
-
-  .card-white {
-    background: var(--white);
-    color: var(--black);
-    border: 2px solid var(--green-pale);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  }
-  .card-white .outline-icon {
-    background: var(--green-pale);
-  }
-  .card-white .stat-label {
-    color: var(--gray-mid);
-  }
-
-  .valores-card {
-    background: var(--white);
-    border: 1px solid rgba(0, 0, 0, 0.03);
-    padding: 2.5rem;
-    justify-content: flex-start;
-  }
-  .valores-card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-    color: var(--green-dark);
+  .valores-section h3 {
+    font-size: 1.5rem;
+    color: var(--brown);
+    margin-bottom: 1.2rem;
   }
   .valores__list {
     list-style: none;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
   }
   .valores__list li {
     display: flex;
-    align-items: flex-start;
-    gap: 15px;
+    align-items: center;
+    gap: 12px;
   }
   .val-icon {
     background: var(--green);
     border-radius: 50%;
-    width: 32px;
-    height: 32px;
+    width: 26px;
+    height: 26px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    margin-top: 2px;
   }
   .valores__list p {
     font-size: 1.05rem;
     color: var(--gray-dark);
-    line-height: 1.5;
+    margin: 0;
+  }
+  .valores__list strong {
+    color: var(--green);
   }
 
-  .video-card {
-    padding: 0;
-    overflow: hidden;
-    aspect-ratio: 16/9;
-    border-radius: var(--radius-lg);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  .conocenos__stats-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
   }
-  .video-card iframe {
+  .stat-box {
+    padding: 1.5rem 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease;
+  }
+  .stat-box:hover {
+    transform: translateY(-5px);
+  }
+  .stat-number {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.2rem;
+    display: block;
+  }
+  .stat-label {
+    font-size: 1rem;
+    font-weight: 500;
+    opacity: 0.9;
+  }
+
+  .box-brown {
+    background: var(--brown);
+    color: white;
+  }
+  .box-green {
+    background: var(--green);
+    color: var(--brown);
+  }
+  .box-white {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    color: var(--gray-dark);
+  }
+  .text-green {
+    color: var(--green) !important;
+  }
+
+  /* ── COLLAGE POLAROID ── */
+  .collage-wrapper {
+    margin: 4rem 0 8rem;
+    padding: 2rem 0;
+  }
+
+  .collage-grid {
+    position: relative;
+    /* Aumenté la altura y el ancho para darle lugar a las fotos más grandes */
+    height: 700px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .polaroid {
+    position: absolute;
+    background: white;
+    padding: 14px 14px 45px 14px; /* Marco apenas más grueso */
+    box-shadow: 0 15px 35px rgba(74, 63, 53, 0.15);
+    transform: rotate(var(--rot));
+    transition:
+      transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+      z-index 0s;
+    width: 320px; /* AUMENTADO de 280 a 320 */
+  }
+
+  .polaroid:hover {
+    transform: rotate(0deg) scale(1.08); /* Scale apenas ajustado porque ya es grande */
+    z-index: 50;
+    box-shadow: 0 25px 50px rgba(74, 63, 53, 0.25);
+  }
+
+  /* ── DECORACIONES DEL MARCO BLANCO ── */
+  /* Cinta adhesiva arriba */
+  .polaroid-tape {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    width: 90px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    backdrop-filter: blur(3px);
+    /* Le da una textura sutil a la cinta */
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(220, 220, 220, 0.4) 50%,
+      rgba(255, 255, 255, 0.1) 100%
+    );
+  }
+
+  /* SVG (Patita) abajo en el margen blanco */
+  .polaroid-frame-deco {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 22px;
+    height: 22px;
+    color: var(--green); /* Color verde principal */
+    opacity: 0.85;
+  }
+  .polaroid-frame-deco svg {
     width: 100%;
     height: 100%;
   }
 
+  .polaroid-inner {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: #eee;
+  }
+
+  .polaroid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Posicionamiento ajustado para el nuevo tamaño de 320px */
+  .pic-1 {
+    top: 0px;
+    left: 0%;
+    z-index: 1;
+  }
+  .pic-2 {
+    top: 60px;
+    left: 20%;
+    z-index: 5;
+  }
+  .pic-3 {
+    top: -10px;
+    left: 40%;
+    z-index: 2;
+  }
+  .pic-4 {
+    top: 40px;
+    left: 65%;
+    z-index: 4;
+  }
+  .pic-5 {
+    top: 320px;
+    left: 8%;
+    z-index: 3;
+  }
+  .pic-6 {
+    top: 290px;
+    left: 35%;
+    z-index: 6;
+  }
+  .pic-7 {
+    top: 340px;
+    left: 62%;
+    z-index: 2;
+  }
+  /* ── VIDEO SECCIÓN ── */
+  .video-section {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .video-card {
+    aspect-ratio: 16/9;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(74, 63, 53, 0.2);
+  }
+  .video-card iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
   /* ── RESPONSIVE ── */
-  @media (max-width: 899px) {
-    .header-two-col {
-      flex-direction: column;
-      gap: 1.5rem;
+  @media (max-width: 992px) {
+    /* 1. Escondemos la decoración de fondo para limpiar la lectura en mobile */
+    .bg-deco {
+      display: none;
     }
-    .desc-highlight {
-      flex: unset;
-      width: 100%;
-      border-left: none;
-      border-bottom: 4px solid var(--accent);
-      border-radius: var(--radius);
+
+    .conocenos__layout {
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
     }
-    .carousel-item {
-      width: 260px;
-      height: 200px;
-    }
-    .stat-card {
-      flex-direction: column;
-      align-items: flex-start;
+
+    .conocenos__stats-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1rem;
+    }
+
+    /* 2. Arreglo del Collage para Mobile */
+    .collage-grid {
+      height: auto;
+      display: flex;
+      flex-direction: column; /* Las apilamos verticalmente */
+      align-items: center;
+      gap: 3.5rem; /* Espacio entre cada foto apilada */
+      padding: 1rem 0;
+    }
+
+    .polaroid {
+      position: relative; /* Anula el absolute de PC */
+      width: 85%;
+      max-width: 320px;
+      /* Reseteamos las posiciones para que no se desordenen */
+      top: auto !important;
+      left: auto !important;
+      /* Reducimos la rotación a la mitad para que no se salgan de la pantalla */
+      transform: rotate(calc(var(--rot) * 0.5));
+    }
+
+    .polaroid:hover {
+      transform: rotate(0deg) scale(1.03); /* Hover más sutil en táctil/tablet */
+    }
+  }
+
+  @media (max-width: 600px) {
+    .polaroid {
+      width: 92%; /* Aprovechamos más el ancho en celulares chicos */
+      max-width: 340px;
     }
   }
 </style>
