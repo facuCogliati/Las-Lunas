@@ -85,9 +85,7 @@ const testimonios = [
         </svg>
         <span>OPINIONES REALES</span>
       </div>
-      <h2>
-        Testimonios que <span class="text-green">nos llenan de orgullo</span>
-      </h2>
+      <h2>TESTIMONIOS</h2>
     </div>
 
     <div
@@ -106,7 +104,6 @@ const testimonios = [
                 </div>
                 <div class="testi-footer">
                   <div class="testi-avatar">
-                    {/* LÓGICA DE LA FOTO AQUÍ */}
                     {t.foto ? (
                       <img
                         src={t.foto}
@@ -119,9 +116,7 @@ const testimonios = [
                   </div>
                   <div>
                     <strong class="testi-autor">{t.autor}</strong>
-                    <span class="testi-meta">
-                      Mascota: {t.mascotas} · {t.año}
-                    </span>
+                    <span class="testi-meta">{t.año}</span>
                   </div>
                 </div>
               </article>
@@ -152,24 +147,6 @@ const testimonios = [
             stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg
           >
         </button>
-      </div>
-    </div>
-
-    <div class="stars-badge reveal" style="transition-delay: 0.2s;">
-      <div class="stars-content">
-        <div class="stars-group">
-          <div class="stars">
-            {[1, 2, 3, 4, 5].map(() => <span class="star">★</span>)}
-          </div>
-          <p>40 años de trayectoria impecable</p>
-        </div>
-        <div class="stars-divider"></div>
-        <div class="stars-group">
-          <div class="stars">
-            {[1, 2, 3, 4, 5].map(() => <span class="star">★</span>)}
-          </div>
-          <p>+500 familias confían sus mascotas</p>
-        </div>
       </div>
     </div>
   </div>
@@ -293,22 +270,21 @@ const testimonios = [
   }
 
   .testi-avatar {
-    width: 56px;
-    height: 56px;
+    width: 84px; /* AGREGADO: Foto mucho más grande */
+    height: 84px; /* AGREGADO: Foto mucho más grande */
     border-radius: 50%;
     background: var(--accent);
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-size: 1.3rem;
+    font-size: 2rem; /* AGREGADO: Letra más grande por si no hay foto */
     color: var(--green-dark);
     flex-shrink: 0;
     font-family: var(--font-display);
-    overflow: hidden; /* AGREGADO: Para que la foto no se salga del círculo */
+    overflow: hidden; /* Para que la foto no se salga del círculo */
   }
 
-  /* AGREGADO: Estilo para la imagen dentro del círculo */
   .avatar-img {
     width: 100%;
     height: 100%;
@@ -335,7 +311,6 @@ const testimonios = [
     justify-content: center;
     gap: 1.5rem;
     margin-top: 2.5rem; /* Margen estándar respecto al viewport */
-    /* No hay margin-top gigante en media queries */
   }
 
   .testi-btn {
