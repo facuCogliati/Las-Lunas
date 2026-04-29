@@ -7,6 +7,8 @@ import img5 from "../assets/instalaciones/5.png";
 import img6 from "../assets/instalaciones/6.png";
 import img7 from "../assets/instalaciones/7.jpg";
 import img8 from "../assets/instalaciones/8.jpg";
+import img9 from "../assets/instalaciones/9.jpg";
+import img10 from "../assets/instalaciones/10.jpg";
 ---
 
 <section id="instalaciones" class="section instalaciones">
@@ -38,34 +40,22 @@ import img8 from "../assets/instalaciones/8.jpg";
       stroke="var(--green)"
       stroke-width="1"></circle>
     <g transform="translate(1280,40) rotate(-15) scale(2)" fill="var(--green)">
-      <ellipse cx="12" cy="6" rx="5" ry="6"></ellipse><ellipse
-        cx="26"
-        cy="4"
-        rx="4"
-        ry="5"></ellipse>
-      <ellipse cx="39" cy="6" rx="4" ry="5"></ellipse><ellipse
-        cx="51"
-        cy="8"
-        rx="3.5"
-        ry="4.5"></ellipse>
+      <ellipse cx="12" cy="6" rx="5" ry="6"></ellipse>
+      <ellipse cx="26" cy="4" rx="4" ry="5"></ellipse>
+      <ellipse cx="39" cy="6" rx="4" ry="5"></ellipse>
+      <ellipse cx="51" cy="8" rx="3.5" ry="4.5"></ellipse>
       <ellipse cx="30" cy="28" rx="14" ry="13"></ellipse>
     </g>
     <g transform="translate(40,750) rotate(10) scale(1.5)" fill="var(--green)">
-      <ellipse cx="12" cy="6" rx="5" ry="6"></ellipse><ellipse
-        cx="26"
-        cy="4"
-        rx="4"
-        ry="5"></ellipse>
-      <ellipse cx="39" cy="6" rx="4" ry="5"></ellipse><ellipse
-        cx="51"
-        cy="8"
-        rx="3.5"
-        ry="4.5"></ellipse>
+      <ellipse cx="12" cy="6" rx="5" ry="6"></ellipse>
+      <ellipse cx="26" cy="4" rx="4" ry="5"></ellipse>
+      <ellipse cx="39" cy="6" rx="4" ry="5"></ellipse>
+      <ellipse cx="51" cy="8" rx="3.5" ry="4.5"></ellipse>
       <ellipse cx="30" cy="28" rx="14" ry="13"></ellipse>
     </g>
   </svg>
 
-  <svg
+  <!-- <svg
     class="inst__wave"
     viewBox="0 0 1200 4200"
     xmlns="http://www.w3.org/2000/svg"
@@ -76,29 +66,45 @@ import img8 from "../assets/instalaciones/8.jpg";
       <style>
         .inst-wave-path {
           fill: none;
+
           stroke: var(--green);
+
           stroke-linecap: round;
+
           stroke-linejoin: round;
+
           stroke-width: 4px;
+
           stroke-dasharray: 0.33 18;
+
           opacity: 1; /* Opacidad al 100% para que sea nítida */
         }
       </style>
     </defs>
+
     <path
       class="inst-wave-path"
       d="
+
       M 100 600
+
       C 50 300, 1050 300, 1100 600
+
       C 1150 900, 80 900, 60 1200
+
       C 40 1500, 1100 1500, 1120 1800
+
       C 1140 2100, 60 2100, 80 2400
+
       C 100 2700, 1100 2700, 1080 3000
+
       C 1060 3300, 100 3300, 120 3600
+
       C 140 3900, 600 3950, 600 4200
+
     "
     ></path>
-  </svg>
+  </svg> -->
 
   <div class="container Relative-z">
     <div class="inst__header reveal">
@@ -110,7 +116,7 @@ import img8 from "../assets/instalaciones/8.jpg";
         </svg>
         NUESTRO PREDIO
       </div>
-      <h2>Instalaciones <span class="text-accent">de primer nivel</span></h2>
+      <h2>Nuestras <span class="text-accent">Instalaciones</span></h2>
     </div>
 
     <div class="blocks reveal" style="transition-delay:0.1s">
@@ -119,14 +125,12 @@ import img8 from "../assets/instalaciones/8.jpg";
           <img src={img1.src} alt="Predio Las Lunas" loading="lazy" />
         </div>
         <div class="block__text" style="border-top: 2px solid white;">
-          <span class="block__num">—</span>
           <h3>Predio 6.000 m² de área verde</h3>
         </div>
       </div>
 
       <div class="block block--right">
         <div class="block__text">
-          <span class="block__num">—</span>
           <h3>Arboleda y pileta</h3>
         </div>
         <div class="block__photo">
@@ -139,14 +143,12 @@ import img8 from "../assets/instalaciones/8.jpg";
           <img src={img3.src} alt="Zonas techadas" loading="lazy" />
         </div>
         <div class="block__text">
-          <span class="block__num">—</span>
           <h3>Zonas techadas</h3>
         </div>
       </div>
 
       <div class="block block--right">
         <div class="block__text">
-          <span class="block__num">—</span>
           <h3>Gateras ambientadas con casitas y troncos</h3>
         </div>
         <div class="block__photo">
@@ -154,59 +156,12 @@ import img8 from "../assets/instalaciones/8.jpg";
         </div>
       </div>
 
-      <!-- <div class="block block--left">
+      <div class="block block--left">
         <div class="block__photo">
-          <img src={img5.src} alt="Área de juego" loading="lazy" />
+          <img src={img9.src} alt="Predio en Pilar" loading="lazy" />
         </div>
         <div class="block__text">
-          <span class="block__num">—</span>
-          <h3>Área de juego y socialización</h3>
-        </div>
-      </div>
-
-      <div class="block block--right">
-        <div class="block__text">
-          <span class="block__num">—</span>
-          <h3>Atención personalizada</h3>
-        </div>
-        <div class="block__photo">
-          <img src={img7.src} alt="Atención personalizada" loading="lazy" />
-        </div>
-      </div> -->
-
-      <!-- <div class="block block--left">
-        <div class="block__photo">
-          <img src={img8.src} alt="Área de descanso" loading="lazy" />
-        </div>
-        <div class="block__text">
-          <span class="block__num">—</span>
-          <h3>Área de descanso</h3>
-        </div>
-      </div>
-
-      <div class="block block--right">
-        <div class="block__text">
-          <span class="block__num">—</span>
-          <h3>Vista general del predio</h3>
-        </div>
-        <div class="block__photo">
-          <img src={img6.src} alt="Vista general" loading="lazy" />
-        </div>
-      </div> -->
-
-      <div class="block block--left block--location">
-        <div class="block__photo block__photo--map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3287.9!2d-58.8166836!3d-34.4621712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc99eed1e02425%3A0x3fffff070ad29f91!2sLas%20Lunas%20Hospedaje!5e0!3m2!1ses!2sar!4v1"
-            width="100%"
-            height="100%"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <div class="block__text">
-          <span class="block__num block__num--location">
+          <span class="block__location-badge">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path
                 d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
@@ -226,9 +181,9 @@ import img8 from "../assets/instalaciones/8.jpg";
         </div>
       </div>
 
-      <div class="block block--right block--location">
+      <div class="block block--right">
         <div class="block__text" style="border-bottom: 2px solid white;">
-          <span class="block__num block__num--location">
+          <span class="block__location-badge">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path
                 d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
@@ -246,15 +201,12 @@ import img8 from "../assets/instalaciones/8.jpg";
             Cómo llegar →
           </a>
         </div>
-        <div class="block__photo block__photo--map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3288.9!2d-58.528356!3d-34.4812534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb1f12ef8f6d9%3A0xde855bf6d08d05bf!2sLas%20Lunas%20-%20Oficina!5e0!3m2!1ses!2sar!4v1"
-            width="100%"
-            height="100%"
-            style="border:0;"
-            allowfullscreen=""
+        <div class="block__photo">
+          <img
+            src={img10.src}
+            alt="Oficina atención al cliente"
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+          />
         </div>
       </div>
     </div>
@@ -288,7 +240,7 @@ import img8 from "../assets/instalaciones/8.jpg";
 
   .instalaciones {
     background: #1b4332; /* Fondo verde oscuro */
-    padding: 6rem 0;
+    padding: 4rem 0; /* Reducido de 6rem a 4rem */
     position: relative;
     overflow: hidden;
   }
@@ -302,17 +254,6 @@ import img8 from "../assets/instalaciones/8.jpg";
     z-index: 0;
   }
 
-  /* ── LÍNEA ONDULADA ── */
-  .inst__wave {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-    overflow: visible;
-  }
-
   .Relative-z {
     position: relative;
     z-index: 1;
@@ -320,7 +261,7 @@ import img8 from "../assets/instalaciones/8.jpg";
 
   /* ── HEADER ── */
   .inst__header {
-    margin-bottom: 3.5rem;
+    margin-bottom: 2.5rem; /* Reducido para ahorrar espacio */
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -340,7 +281,7 @@ import img8 from "../assets/instalaciones/8.jpg";
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
   }
 
   .inst__header h2 {
@@ -362,7 +303,7 @@ import img8 from "../assets/instalaciones/8.jpg";
   .block {
     display: grid;
     grid-template-columns: 1.6fr 1fr;
-    height: 340px;
+    height: 280px; /* Reducido de 340px a 280px */
     overflow: hidden;
   }
 
@@ -387,23 +328,11 @@ import img8 from "../assets/instalaciones/8.jpg";
     transform: scale(1.04);
   }
 
-  .block__photo--map {
-    overflow: hidden;
-    filter: grayscale(30%) contrast(0.95);
-    opacity: 0.85;
-  }
-  .block__photo--map iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    display: block;
-  }
-
   .block__text {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 2.5rem 3rem;
+    padding: 1.5rem 2.5rem; /* Reducido el padding interno */
     background: #1b4332;
   }
 
@@ -415,28 +344,23 @@ import img8 from "../assets/instalaciones/8.jpg";
     border-left: 2px solid white;
   }
 
-  .block__num {
+  .block__location-badge {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-size: 1.5rem; /* Agrandado para que el guion resalte */
-    font-weight: 800;
-    color: var(--green); /* Mantiene tu color verde */
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green);
     margin-bottom: 0.5rem;
   }
 
-  .block__num--location {
-    font-size: 0.72rem; /* El texto Ubicación queda de su tamaño original */
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
   .block__text h3 {
-    font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+    font-size: clamp(1.2rem, 2vw, 1.6rem); /* Ligeramente más pequeño */
     font-weight: 900;
     color: var(--white);
-    line-height: 1.1;
-    margin-bottom: 0.9rem;
+    line-height: 1.2;
+    margin-bottom: 0; /* Quitamos el margen inferior si no hay link abajo */
     letter-spacing: -0.02em;
   }
 
@@ -444,7 +368,7 @@ import img8 from "../assets/instalaciones/8.jpg";
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    margin-top: 1.25rem;
+    margin-top: 1rem;
     color: var(--green);
     font-size: 0.9rem;
     font-weight: 700;
@@ -454,6 +378,7 @@ import img8 from "../assets/instalaciones/8.jpg";
       color 0.2s,
       gap 0.2s;
   }
+
   .block__cta-link:hover {
     color: white;
     gap: 10px;
@@ -461,7 +386,7 @@ import img8 from "../assets/instalaciones/8.jpg";
 
   /* ── CTA FOTOS ── */
   .inst__cta {
-    margin-top: 3rem;
+    margin-top: 2.5rem;
     display: flex;
     justify-content: center;
   }
@@ -483,26 +408,24 @@ import img8 from "../assets/instalaciones/8.jpg";
       box-shadow 0.2s;
     box-shadow: 0 4px 20px rgba(149, 188, 58, 0.3);
   }
+
   .cta-fotos:hover {
     background: white;
     color: var(--brown);
     transform: translateY(-2px);
     box-shadow: 0 8px 28px rgba(255, 255, 255, 0.4);
   }
+
   .cta-fotos svg {
     stroke: var(--brown);
   }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    .inst__wave {
-      display: none;
-    }
-
     .block,
     .block--right {
       grid-template-columns: 1fr;
-      grid-template-rows: 260px auto;
+      grid-template-rows: 220px auto; /* Ajuste para mobile */
       height: auto;
     }
 
@@ -514,13 +437,13 @@ import img8 from "../assets/instalaciones/8.jpg";
     }
 
     .block__text {
-      padding: 2rem 1.75rem;
+      padding: 1.5rem;
     }
   }
 
   @media (max-width: 480px) {
     .block {
-      grid-template-rows: 220px auto;
+      grid-template-rows: 180px auto; /* Aún más chico en celulares */
     }
   }
 </style>
