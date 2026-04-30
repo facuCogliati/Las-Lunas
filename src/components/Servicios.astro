@@ -35,6 +35,7 @@ const internationalImages = [
 ---
 
 <section id="servicios" class="section servicios">
+  <!-- DECORACIONES SVG (Tus SVG originales intactos) -->
   <div class="servicios__deco" aria-hidden="true">
     <svg class="deco-trail" viewBox="0 0 1440 2800" preserveAspectRatio="none">
       <path
@@ -69,6 +70,7 @@ const internationalImages = [
         ></path>
       </g>
     </svg>
+
     <svg
       class="deco-item deco-bone"
       style="top: 35%; left: 4%; width: 160px; transform: rotate(-25deg);"
@@ -156,15 +158,11 @@ const internationalImages = [
       <div class="header-two-col">
         <div class="header-left">
           <h2>Nuestros <span class="text-accent">servicios</span></h2>
-          <!-- <p class="header-body">
-            Todo lo que necesita tu mascota en un entorno seguro, natural y
-            profesional.
-          </p> -->
         </div>
       </div>
     </div>
 
-    <!-- NUEVO: CARDS A, B, C en formato Lista Horizontal con Iconos Nuevos -->
+    <!-- CARDS HORIZONTALES (A, B, C) -->
     <div class="services-horizontal-list">
       <!-- Card 1: Perros -->
       <article
@@ -227,7 +225,6 @@ const internationalImages = [
         <div class="card-left">
           <div class="service-number card-b-number">02</div>
           <div class="stat-icon green-icon">
-            <!-- Icono Gato Minimalista -->
             <svg
               width="32"
               height="32"
@@ -321,15 +318,19 @@ const internationalImages = [
       </article>
     </div>
 
+    <!-- CARD D: PROGRAMA DE ADIESTRAMIENTO (LAYOUT BALANCEADO Y SIN BOTON) -->
     <div
       class="training-full-width card-brown reveal"
       style="transition-delay: 0.4s;"
     >
       <div class="training-content-area">
-        <span class="training-badge">Programa Intensivo</span>
-        <h3 class="training-title">Programas de adiestramiento</h3>
+        <div class="training-top-header">
+          <span class="training-badge">Programa Intensivo</span>
+          <h3 class="training-title">Programas de adiestramiento</h3>
+        </div>
 
         <div class="training-main-layout">
+          <!-- Columna Izquierda: Información Mixta -->
           <div class="training-left-column">
             <div class="training-section">
               <h4 class="section-title-small">¿En qué consiste?</h4>
@@ -339,130 +340,120 @@ const internationalImages = [
               </p>
             </div>
 
-            <div class="training-section">
-              <h4 class="section-title-small">¿Qué incluye?</h4>
-              <ul class="includes-list">
-                <li>Hospedaje por 30 días.</li>
-                <li>
-                  Traslados incluidos: retiro y devolución a tu domicilio.
-                </li>
-                <li>Alimento premium durante toda la estadía.</li>
-                <li>Baños sanitarios.</li>
-                <li>Asistencia veterinaria permanente.</li>
-                <li>Informe de avances e instructivo final.</li>
-              </ul>
-            </div>
-
+            <!-- Comandos (Siempre visibles, sin números) -->
             <div class="training-section">
               <h4 class="section-title-small">
                 ¿Qué logrará con este programa?
               </h4>
-              <div class="table-responsive">
-                <table class="commands-table">
-                  <tbody>
-                    <tr>
-                      <td class="cmd-name"
-                        ><span class="cmd-num">1</span> Junto</td
-                      >
-                      <td>Camina junto al guía.</td>
-                    </tr>
-                    <tr>
-                      <td class="cmd-name"
-                        ><span class="cmd-num">2</span> Sit / Down</td
-                      >
-                      <td>Se sienta / Se echa.</td>
-                    </tr>
-                    <tr>
-                      <td class="cmd-name"
-                        ><span class="cmd-num">3</span> Stá o parado</td
-                      >
-                      <td>Se para.</td>
-                    </tr>
-                    <tr>
-                      <td class="cmd-name"
-                        ><span class="cmd-num">4</span> Vení</td
-                      >
-                      <td>Acude al llamado siempre.</td>
-                    </tr>
-                    <tr>
-                      <td class="cmd-name"
-                        ><span class="cmd-num">5</span> Varía pos.</td
-                      >
-                      <td>Se queda en las posiciones aprendidas.</td>
-                    </tr>
-                    <tr>
-                      <td class="cmd-name"
-                        ><span class="cmd-num">6</span> Off</td
-                      >
-                      <td>Aprende a no saltar sobre la gente.</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <ul class="commands-simple-grid">
+                <li>
+                  <span class="cmd-highlight">Junto</span>Camina junto al guía.
+                </li>
+                <li>
+                  <span class="cmd-highlight">Sit / Down</span>Se sienta / Se
+                  echa.
+                </li>
+                <li><span class="cmd-highlight">Stá o parado</span>Se para.</li>
+                <li>
+                  <span class="cmd-highlight">Vení</span>Acude al llamado
+                  siempre.
+                </li>
+                <li>
+                  <span class="cmd-highlight">Varía pos.</span>Se queda en
+                  posiciones.
+                </li>
+                <li>
+                  <span class="cmd-highlight">Off</span>Aprende a no saltar.
+                </li>
+              </ul>
             </div>
 
-            <div class="training-section guarantee-box-wrapper">
-              <div class="guarantee-box guarantee-accent">
-                <div class="guarantee-header">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    ><path
-                      d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"
-                    ></path></svg
-                  >
-                  <h5 class="guarantee-title">¿Qué garantiza?</h5>
+            <!-- Desplegables invisibles nativos -->
+            <div class="training-dropdowns">
+              <details class="seamless-details">
+                <summary>Ver todo lo que incluye el programa</summary>
+                <div class="details-content">
+                  <ul class="includes-list">
+                    <li>Hospedaje por 30 días.</li>
+                    <li>
+                      Traslados incluidos: retiro y devolución a tu domicilio.
+                    </li>
+                    <li>Alimento premium durante toda la estadía.</li>
+                    <li>Baños sanitarios.</li>
+                    <li>Asistencia veterinaria permanente.</li>
+                    <li>Informe de avances e instructivo final.</li>
+                  </ul>
                 </div>
-                <div class="guarantee-content">
-                  <ul class="guarantee-list">
+              </details>
+
+              <details class="seamless-details guarantee-seamless">
+                <summary>
+                  <span class="guarantee-summary-flex">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"
+                      ></path>
+                    </svg>
+                    Conocé nuestra Garantía de 3 meses
+                  </span>
+                </summary>
+                <div class="details-content">
+                  <ul class="includes-list guarantee-list-clean">
                     <li>
-                      En Las Lunas garantizamos el correcto funcionamiento de
-                      los comandos enseñados durante <strong>3 meses</strong> después
-                      de finalizado el programa.
+                      Garantizamos el correcto funcionamiento de los comandos
+                      enseñados.
+                    </li>
+                    <li>Requisito: usarlos de forma habitual en casa.</li>
+                    <li>
+                      Si alguno falla, lo volvemos a trabajar y reforzar en
+                      nuestro predio.
                     </li>
                     <li>
-                      Para que aplique, necesitamos que en casa usen los
-                      comandos de forma habitual.
-                    </li>
-                    <li>
-                      Si alguno no llegara a funcionar, lo volvemos a trabajar y
-                      reforzar en nuestro predio.
-                    </li>
-                    <li>
-                      En ese caso, te vamos a pedir que te acerques a <strong
-                        >Pilar</strong
-                      > para que puedas ver el funcionamiento de los comandos una
-                      vez resueltos.
+                      Te pediremos acercarte a Pilar para ver el funcionamiento
+                      resuelto.
                     </li>
                   </ul>
                 </div>
-              </div>
+              </details>
             </div>
           </div>
 
+          <!-- Columna Derecha: Carrusel que ocupa todo el ALTO (Agrandado) -->
           <div class="training-right-gallery">
-            <div class="gallery-grid-integrated">
+            <div class="carousel-container">
               {
                 trainingImages.map((img, index) => (
-                  <div class={`gallery-item gallery-item-${index + 1}`}>
+                  <div
+                    class={`carousel-slide ${index === 0 ? "active" : ""}`}
+                    data-index={index}
+                  >
                     <img src={img.src} alt={img.alt} loading="lazy" />
-                    {/* Solo pone número a las primeras 6 fotos */}
-                    {index < 6 && (
-                      <div class="img-cmd-badge">
-                        <span class="badge-num">{index + 1}</span>
-                      </div>
-                    )}
                   </div>
                 ))
               }
+              <div class="carousel-dots">
+                {
+                  trainingImages.map((_, index) => (
+                    <button
+                      class={`carousel-dot ${index === 0 ? "active" : ""}`}
+                      data-t-dot={index}
+                      aria-label={`Foto adiestramiento ${index + 1}`}
+                    />
+                  ))
+                }
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- CARD E: TRASLADO INTERNACIONAL (Achicada y con Carrusel) -->
     <div
       class="international-transport-card reveal"
       style="transition-delay: 0.5s;"
@@ -484,20 +475,22 @@ const internationalImages = [
         </div>
         <div class="int-header-icon">
           <svg
-            width="48"
-            height="48"
+            width="36"
+            height="36"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
             stroke-width="1.5"
-            ><path
-              d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"
-            ></path></svg
           >
+            <path
+              d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"
+            ></path>
+          </svg>
         </div>
       </div>
 
       <div class="international-content-new">
+        <!-- Columna de texto con menos padding -->
         <div class="int-text-main">
           <h3 class="int-title-large">Traslado internacional de mascotas</h3>
           <p class="int-subtitle">¿Viajás con tu mascota?</p>
@@ -511,8 +504,8 @@ const internationalImages = [
             class="btn-quote-international"
           >
             <svg
-              width="20"
-              height="20"
+              width="18"
+              height="18"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -521,7 +514,7 @@ const internationalImages = [
               ></path><circle cx="12" cy="10" r="3"></circle></svg
             >
             <span>Solicitar cotización</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"
               ><path
                 d="M1 8H15M15 8L8 1M15 8L8 15"
                 stroke="currentColor"
@@ -530,34 +523,49 @@ const internationalImages = [
           </a>
         </div>
 
-        <div class="int-gallery-mosaic">
+        <!-- Nueva estructura: Carrusel en lugar de mosaico para achicar el alto -->
+        <div class="int-carousel-container">
           {
             internationalImages.map((img, index) => (
-              <div class={`mosaic-img mosaic-img-${index + 1}`}>
+              <div
+                class={`int-carousel-slide ${index === 0 ? "active" : ""}`}
+                data-int-index={index}
+              >
                 <img src={img.src} alt={img.alt} loading="lazy" />
                 <div class="mosaic-overlay" />
               </div>
             ))
           }
+          <div class="int-carousel-dots">
+            {
+              internationalImages.map((_, index) => (
+                <button
+                  class={`int-carousel-dot ${index === 0 ? "active" : ""}`}
+                  data-i-dot={index}
+                  aria-label={`Foto traslado ${index + 1}`}
+                />
+              ))
+            }
+          </div>
         </div>
       </div>
     </div>
 
+    <!-- CARD F: SERVICIOS INCLUIDOS (5 Columnas) -->
     <div
       class="general-services-card-new reveal"
       style="transition-delay: 0.6s;"
     >
       <div class="general-header-new">
         <h3 class="general-title-main">Servicios incluidos</h3>
-        <p class="general-subtitle">Cuidado integral para tu mascota</p>
       </div>
 
       <div class="general-grid-new">
-        <div class="general-card-item supervision-card">
+        <div class="general-card-item">
           <div class="general-card-icon">
             <svg
-              width="40"
-              height="40"
+              width="28"
+              height="28"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -567,135 +575,142 @@ const internationalImages = [
             >
           </div>
           <h4 class="general-card-title">Supervisión permanente</h4>
-          <p class="general-card-desc">Monitoreo continuo 24/7</p>
         </div>
 
-        <div class="general-card-item cleaning-card">
+        <div class="general-card-item">
           <div class="general-card-icon">
             <svg
-              width="40"
-              height="40"
+              width="28"
+              height="28"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               stroke-width="2"
-              ><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"
-              ></path></svg
+              ><path d="M3 22l4-4m0 0l9-9m-9 9l-2-2 9-9 2 2m0-7l3 3-3-3z"
+              ></path><path d="M15 3s2 2 2 4-2 4-2 4"></path></svg
             >
           </div>
           <h4 class="general-card-title">Limpieza constante</h4>
-          <p class="general-card-desc">Higiene y desinfección diaria</p>
         </div>
 
-        <div class="general-card-item bath-card">
+        <div class="general-card-item">
           <div class="general-card-icon">
             <svg
-              width="40"
-              height="40"
+              width="28"
+              height="28"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               stroke-width="2"
-              ><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg
+              ><path d="M4 12h16"></path><path
+                d="M4 12a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8H4v-8z"></path><path
+                d="M9 20v2"></path><path d="M15 20v2"></path><path d="M8 4V3"
+              ></path><path d="M12 4V3"></path><path d="M16 4V3"></path></svg
             >
           </div>
           <h4 class="general-card-title">Baños sanitarios</h4>
-          <p class="general-card-desc">Cuidado estético profesional</p>
         </div>
 
-        <div class="general-card-item vet-card featured-card">
-          <div class="featured-content">
-            <div class="featured-left">
-              <div class="general-card-icon featured-icon">
-                <svg
-                  width="48"
-                  height="48"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  ><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg
-                >
-              </div>
-              <div class="featured-text">
-                <h4 class="general-card-title">Asistencia veterinaria</h4>
-                <p class="general-card-desc">
-                  Atención profesional ante urgencias
-                </p>
-              </div>
-            </div>
-            <div class="featured-badge">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                ><path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                ></path></svg
-              >
-              <span>Servicio destacado</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="general-card-item food-card">
+        <div class="general-card-item">
           <div class="general-card-icon">
             <svg
-              width="40"
-              height="40"
+              width="28"
+              height="28"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               stroke-width="2"
-              ><path
-                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+              ><path d="M8 2h8v4h4v8h-4v4H8v-4H4V6h4V2z"></path></svg
+            >
+          </div>
+          <h4 class="general-card-title">Asistencia ante urgencias</h4>
+        </div>
+
+        <div class="general-card-item">
+          <div class="general-card-icon">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              ><path d="M2 12h20M2 12c0 5.523 4.477 10 10 10s10-4.477 10-10"
+              ></path><path d="M7 12V7a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v5"
               ></path></svg
             >
           </div>
           <h4 class="general-card-title">Alimento premium</h4>
-          <p class="general-card-desc">Nutrición balanceada de calidad</p>
         </div>
       </div>
     </div>
-
-    <div class="inst__cta reveal" style="transition-delay:0.3s">
-      <a href="/galeria" class="cta-fotos">
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-          <circle cx="8.5" cy="8.5" r="1.5"></circle>
-          <polyline points="21 15 16 10 5 21"></polyline>
-        </svg>
-        ¡Más fotos acá!
-      </a>
-    </div>
+    <!-- Botón de 'más fotos' eliminado de acá -->
   </div>
 </section>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // 1. Carrusel Adiestramiento
+    const tSlides = document.querySelectorAll(".carousel-slide");
+    const tDots = document.querySelectorAll(".carousel-dot");
+    let tIndex = 0;
+
+    if (tSlides.length > 0) {
+      function goT(i: any) {
+        tSlides[tIndex].classList.remove("active");
+        tDots[tIndex].classList.remove("active");
+        tIndex = i;
+        tSlides[tIndex].classList.add("active");
+        tDots[tIndex].classList.add("active");
+      }
+      tDots.forEach((dot, i) => {
+        dot.addEventListener("click", () => goT(i));
+      });
+      setInterval(() => {
+        goT((tIndex + 1) % tSlides.length);
+      }, 3500);
+    }
+
+    // 2. Carrusel Internacional (Nuevo)
+    const iSlides = document.querySelectorAll(".int-carousel-slide");
+    const iDots = document.querySelectorAll(".int-carousel-dot");
+    let iIndex = 0;
+
+    if (iSlides.length > 0) {
+      function goI(i: any) {
+        iSlides[iIndex].classList.remove("active");
+        iDots[iIndex].classList.remove("active");
+        iIndex = i;
+        iSlides[iIndex].classList.add("active");
+        iDots[iIndex].classList.add("active");
+      }
+      iDots.forEach((dot, i) => {
+        dot.addEventListener("click", () => goI(i));
+      });
+      setInterval(() => {
+        goI((iIndex + 1) % iSlides.length);
+      }, 4200); // Un poco más de tiempo para que no cambien al unísono
+    }
+  });
+</script>
+
 <style>
   :root {
-    --green: #95bc3a; /* Verde Claro Principal */
-    --brown: #4a3f35; /* Marrón Tierra Principal */
-    --off-white: #fbfbf9; /* Fondo claro general */
-    --gray-mid: #6b7280; /* Texto secundario gris */
+    --green: #95bc3a;
+    --brown: #4a3f35;
+    --off-white: #fbfbf9;
+    --gray-mid: #6b7280;
     --white: #ffffff;
   }
 
   .servicios {
-    background: var(--white); /* Fondo original blanco */
+    background: var(--white);
     padding: 6rem 0;
     position: relative;
     overflow: hidden;
   }
 
-  /* ── DECORACIONES SVG (SIN OPACIDAD DESVANECIDA) ── */
+  /* ── DECORACIONES ── */
   .servicios__deco {
     position: absolute;
     inset: 0;
@@ -709,16 +724,6 @@ const internationalImages = [
     position: absolute;
     color: var(--green);
   }
-
-  .deco-sparkle {
-    /* Opacidad eliminada para que sea 100% visible */
-  }
-
-  /* Huesos con opacidad visible pero sutil */
-  .deco-bone {
-    /* Opacidad eliminada para que sea 100% visible */
-  }
-
   .deco-trail {
     position: absolute;
     top: 0;
@@ -729,19 +734,15 @@ const internationalImages = [
     stroke-width: 3px;
     stroke-dasharray: 12 12;
     fill: none;
-    /* Opacidad eliminada para que sea 100% visible */
   }
-
   .Relative-z {
     position: relative;
     z-index: 1;
   }
 
-  /* ── HEADER ── */
   .servicios__header {
     margin-bottom: 4rem;
   }
-
   .header-badge {
     display: inline-flex;
     align-items: center;
@@ -756,68 +757,54 @@ const internationalImages = [
     letter-spacing: 0.05em;
     margin-bottom: 1.25rem;
   }
-
   .header-two-col {
     display: flex;
     align-items: flex-start;
     gap: 7rem;
   }
-
   .header-left h2 {
     color: var(--brown);
     margin-bottom: 1rem;
     font-size: clamp(2.5rem, 4vw, 3rem);
   }
-
   .text-accent {
     color: var(--green);
   }
 
-  .header-body {
-    color: var(--gray-mid);
-    font-size: 1.1rem;
-    line-height: 1.7;
-    max-width: 560px;
-  }
-
-  /* ── CARDS A, B, C - BENTO GRID ── */
-  .services-bento-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-  }
-
-  .bento-service {
-    border-radius: var(--radius-lg);
-    padding: 2.5rem;
+  /* ── CARDS HORIZONTALES ── */
+  .services-horizontal-list {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .horizontal-service-card {
+    border-radius: var(--radius-lg, 24px);
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
     transition:
       transform 0.3s ease,
       box-shadow 0.3s ease;
-    height: 100%;
   }
-
-  .bento-service:hover {
+  .horizontal-service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(74, 63, 53, 0.1);
   }
-
-  .service-content {
+  .card-left {
     display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  .service-header-row {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
+    gap: 1.5rem;
+    min-width: 130px;
+    width: 170px;
   }
-
+  .card-center {
+    flex: 1;
+  }
+  .card-right {
+    flex-shrink: 0;
+  }
   .service-number {
     font-size: 3.5rem;
     font-family: var(--font-display);
@@ -825,21 +812,27 @@ const internationalImages = [
     line-height: 1;
     width: 65px;
   }
-
   .service-title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-family: var(--font-display);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     line-height: 1.2;
   }
-
   .service-description {
     line-height: 1.5;
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
-    flex-grow: 1;
+    margin-bottom: 0;
+    font-size: 1.05rem;
   }
-
+  .stat-icon {
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    flex-shrink: 0;
+  }
   .service-cta {
     display: inline-flex;
     align-items: center;
@@ -852,18 +845,6 @@ const internationalImages = [
     transition: all 0.3s ease;
   }
 
-  .stat-icon {
-    font-size: 2rem;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 16px;
-    flex-shrink: 0;
-  }
-
-  /* Variación A: Marrón Tierra */
   .card-brown {
     background: var(--brown);
     color: white;
@@ -884,7 +865,6 @@ const internationalImages = [
     color: var(--brown);
   }
 
-  /* Variación B: Verde Claro */
   .card-green {
     background: var(--green);
     color: var(--brown);
@@ -905,7 +885,6 @@ const internationalImages = [
     color: white;
   }
 
-  /* Variación C: Blanco */
   .card-white {
     background: white;
     color: var(--brown);
@@ -934,699 +913,6 @@ const internationalImages = [
     color: var(--brown);
   }
 
-  .service-meta-mini {
-    background: rgba(149, 188, 58, 0.15);
-    padding: 0.75rem;
-    border-radius: var(--radius);
-    font-size: 0.8rem;
-    margin-bottom: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-  .service-meta-mini span {
-    color: var(--brown);
-    font-weight: 600;
-  }
-  .meta-link {
-    font-weight: bold;
-    color: var(--green);
-    text-decoration: none;
-  }
-  .meta-link:hover {
-    text-decoration: underline;
-  }
-
-  /* ── CARD D: PROGRAMA DE ADIESTRAMIENTO - NUEVO LAYOUT CON GALERÍA INTEGRADA ── */
-  .training-full-width {
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    margin-top: 1.5rem;
-    background: var(--brown);
-  }
-
-  .training-content-area {
-    padding: 3rem 4rem;
-  }
-
-  .training-badge {
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.15);
-    color: var(--green);
-    padding: 6px 16px;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-
-  .training-title {
-    font-family: var(--font-display);
-    font-size: 2.5rem;
-    margin-bottom: 2.5rem;
-    color: white !important;
-  }
-
-  /* NUEVO: Layout con columnas - Info a la izquierda, Galería a la derecha */
-  .training-main-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
-  }
-
-  .training-left-column {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .training-section {
-    margin-bottom: 0;
-  }
-
-  .section-title-small {
-    color: var(--green);
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
-    font-weight: 700;
-  }
-  .section-text {
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.85);
-  }
-
-  .includes-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .includes-list li {
-    padding-left: 1.5rem;
-    position: relative;
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 0.95rem;
-  }
-  .includes-list li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--green);
-    font-weight: bold;
-  }
-
-  .table-responsive {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: var(--radius);
-    padding: 1rem;
-  }
-  .commands-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  .commands-table td {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
-  }
-  .commands-table tr:last-child td {
-    border-bottom: none;
-  }
-  /* --- NÚMEROS EN LA TABLA --- */
-  .cmd-name {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-weight: bold;
-    color: white !important;
-  }
-
-  .cmd-num {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    background: var(--green); /* Círculo Verde */
-    color: var(--brown); /* Número Marrón */
-    border-radius: 50%;
-    font-size: 0.8rem;
-    font-weight: 800;
-    flex-shrink: 0;
-  }
-
-  .guarantee-box-wrapper {
-    margin-top: auto;
-  }
-  .guarantee-accent {
-    background: var(--green);
-    color: var(--brown);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-  }
-  .guarantee-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 0.5rem;
-  }
-  .guarantee-title {
-    margin: 0;
-    font-size: 1.1rem;
-    font-weight: 800;
-  }
-  .guarantee-content p {
-    margin: 0;
-    font-size: 0.9rem;
-  }
-
-  /* --- ESTILOS PARA LA NUEVA LISTA DE GARANTÍA --- */
-  .guarantee-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem; /* Separación entre cada punto */
-  }
-
-  .guarantee-list li {
-    font-size: 0.9rem;
-    line-height: 1.4;
-    position: relative;
-    padding-left: 1.25rem;
-    color: var(--brown);
-  }
-
-  .guarantee-list li strong {
-    font-weight: 800;
-  }
-
-  /* El puntito de la lista */
-  .guarantee-list li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: var(--brown);
-    font-weight: bold;
-    font-size: 1.2rem;
-    line-height: 1;
-    top: -2px; /* Alineación óptica del puntito */
-  }
-
-  .btn-whatsapp {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: #25d366;
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-weight: bold;
-    text-decoration: none;
-    margin-top: 1rem;
-    transition: transform 0.3s ease;
-  }
-  .btn-whatsapp:hover {
-    transform: translateY(-3px);
-  }
-
-  /* NUEVA GALERÍA INTEGRADA - Grid de fotos masonry style */
-  .training-right-gallery {
-    position: sticky;
-    top: 2rem;
-  }
-
-  .gallery-grid-integrated {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    grid-auto-rows: 180px;
-  }
-
-  .gallery-item {
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
-  }
-
-  .gallery-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(149, 188, 58, 0.4);
-  }
-
-  .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-  }
-
-  .gallery-item {
-    position: relative; /* Clave para que el número quede adentro de la foto */
-  }
-
-  .img-cmd-badge {
-    position: absolute;
-    bottom: 12px;
-    left: 12px;
-    background: rgba(
-      74,
-      63,
-      53,
-      0.7
-    ); /* Marrón translúcido para que resalte el verde */
-    padding: 5px;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    pointer-events: none;
-  }
-
-  .badge-num {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 26px;
-    height: 26px;
-    background: var(--green); /* Círculo Verde */
-    color: var(--brown); /* Número Marrón */
-    border-radius: 50%;
-    font-size: 0.9rem;
-    font-weight: 800;
-  }
-
-  /* Patrón de diseño masonry - diferentes alturas para evitar cortes */
-  .gallery-item-1 {
-    grid-row: span 2;
-  }
-  .gallery-item-2 {
-    grid-row: span 1;
-  }
-  .gallery-item-3 {
-    grid-row: span 1;
-  }
-  .gallery-item-4 {
-    grid-row: span 2;
-  }
-  .gallery-item-5 {
-    grid-row: span 1;
-  }
-  .gallery-item-6 {
-    grid-row: span 1;
-  }
-  .gallery-item-7 {
-    grid-row: span 2;
-    grid-column: span 2;
-  }
-
-  /* ── CARD E: TRASLADO INTERNACIONAL ── */
-  .international-transport-card {
-    background: white;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    margin-top: 2rem;
-    border: 2px solid var(--green);
-    box-shadow: 0 12px 40px rgba(74, 63, 53, 0.08);
-  }
-
-  .international-header {
-    background: var(--brown);
-    padding: 1.75rem 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 4px solid var(--green);
-  }
-
-  .int-header-left {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-  }
-  .latam-logo-container {
-    display: block;
-    transition: transform 0.3s ease;
-  }
-  .latam-logo-container:hover {
-    transform: scale(1.05);
-  }
-  .latam-logo {
-    height: 70px;
-    width: auto;
-    display: block;
-  }
-
-  .partner-badge {
-    background: var(--green);
-    color: var(--brown);
-    padding: 0.4rem 1rem;
-    border-radius: 50px;
-    font-size: 0.75rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  .int-header-icon {
-    width: 72px;
-    height: 72px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--green);
-  }
-
-  .international-content-new {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-  }
-  .int-text-main {
-    padding: 3rem;
-    background: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .int-title-large {
-    font-family: var(--font-display);
-    font-size: 2.25rem;
-    color: var(--brown);
-    margin-bottom: 1rem;
-    line-height: 1.2;
-    font-weight: 800;
-  }
-  .int-subtitle {
-    font-size: 1.25rem;
-    color: var(--green);
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-  .int-description {
-    color: var(--gray-mid);
-    line-height: 1.8;
-    margin-bottom: 2rem;
-    font-size: 1.0625rem;
-  }
-
-  .btn-quote-international {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    padding: 1.125rem 2.25rem;
-    background: var(--brown);
-    color: white;
-    text-decoration: none;
-    border-radius: var(--radius);
-    font-weight: 700;
-    font-size: 1.0625rem;
-    transition: all 0.3s ease;
-    align-self: flex-start;
-    box-shadow: 0 4px 12px rgba(74, 63, 53, 0.2);
-  }
-  .btn-quote-international:hover {
-    background: var(--green);
-    color: var(--brown);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(149, 188, 58, 0.35);
-  }
-
-  .int-gallery-mosaic {
-    background: rgba(149, 188, 58, 0.1);
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .mosaic-img {
-    position: relative;
-    overflow: hidden;
-    aspect-ratio: 1;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  .mosaic-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .mosaic-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      180deg,
-      transparent 50%,
-      rgba(74, 63, 53, 0.4) 100%
-    );
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  .mosaic-img:hover .mosaic-overlay {
-    opacity: 1;
-  }
-
-  /* ── CARD F: SERVICIOS GENERALES ── */
-  .general-services-card-new {
-    margin-top: 2rem;
-    background: linear-gradient(135deg, white 0%, rgba(149, 188, 58, 0.1) 100%);
-    border-radius: var(--radius-lg);
-    padding: 3rem;
-    border: 2px solid rgba(149, 188, 58, 0.3);
-  }
-
-  .general-header-new {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-  .general-title-main {
-    font-family: var(--font-display);
-    font-size: 2.5rem;
-    color: var(--brown);
-    margin-bottom: 0.5rem;
-    font-weight: 800;
-  }
-  .general-subtitle {
-    color: var(--gray-mid);
-    font-size: 1.125rem;
-  }
-
-  .general-grid-new {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-  }
-  .general-card-item {
-    background: white;
-    padding: 2.25rem;
-    border-radius: var(--radius-lg);
-    text-align: center;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-    position: relative;
-    overflow: hidden;
-  }
-  .general-card-item::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: var(--green);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-  }
-  .general-card-item:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 30px rgba(74, 63, 53, 0.1);
-    border-color: var(--green);
-  }
-  .general-card-item:hover::before {
-    transform: scaleX(1);
-  }
-
-  .general-card-icon {
-    width: 80px;
-    height: 80px;
-    background: rgba(149, 188, 58, 0.15);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-    color: var(--green);
-    transition: all 0.3s ease;
-  }
-  .general-card-item:hover .general-card-icon {
-    background: var(--green);
-    color: white;
-    transform: rotate(5deg) scale(1.05);
-  }
-  .general-card-title {
-    font-family: var(--font-display);
-    font-size: 1.25rem;
-    color: var(--brown);
-    margin-bottom: 0.75rem;
-    font-weight: 800;
-  }
-  .general-card-desc {
-    color: var(--gray-mid);
-    font-size: 0.9375rem;
-    line-height: 1.6;
-    margin: 0;
-  }
-
-  /* Card destacada de Veterinaria */
-  .featured-card {
-    grid-column: span 2;
-    background: var(--brown);
-    text-align: left;
-    padding: 0;
-  }
-  .featured-card::before {
-    background: var(--green);
-  }
-  .featured-content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 2.5rem;
-    gap: 2rem;
-  }
-  .featured-left {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-  }
-  .featured-icon {
-    background: var(--green);
-    color: var(--brown);
-  }
-  .featured-text {
-    flex: 1;
-  }
-  .featured-card .general-card-title {
-    color: white;
-    font-size: 1.5rem;
-  }
-  .featured-card .general-card-desc {
-    color: rgba(255, 255, 255, 0.7);
-  }
-
-  .featured-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    background: rgba(149, 188, 58, 0.2);
-    color: var(--green);
-    padding: 0.75rem 1.5rem;
-    border-radius: 50px;
-    font-size: 0.875rem;
-    font-weight: 700;
-    align-self: flex-start;
-  }
-
-  /* ── CTA FOTOS (Marrón Tierra con texto Off-White) ── */
-  .inst__cta {
-    margin-top: 3rem;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    z-index: 2; /* Por encima de la decoración */
-  }
-
-  .cta-fotos {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 1.1rem 2.5rem;
-    background: var(--brown); /* Botón Marrón Tierra */
-    border-radius: 50px;
-    color: var(--off-white); /* Texto Off-White */
-    font-size: 1.1rem;
-    font-weight: 800;
-    text-decoration: none;
-    transition:
-      background 0.2s,
-      transform 0.2s,
-      box-shadow 0.2s;
-    box-shadow: 0 4px 20px rgba(74, 63, 53, 0.3);
-  }
-  .cta-fotos:hover {
-    background: var(--green); /* Hover Verde Claro */
-    color: var(--brown); /* Texto Marrón Tierra */
-    transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(149, 188, 58, 0.4);
-  }
-  .cta-fotos svg {
-    stroke: var(--off-white); /* SVG Off-White */
-  }
-  .cta-fotos:hover svg {
-    stroke: var(--brown); /* SVG Marrón Tierra */
-  }
-
-  /* ── NUEVO LAYOUT HORIZONTAL PARA CARDS A, B y C ── */
-  .services-horizontal-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
-  }
-
-  .horizontal-service-card {
-    border-radius: var(--radius-lg, 24px);
-    padding: 2rem 3rem;
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
-  }
-
-  .horizontal-service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(74, 63, 53, 0.1);
-  }
-
-  .card-left {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    min-width: 130px;
-    width: 170px;
-  }
-
-  .card-center {
-    flex: 1;
-  }
-
-  .horizontal-service-card .service-title {
-    margin-bottom: 0.5rem;
-    font-size: 1.6rem;
-    font-family: var(--font-display);
-    line-height: 1.2;
-  }
-
-  .horizontal-service-card .service-description {
-    margin-bottom: 0;
-    font-size: 1.05rem;
-    line-height: 1.5;
-  }
-
-  .card-right {
-    flex-shrink: 0;
-  }
-
-  /* Info extra en la Card 3 (Traslados) */
   .service-meta-inline {
     display: flex;
     align-items: center;
@@ -1642,8 +928,509 @@ const internationalImages = [
     color: var(--brown);
     font-weight: 600;
   }
+  .meta-link {
+    font-weight: bold;
+    color: var(--green);
+    text-decoration: none;
+  }
+  .meta-link:hover {
+    text-decoration: underline;
+  }
 
-  /* Adaptación a celular para el diseño horizontal */
+  /* ── ADIESTRAMIENTO ── */
+  .training-full-width {
+    border-radius: var(--radius-lg, 24px);
+    overflow: hidden;
+    margin-top: 1.5rem;
+    background: var(--brown);
+  }
+  .training-content-area {
+    padding: 3rem 4rem;
+  }
+
+  .training-top-header {
+    margin-bottom: 2rem;
+  }
+  .training-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--green);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .training-title {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: white !important;
+  }
+
+  /* Layout principal estirado para que ambas columnas midan igual de alto */
+  .training-main-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start; /* CRUCIAL: Evita que la foto se estire como chicle */
+    min-height: 700px; /* Reserva el espacio para que la tarjeta marrón no salte */
+  }
+
+  .training-left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .training-section {
+    margin-bottom: 0;
+  }
+
+  .section-title-small {
+    color: var(--green);
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+  }
+  .section-text {
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+  }
+
+  /* Grilla de Comandos Limpia (Tarjetas Verdes) */
+  .commands-simple-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .commands-simple-grid li {
+    background: var(--green);
+    padding: 1rem;
+    border-radius: 12px;
+    color: var(--brown);
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  .cmd-highlight {
+    display: block;
+    color: var(--brown);
+    font-weight: 900;
+    margin-bottom: 0.25rem;
+    font-size: 1.05rem;
+  }
+
+  /* Acordeones invisibles nativos */
+  .training-dropdowns {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+  }
+  .seamless-details {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem 0;
+  }
+  .seamless-details:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .seamless-details summary {
+    cursor: pointer;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--green);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+  }
+  .seamless-details summary::-webkit-details-marker {
+    display: none;
+  }
+  .seamless-details summary::after {
+    content: "+";
+    font-size: 2rem;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+  }
+  .seamless-details[open] summary::after {
+    transform: rotate(45deg);
+  }
+
+  .details-content {
+    padding-top: 1.25rem;
+    animation: fadeInDown 0.4s ease-out;
+  }
+  .includes-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .includes-list li {
+    padding-left: 1.5rem;
+    position: relative;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .includes-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--green);
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Carrusel de Adiestramiento (Ocupa 100% de la altura disponible) */
+  .training-right-gallery {
+    position: sticky;
+    top: 2rem;
+    width: 100%;
+    height: 650px; /* Altura Fija: ¡Nunca más se va a deformar! */
+  }
+  .carousel-container {
+    position: relative; /* Cambiado para que respete su contenedor */
+    border-radius: var(--radius-lg, 20px);
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+  .carousel-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+  }
+  .carousel-slide.active {
+    opacity: 1;
+  }
+  .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+  .carousel-dots {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+  }
+  .carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition:
+      background 0.3s ease,
+      transform 0.3s ease;
+  }
+  .carousel-dot.active {
+    background: var(--green);
+    transform: scale(1.3);
+  }
+
+  /* ── INTERNACIONAL (Más compacta) ── */
+  .international-transport-card {
+    background: white;
+    border-radius: var(--radius-lg, 24px);
+    overflow: hidden;
+    margin-top: 2rem;
+    border: 2px solid var(--green);
+    box-shadow: 0 12px 40px rgba(74, 63, 53, 0.08);
+  }
+  .international-header {
+    background: var(--off-white);
+    padding: 1.25rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--green);
+  }
+  .int-header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  .latam-logo-container {
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .latam-logo-container:hover {
+    transform: scale(1.05);
+  }
+  .latam-logo {
+    height: 55px;
+    width: auto;
+    display: block;
+  }
+  .partner-badge {
+    background: var(--green);
+    color: var(--brown);
+    padding: 0.35rem 0.9rem;
+    border-radius: 50px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .int-header-icon {
+    width: 52px;
+    height: 52px;
+    background: rgba(149, 188, 58, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--brown);
+  }
+
+  .international-content-new {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: stretch;
+  }
+  .int-text-main {
+    padding: 2rem 2.5rem;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .int-title-large {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--brown);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    font-weight: 800;
+  }
+  .int-subtitle {
+    font-size: 1.1rem;
+    color: var(--green);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+  .int-description {
+    color: var(--gray-mid);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+  }
+  .btn-quote-international {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.85rem 1.5rem;
+    background: var(--brown);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius, 12px);
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    box-shadow: 0 4px 12px rgba(74, 63, 53, 0.2);
+  }
+  .btn-quote-international:hover {
+    background: var(--green);
+    color: var(--brown);
+    transform: translateY(-2px);
+  }
+
+  /* Nuevo Carrusel Internacional */
+  .int-carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    overflow: hidden;
+  }
+  .int-carousel-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+  }
+  .int-carousel-slide.active {
+    opacity: 1;
+  }
+  .int-carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .mosaic-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      transparent 50%,
+      rgba(74, 63, 53, 0.4) 100%
+    );
+    pointer-events: none;
+  }
+  .int-carousel-dots {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+  }
+  .int-carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition:
+      background 0.3s ease,
+      transform 0.3s ease;
+  }
+  .int-carousel-dot.active {
+    background: var(--green);
+    transform: scale(1.3);
+  }
+
+  /* ── SERVICIOS INCLUIDOS (5 Columnas) ── */
+  .general-services-card-new {
+    margin-top: 2rem;
+    background: linear-gradient(
+      135deg,
+      white 0%,
+      rgba(149, 188, 58, 0.08) 100%
+    );
+    border-radius: var(--radius-lg, 24px);
+    padding: 2rem 2.5rem;
+    border: 2px solid rgba(149, 188, 58, 0.3);
+  }
+  .general-header-new {
+    text-align: center;
+    margin-bottom: 1.75rem;
+  }
+  .general-title-main {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--brown);
+    margin: 0;
+    font-weight: 800;
+  }
+  .general-grid-new {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+  }
+  .general-card-item {
+    background: white;
+    padding: 1.5rem 1rem;
+    border-radius: var(--radius-lg, 16px);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+  }
+  .general-card-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--green);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  .general-card-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(74, 63, 53, 0.1);
+    border-color: var(--green);
+  }
+  .general-card-item:hover::before {
+    transform: scaleX(1);
+  }
+  .general-card-icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(149, 188, 58, 0.15);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: var(--green);
+    transition: all 0.3s ease;
+  }
+  .general-card-item:hover .general-card-icon {
+    background: var(--green);
+    color: white;
+  }
+  .general-card-title {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    color: var(--brown);
+    margin: 0;
+    font-weight: 800;
+    line-height: 1.3;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1100px) {
+    .general-grid-new {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (max-width: 1024px) {
+    .header-two-col {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .training-content-area {
+      padding: 2rem;
+    }
+    .training-main-layout {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .training-right-gallery {
+      min-height: 350px;
+    }
+    .international-content-new {
+      grid-template-columns: 1fr;
+    }
+  }
   @media (max-width: 900px) {
     .horizontal-service-card {
       flex-direction: column;
@@ -1668,76 +1455,21 @@ const internationalImages = [
       border-radius: 12px;
       width: 100%;
     }
-  }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 1024px) {
-    .header-two-col {
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-    .services-bento-grid {
+    .commands-simple-grid {
       grid-template-columns: 1fr;
-    }
-    .training-content-area {
-      padding: 2rem;
-    }
-
-    /* Layout de adiestramiento en mobile: columna única */
-    .training-main-layout {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-
-    .training-right-gallery {
-      position: relative;
-      top: 0;
-    }
-
-    .gallery-grid-integrated {
-      grid-auto-rows: 150px;
-    }
-
-    .international-header {
-      padding: 1.5rem 2rem;
-    }
-    .international-content-new {
-      grid-template-columns: 1fr;
-    }
-    .int-gallery-mosaic {
-      padding: 1.5rem;
-    }
-    .featured-card {
-      grid-column: span 1;
-    }
-    .featured-left {
-      flex-direction: column;
-      align-items: flex-start;
     }
   }
-
   @media (max-width: 768px) {
+    .general-grid-new {
+      grid-template-columns: repeat(2, 1fr);
+    }
     .int-header-icon {
       display: none;
     }
-    .int-gallery-mosaic {
-      grid-template-columns: 1fr;
-    }
+  }
+  @media (max-width: 480px) {
     .general-grid-new {
       grid-template-columns: 1fr;
-    }
-
-    .gallery-grid-integrated {
-      grid-template-columns: 1fr;
-      grid-auto-rows: 200px;
-    }
-
-    /* Resetear spans en mobile para mejor visualización */
-    .gallery-item-1,
-    .gallery-item-4,
-    .gallery-item-7 {
-      grid-row: span 1;
-      grid-column: span 1;
     }
   }
 </style>
