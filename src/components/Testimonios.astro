@@ -13,7 +13,7 @@ const testimonios = [
     autor: "Adriana",
     año: "2002",
     mascotas: "Tchavolo, Sausalia y Dímiti",
-    foto: null, // Sin foto, mostrará la inicial "A"
+    foto: null, // Sin foto, mostrará la inicial "A" en grande
   },
   {
     texto:
@@ -98,27 +98,32 @@ const testimonios = [
           {
             testimonios.map((t) => (
               <article class="testi-card">
-                <div class="testi-card-content">
+                
+                <!-- NUEVO: Columna de la Imagen Gigante -->
+                <div class="testi-image-col">
+                  {t.foto ? (
+                    <img
+                      src={t.foto}
+                      alt={`Foto de la mascota de ${t.autor}`}
+                      class="testi-large-img"
+                    />
+                  ) : (
+                    <div class="testi-fallback-img">
+                      {t.autor.charAt(0).toUpperCase()}
+                    </div>
+                  )}
+                </div>
+
+                <!-- Columna del Texto -->
+                <div class="testi-text-col">
                   <div class="testi-quote">“</div>
                   <p class="testi-text">{t.texto}</p>
-                </div>
-                <div class="testi-footer">
-                  <div class="testi-avatar">
-                    {t.foto ? (
-                      <img
-                        src={t.foto}
-                        alt={`Foto de ${t.autor}`}
-                        class="avatar-img"
-                      />
-                    ) : (
-                      t.autor.charAt(0).toUpperCase()
-                    )}
-                  </div>
-                  <div>
+                  <div class="testi-author-info">
                     <strong class="testi-autor">{t.autor}</strong>
-                    <span class="testi-meta">{t.año}</span>
+                    <span class="testi-meta">{t.año} - {t.mascotas}</span>
                   </div>
                 </div>
+
               </article>
             ))
           }
@@ -133,8 +138,7 @@ const testimonios = [
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg
-          >
+            stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
         </button>
         <div class="testi-dots" id="testi-dots"></div>
         <button class="testi-btn" id="testi-next" aria-label="Siguiente">
@@ -144,8 +148,7 @@ const testimonios = [
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg
-          >
+            stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
         </button>
       </div>
     </div>
@@ -160,17 +163,16 @@ const testimonios = [
     overflow: hidden;
   }
 
-  /* patterns orgánicos de huellas sutiles */
   .testimonios::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("/assets/pattern-paws-light.svg"); /* Necesitarás este SVG */
+    background-image: url("/assets/pattern-paws-light.svg");
     opacity: 0.03;
     pointer-events: none;
   }
 
-  /* --- HEADER REDISEÑADO --- */
+  /* --- HEADER --- */
   .testimonios__header {
     text-align: center;
     margin-bottom: 5rem;
@@ -184,7 +186,7 @@ const testimonios = [
     align-items: center;
     gap: 8px;
     padding: 8px 20px;
-    background: rgba(163, 230, 53, 0.1); /* var(--accent) con opacidad */
+    background: rgba(163, 230, 53, 0.1); 
     border-radius: 50px;
     color: var(--accent); /* var(--accent, #a3e635) */
     font-size: 0.85rem;
@@ -198,49 +200,77 @@ const testimonios = [
     max-width: 600px;
   }
 
-  .testimonios__header .text-green {
-    color: var(--accent);
-  }
-
-  /* --- CARRUSEL CORREGIDO (Flexbox logic para altura dinámica) --- */
+  /* --- CARRUSEL --- */
   .testi-carousel {
     position: relative;
-    max-width: 900px; /* Un poco más ancho para dar aire vertical */
+    max-width: 1000px; /* Expandido para dar lugar a la foto grande */
     margin: 0 auto;
   }
 
-  /* Viewport recorta el contenido y se adapta a la altura del track */
   .testi-viewport {
     overflow: hidden;
     border-radius: var(--radius-lg);
-    /* No hay altura fija aquí */
   }
 
-  /* Track contiene las tarjetas una al lado de la otra */
   .testi-track {
     display: flex;
     transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     width: 100%;
-    align-items: stretch; /* Centrado vertical automático si las tarjetas difieren */
+    align-items: stretch; 
   }
 
-  /* TARJETA - Diseño Original Mantenido */
+  /* --- TARJETA REDISEÑADA (Split Layout) --- */
   .testi-card {
-    flex: 0 0 100%; /* Cada tarjeta ocupa el 100% del viewport */
+    flex: 0 0 100%;
     width: 100%;
-    background: rgba(255, 255, 255, 0.06); /* Translúcido original */
-    border: 1px solid rgba(255, 255, 255, 0.12); /* Borde original */
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: var(--radius-lg);
-    padding: 3rem;
+    
+    /* Layout tipo Grid para separar Foto de Texto */
+    display: grid;
+    grid-template-columns: 2fr 3fr; /* 40% Foto, 60% Texto */
+    gap: 0; /* Sin espacio porque el padding lo maneja el texto */
+    overflow: hidden; /* Para que la foto respete los bordes curvos de la tarjeta */
+    box-sizing: border-box;
+  }
+
+  /* --- COLUMNA DE LA IMAGEN --- */
+  .testi-image-col {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    background: var(--accent);
+  }
+
+  .testi-large-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .testi-fallback-img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8rem;
+    font-family: var(--font-display);
+    color: var(--green-dark);
+    font-weight: 800;
+  }
+
+  /* --- COLUMNA DEL TEXTO --- */
+  .testi-text-col {
+    padding: 3rem 4rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Empuja el footer abajo */
-    box-sizing: border-box;
-    /* Sin sombras pesadas */
-  }
-
-  .testi-card-content {
-    flex-grow: 1;
+    justify-content: center;
   }
 
   .testi-quote {
@@ -248,77 +278,53 @@ const testimonios = [
     font-size: 6rem;
     color: var(--accent);
     line-height: 1;
-    margin-bottom: -1rem; /* Acercar al texto */
+    margin-bottom: -1rem;
     margin-left: -0.5rem;
-    opacity: 0.3; /* Opacidad original */
+    opacity: 0.3;
   }
 
   .testi-text {
     font-size: 1.15rem;
-    color: rgba(255, 255, 255, 0.9); /* Blanco translúcido original */
+    color: rgba(255, 255, 255, 0.9);
     line-height: 1.7;
     margin-bottom: 2.5rem;
-    font-style: italic; /* Itálica original */
+    font-style: italic;
+    flex-grow: 1; /* Empuja el autor hacia abajo si hay espacio */
   }
 
-  .testi-footer {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Separador original */
+  .testi-author-info {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 1.5rem;
-  }
-
-  .testi-avatar {
-    width: 84px; /* AGREGADO: Foto mucho más grande */
-    height: 84px; /* AGREGADO: Foto mucho más grande */
-    border-radius: 50%;
-    background: var(--accent);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 2rem; /* AGREGADO: Letra más grande por si no hay foto */
-    color: var(--green-dark);
-    flex-shrink: 0;
-    font-family: var(--font-display);
-    overflow: hidden; /* Para que la foto no se salga del círculo */
-  }
-
-  .avatar-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 
   .testi-autor {
     display: block;
     color: var(--white);
-    font-size: 1.1rem;
-    margin-bottom: 2px;
+    font-size: 1.15rem;
+    margin-bottom: 4px;
   }
 
   .testi-meta {
     display: block;
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.6); /* Meta original */
+    color: rgba(255, 255, 255, 0.6);
   }
 
-  /* --- NAVEGACIÓN Y DOTS CORREGIDOS (No usa márgenes fijos gigantes) --- */
+  /* --- NAVEGACIÓN --- */
   .testi-nav {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    margin-top: 2.5rem; /* Margen estándar respecto al viewport */
+    margin-top: 2.5rem;
   }
 
   .testi-btn {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05); /* Botón original */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde original */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -339,83 +345,31 @@ const testimonios = [
     align-items: center;
   }
 
-  /* Estilos para los dots gestionados por JS (sin estilo inline) */
   :global(.testi-dot) {
     display: inline-block;
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3); /* Dot original */
+    background: rgba(255, 255, 255, 0.3);
     cursor: pointer;
     transition: all 0.3s ease;
     border: none;
   }
 
   :global(.testi-dot.active) {
-    background: var(--accent); /* Dot activo original */
+    background: var(--accent);
     transform: scale(1.3);
-  }
-
-  /* --- STARS BADGE (Nuevo diseño tipo Bento para el pie) --- */
-  .stars-badge {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    max-width: 800px;
-    margin: 6rem auto 0;
-    border-radius: 100px; /* Redondeado Bento */
-    padding: 1.5rem 3rem;
-  }
-
-  .stars-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-  }
-
-  .stars-group {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-  }
-
-  .stars {
-    display: flex;
-    gap: 4px;
-    color: #ffd700;
-    font-size: 1.1rem;
-  }
-
-  .stars-group p {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1rem;
-    margin: 0;
-  }
-
-  .stars-divider {
-    width: 1px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
   }
 
   /* --- RESPONSIVE --- */
   @media (max-width: 900px) {
-    .stars-badge {
-      border-radius: var(--radius);
-      padding: 2rem;
+    .testi-card {
+      /* En tablets y celulares se apila: foto arriba, texto abajo */
+      grid-template-columns: 1fr;
+      grid-template-rows: 350px auto; 
     }
-    .stars-content {
-      flex-direction: column;
-      gap: 1.5rem;
-      text-align: center;
-    }
-    .stars-group {
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .stars-divider {
-      width: 100%;
-      height: 1px;
+    .testi-text-col {
+      padding: 2.5rem;
     }
   }
 
@@ -427,6 +381,9 @@ const testimonios = [
       margin-bottom: 3.5rem;
     }
     .testi-card {
+      grid-template-rows: 280px auto; /* Foto un poco más baja en celus */
+    }
+    .testi-text-col {
       padding: 2rem;
     }
     .testi-text {
@@ -439,7 +396,6 @@ const testimonios = [
 </style>
 
 <script>
-  // Script refactorizado: Más limpio, dinámico y centrado
   const track = document.getElementById("testi-track");
   const slides = document.querySelectorAll(".testi-card");
   const dotsEl = document.getElementById("testi-dots");
@@ -458,7 +414,7 @@ const testimonios = [
       d.addEventListener("click", () => {
         cur = i;
         updateSlider();
-        startAuto(); // Reiniciar timer
+        startAuto(); 
       });
       dotsEl.appendChild(d);
     });
@@ -466,17 +422,11 @@ const testimonios = [
 
   function updateSlider() {
     if (!track || !dotsEl) return;
-
-    // Deslizar el track
     track.style.transform = `translateX(-${cur * 100}%)`;
-
-    // Actualizar dots (usando clases CSS, no inline style)
     dotsEl.querySelectorAll(".testi-dot").forEach((d, i) => {
       if (i === cur) d.classList.add("active");
       else d.classList.remove("active");
     });
-
-    // Asegurar centrado vertical recalculando altura si necesario (gracias a Flexbox track)
     track.style.height = slides[cur].scrollHeight + "px";
   }
 
@@ -492,16 +442,14 @@ const testimonios = [
 
   function startAuto() {
     clearInterval(autoTimer);
-    autoTimer = setInterval(nextSlide, 7000); // 7 segundos para textos largos
+    autoTimer = setInterval(nextSlide, 7000); 
   }
 
-  // Inicializar
   if (track && slides.length > 0) {
     buildDots();
-    updateSlider(); // Asegurar estado inicial
+    updateSlider();
     startAuto();
 
-    // Event listeners
     prevBtn?.addEventListener("click", () => {
       prevSlide();
       startAuto();
