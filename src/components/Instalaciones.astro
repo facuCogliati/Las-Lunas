@@ -9,6 +9,10 @@ import img7 from "../assets/instalaciones/7.jpg";
 import img8 from "../assets/instalaciones/8.jpg";
 import img9 from "../assets/instalaciones/9.jpg";
 import img10 from "../assets/instalaciones/10.jpg";
+
+import img11 from "../assets/instalaciones/11.jpg"; // Arboleda y pileta
+import img12 from "../assets/instalaciones/12.jpg"; // Gateras ambientadas
+import img13 from "../assets/instalaciones/13.jpg"; // Zonas techadas
 ---
 
 <section id="instalaciones" class="section instalaciones">
@@ -55,57 +59,6 @@ import img10 from "../assets/instalaciones/10.jpg";
     </g>
   </svg>
 
-  <!-- <svg
-    class="inst__wave"
-    viewBox="0 0 1200 4200"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
-    preserveAspectRatio="none"
-  >
-    <defs>
-      <style>
-        .inst-wave-path {
-          fill: none;
-
-          stroke: var(--green);
-
-          stroke-linecap: round;
-
-          stroke-linejoin: round;
-
-          stroke-width: 4px;
-
-          stroke-dasharray: 0.33 18;
-
-          opacity: 1; /* Opacidad al 100% para que sea nítida */
-        }
-      </style>
-    </defs>
-
-    <path
-      class="inst-wave-path"
-      d="
-
-      M 100 600
-
-      C 50 300, 1050 300, 1100 600
-
-      C 1150 900, 80 900, 60 1200
-
-      C 40 1500, 1100 1500, 1120 1800
-
-      C 1140 2100, 60 2100, 80 2400
-
-      C 100 2700, 1100 2700, 1080 3000
-
-      C 1060 3300, 100 3300, 120 3600
-
-      C 140 3900, 600 3950, 600 4200
-
-    "
-    ></path>
-  </svg> -->
-
   <div class="container Relative-z">
     <div class="inst__header reveal">
       <div class="inst__badge">
@@ -120,6 +73,7 @@ import img10 from "../assets/instalaciones/10.jpg";
     </div>
 
     <div class="blocks reveal" style="transition-delay:0.1s">
+      <!-- 1. Predio -->
       <div class="block block--left">
         <div class="block__photo">
           <img src={img1.src} alt="Predio Las Lunas" loading="lazy" />
@@ -129,89 +83,97 @@ import img10 from "../assets/instalaciones/10.jpg";
         </div>
       </div>
 
+      <!-- 2. Arboleda y Pileta -->
       <div class="block block--right">
         <div class="block__text">
           <h3>Arboleda y pileta</h3>
         </div>
         <div class="block__photo">
-          <img src={img2.src} alt="Arboleda y pileta" loading="lazy" />
+          <img src={img11.src} alt="Arboleda y pileta" loading="lazy" />
         </div>
       </div>
 
+      <!-- 3. Zonas Techadas -->
       <div class="block block--left">
         <div class="block__photo">
-          <img src={img3.src} alt="Zonas techadas" loading="lazy" />
+          <img src={img13.src} alt="Zonas techadas" loading="lazy" />
         </div>
         <div class="block__text">
           <h3>Zonas techadas</h3>
         </div>
       </div>
 
+      <!-- 4. Gateras Ambientadas -->
       <div class="block block--right">
-        <div class="block__text">
+        <div class="block__text" style="border-bottom: 2px solid white;">
           <h3>Gateras ambientadas con casitas y troncos</h3>
         </div>
         <div class="block__photo">
-          <img src={img4.src} alt="Gateras ambientadas" loading="lazy" />
-        </div>
-      </div>
-
-      <div class="block block--left">
-        <div class="block__photo">
-          <img src={img9.src} alt="Predio en Pilar" loading="lazy" />
-        </div>
-        <div class="block__text">
-          <span class="block__location-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-              ></path>
-            </svg>
-            Ubicación
-          </span>
-          <h3>Predio en Pilar</h3>
-          <a
-            href="https://www.google.com/maps/place/las+lunas+hospedaje/@-34.4621708,-58.8269619,15z"
-            target="_blank"
-            rel="noopener"
-            class="block__cta-link"
-          >
-            Cómo llegar →
-          </a>
-        </div>
-      </div>
-
-      <div class="block block--right">
-        <div class="block__text" style="border-bottom: 2px solid white;">
-          <span class="block__location-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-              ></path>
-            </svg>
-            Ubicación
-          </span>
-          <h3>Oficina atención al cliente</h3>
-          <a
-            href="maps.google.com/6"
-            target="_blank"
-            rel="noopener"
-            class="block__cta-link"
-          >
-            Cómo llegar →
-          </a>
-        </div>
-        <div class="block__photo">
-          <img
-            src={img10.src}
-            alt="Oficina atención al cliente"
-            loading="lazy"
-          />
+          <img src={img12.src} alt="Gateras ambientadas" loading="lazy" />
         </div>
       </div>
     </div>
 
-    <div class="inst__cta reveal" style="transition-delay:0.2s">
+    <!-- SECCIÓN DE UBICACIÓN (Diseño Compacto) -->
+    <div class="location-wrapper reveal" style="transition-delay:0.2s">
+      <div class="location-header">
+        <span class="location-title">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+            ></path>
+          </svg>
+          Dónde encontrarnos
+        </span>
+      </div>
+
+      <div class="loc-compact-grid">
+        <!-- Sede Pilar -->
+        <div class="loc-compact-card">
+          <img
+            src={img9.src}
+            alt="Predio en Pilar"
+            class="loc-compact-img"
+            loading="lazy"
+          />
+          <div class="loc-compact-info">
+            <h4>Predio en Pilar</h4>
+            <a
+              href="https://www.google.com/maps/place/las+lunas+hospedaje/@-34.4621712,-58.8166836,1250m/data=!3m2!1e3!4b1!4m6!3m5!1s0x95bc99eed1e02425:0x3fffff070ad29f91!8m2!3d-34.4621712!4d-58.8166836!16s%2Fg%2F11j03_2tg3?entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener"
+              class="loc-link"
+            >
+              Cómo llegar →
+            </a>
+          </div>
+        </div>
+
+        <!-- Sede Oficina -->
+        <div class="loc-compact-card">
+          <img
+            src={img10.src}
+            alt="Oficina atención al cliente"
+            class="loc-compact-img"
+            loading="lazy"
+          />
+          <div class="loc-compact-info">
+            <h4>Oficina atención al cliente</h4>
+            <a
+              href="https://www.google.com/maps/place/Las+Lunas+-+Oficina/@-34.4812534,-58.528356,1250m/data=!3m2!1e3!4b1!4m6!3m5!1s0x95bcb1f12ef8f6d9:0xde855bf6d08d05bf!8m2!3d-34.4812534!4d-58.528356!16s%2Fg%2F11yt0tdlp7?entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener"
+              class="loc-link"
+            >
+              Cómo llegar →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA FOTOS -->
+    <div class="inst__cta reveal" style="transition-delay:0.3s">
       <a href="/galeria" class="cta-fotos">
         <svg
           width="20"
@@ -240,7 +202,7 @@ import img10 from "../assets/instalaciones/10.jpg";
 
   .instalaciones {
     background: #1b4332; /* Fondo verde oscuro */
-    padding: 4rem 0; /* Reducido de 6rem a 4rem */
+    padding: 4rem 0 6rem 0;
     position: relative;
     overflow: hidden;
   }
@@ -261,7 +223,7 @@ import img10 from "../assets/instalaciones/10.jpg";
 
   /* ── HEADER ── */
   .inst__header {
-    margin-bottom: 2.5rem; /* Reducido para ahorrar espacio */
+    margin-bottom: 2.5rem;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -292,7 +254,7 @@ import img10 from "../assets/instalaciones/10.jpg";
     color: var(--green);
   }
 
-  /* ── BLOQUES ── */
+  /* ── BLOQUES ORIGINALES ── */
   .blocks {
     display: flex;
     flex-direction: column;
@@ -303,7 +265,7 @@ import img10 from "../assets/instalaciones/10.jpg";
   .block {
     display: grid;
     grid-template-columns: 1.6fr 1fr;
-    height: 280px; /* Reducido de 340px a 280px */
+    height: 280px;
     overflow: hidden;
   }
 
@@ -332,7 +294,7 @@ import img10 from "../assets/instalaciones/10.jpg";
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 1.5rem 2.5rem; /* Reducido el padding interno */
+    padding: 1.5rem 2.5rem;
     background: #1b4332;
   }
 
@@ -344,49 +306,104 @@ import img10 from "../assets/instalaciones/10.jpg";
     border-left: 2px solid white;
   }
 
-  .block__location-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--green);
-    margin-bottom: 0.5rem;
-  }
-
   .block__text h3 {
-    font-size: clamp(1.2rem, 2vw, 1.6rem); /* Ligeramente más pequeño */
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
     font-weight: 900;
     color: var(--white);
     line-height: 1.2;
-    margin-bottom: 0; /* Quitamos el margen inferior si no hay link abajo */
+    margin-bottom: 0;
     letter-spacing: -0.02em;
   }
 
-  .block__cta-link {
+  /* ── SECCIÓN DE UBICACIÓN COMPACTA ── */
+  .location-wrapper {
+    max-width: 900px;
+    margin: 4rem auto 0 auto;
+    padding-top: 3.5rem;
+    border-top: 1px dashed rgba(255, 255, 255, 0.15);
+  }
+
+  .location-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .location-title {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    margin-top: 1rem;
+    gap: 12px;
+    color: var(--green);
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .loc-compact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .loc-compact-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    transition:
+      transform 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  .loc-compact-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--green);
+  }
+
+  .loc-compact-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .loc-compact-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .loc-compact-info h4 {
+    color: var(--white);
+    font-size: 1.15rem;
+    margin-bottom: 0.25rem;
+    font-family: var(--font-display);
+    line-height: 1.2;
+  }
+
+  .loc-link {
     color: var(--green);
     font-size: 0.9rem;
     font-weight: 700;
     text-decoration: none;
-    letter-spacing: 0.02em;
     transition:
       color 0.2s,
-      gap 0.2s;
+      transform 0.2s;
+    display: inline-block;
   }
 
-  .block__cta-link:hover {
-    color: white;
-    gap: 10px;
+  .loc-link:hover {
+    color: var(--white);
+    transform: translateX(4px);
   }
 
   /* ── CTA FOTOS ── */
   .inst__cta {
-    margin-top: 2.5rem;
+    margin-top: 4rem;
     display: flex;
     justify-content: center;
   }
@@ -425,7 +442,7 @@ import img10 from "../assets/instalaciones/10.jpg";
     .block,
     .block--right {
       grid-template-columns: 1fr;
-      grid-template-rows: 220px auto; /* Ajuste para mobile */
+      grid-template-rows: 220px auto;
       height: auto;
     }
 
@@ -439,11 +456,16 @@ import img10 from "../assets/instalaciones/10.jpg";
     .block__text {
       padding: 1.5rem;
     }
+
+    .loc-compact-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
   }
 
   @media (max-width: 480px) {
     .block {
-      grid-template-rows: 180px auto; /* Aún más chico en celulares */
+      grid-template-rows: 180px auto;
     }
   }
 </style>

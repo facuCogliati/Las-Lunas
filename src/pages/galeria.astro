@@ -2,6 +2,48 @@
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
+
+// Importamos todas las imágenes de la galería
+import img1 from "../assets/galeria/1.jpg";
+import img2 from "../assets/galeria/2.jpg";
+import img3 from "../assets/galeria/3.jpg";
+import img4 from "../assets/galeria/4.jpg";
+import img5 from "../assets/galeria/5.jpg";
+import img6 from "../assets/galeria/6.jpg";
+import img7 from "../assets/galeria/7.jpg";
+import img8 from "../assets/galeria/8.jpg";
+import img9 from "../assets/galeria/9.jpg";
+import img10 from "../assets/galeria/10.jpg";
+import img11 from "../assets/galeria/11.jpg";
+import img12 from "../assets/galeria/12.jpg";
+import img13 from "../assets/galeria/13.jpg";
+import img14 from "../assets/galeria/14.jpg";
+import img15 from "../assets/galeria/15.jpg";
+import img16 from "../assets/galeria/16.jpg";
+import img17 from "../assets/galeria/17.jpg";
+import img18 from "../assets/galeria/18.jpg";
+
+// Las agrupamos para mostrarlas fácilmente
+const images = [
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img6,
+  img7,
+  img8,
+  img9,
+  img10,
+  img11,
+  img12,
+  img13,
+  img14,
+  img15,
+  img16,
+  img17,
+  img18,
+];
 ---
 
 <Layout
@@ -9,6 +51,7 @@ import Footer from "../components/Footer.astro";
   description="Conocé nuestras instalaciones de 6000m² con fotos del predio, los animales y el equipo."
 >
   <main class="page-galeria">
+    <!-- HEADER -->
     <header class="gallery-header">
       <svg
         class="gallery-paw header-paw-1 hide-on-mobile"
@@ -67,23 +110,86 @@ import Footer from "../components/Footer.astro";
       </div>
     </header>
 
+    <!-- SECCIÓN GALERÍA -->
     <section class="gallery-content">
-      <div class="container">
-        <div class="gallery-grid">
+      <!-- CONTENEDOR ESTRICTO PARA SVGS DE FONDO (Acá está la solución) -->
+      <div class="bg-paws-container">
+        <svg class="bg-paw bg-paw-left" viewBox="0 0 60 45" aria-hidden="true">
+          <g fill="currentColor">
+            <ellipse cx="12" cy="6" rx="5" ry="6"></ellipse><ellipse
+              cx="26"
+              cy="4"
+              rx="4"
+              ry="5"></ellipse><ellipse cx="39" cy="6" rx="4" ry="5"
+            ></ellipse><ellipse cx="51" cy="8" rx="3.5" ry="4.5"
+            ></ellipse><ellipse cx="30" cy="28" rx="14" ry="13"></ellipse>
+          </g>
+        </svg>
+        <svg class="bg-paw bg-paw-right" viewBox="0 0 60 45" aria-hidden="true">
+          <g fill="currentColor">
+            <ellipse cx="12" cy="6" rx="5" ry="6"></ellipse><ellipse
+              cx="26"
+              cy="4"
+              rx="4"
+              ry="5"></ellipse><ellipse cx="39" cy="6" rx="4" ry="5"
+            ></ellipse><ellipse cx="51" cy="8" rx="3.5" ry="4.5"
+            ></ellipse><ellipse cx="30" cy="28" rx="14" ry="13"></ellipse>
+          </g>
+        </svg>
+        <svg
+          class="bg-paw bg-paw-bottom"
+          viewBox="0 0 60 45"
+          aria-hidden="true"
+        >
+          <g fill="currentColor">
+            <ellipse cx="12" cy="6" rx="5" ry="6"></ellipse><ellipse
+              cx="26"
+              cy="4"
+              rx="4"
+              ry="5"></ellipse><ellipse cx="39" cy="6" rx="4" ry="5"
+            ></ellipse><ellipse cx="51" cy="8" rx="3.5" ry="4.5"
+            ></ellipse><ellipse cx="30" cy="28" rx="14" ry="13"></ellipse>
+          </g>
+        </svg>
+      </div>
+
+      <div class="container relative-z">
+        <!-- Contenedor estilo Pinterest -->
+        <div class="gallery-masonry">
           {
-            Array.from({ length: 12 }, (_, i) => (
-              <div
+            images.map((img, i) => (
+              <button
+                type="button"
                 class="gallery-item reveal"
-                style={`transition-delay: ${0.1 * (i % 4)}s;`}
+                style={`transition-delay: ${0.05 * (i % 6)}s;`}
+                data-full-img={img.src}
+                aria-label={`Ampliar foto ${i + 1}`}
               >
                 <div class="img-wrapper">
                   <img
-                    src={`https://picsum.photos/seed/gallery${i}/800/600`}
+                    src={img.src}
                     alt={`Las Lunas - foto de las instalaciones ${i + 1}`}
                     loading="lazy"
                   />
+                  <div class="hover-overlay">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <circle cx="11" cy="11" r="8" />
+                      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                      <line x1="11" y1="8" x2="11" y2="14" />
+                      <line x1="8" y1="11" x2="14" y2="11" />
+                    </svg>
+                  </div>
                 </div>
-              </div>
+              </button>
             ))
           }
         </div>
@@ -95,6 +201,12 @@ import Footer from "../components/Footer.astro";
     </section>
   </main>
 
+  <!-- POP-UP (LIGHTBOX) -->
+  <div id="gallery-lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Cerrar">&times;</button>
+    <img id="lightbox-image" src="" alt="Foto ampliada" />
+  </div>
+
   <Footer />
 </Layout>
 
@@ -102,17 +214,16 @@ import Footer from "../components/Footer.astro";
   .page-galeria {
     background: var(--gray-light);
     min-height: 100vh;
-    /* padding-top: calc(var(--pre-header-h) + var(--header-h)); */
   }
 
-  /* --- HEADER DE PÁGINA (Estilo idéntico a Requisitos) --- */
+  /* --- HEADER DE PÁGINA --- */
   .gallery-header {
     background: var(--green-dark);
     color: var(--white);
-    padding: 6rem 1rem 12rem; /* Mucho padding abajo para solapar la grilla */
+    padding: 6rem 1rem 12rem;
     text-align: center;
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* Esto evita que el header se rompa */
   }
 
   .header-badge {
@@ -155,7 +266,7 @@ import Footer from "../components/Footer.astro";
     z-index: 1;
   }
 
-  /* --- PATITAS DECORATIVAS --- */
+  /* --- PATITAS DECORATIVAS HEADER --- */
   .gallery-paw {
     position: absolute;
     height: auto;
@@ -177,32 +288,77 @@ import Footer from "../components/Footer.astro";
     width: 100px;
   }
 
-  /* --- CONTENIDO Y GRILLA --- */
+  /* --- CONTENIDO Y GRILLA PINTEREST --- */
   .gallery-content {
     padding: 0 1rem 6rem;
-    margin-top: -8rem; /* Superpone las fotos sobre el fondo verde oscuro */
+    margin-top: -8rem;
     position: relative;
-    z-index: 2;
+    z-index: 2; /* Para que pase por encima del Header verde */
   }
 
-  .gallery-grid {
-    display: grid;
-    /* Ajuste para que las tarjetas sean un poco más anchas y se vean más premium */
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 2rem;
-    max-width: 1400px;
+  .relative-z {
+    position: relative;
+    z-index: 3; /* Para que las fotos estén por encima de las huellas */
+  }
+
+  /* SOLUCIÓN: CONTENEDOR ESTRICTO DE SVGs */
+  .bg-paws-container {
+    position: absolute;
+    top: 8rem; /* Empieza justo donde termina el verde del header */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 8rem);
+    overflow: hidden; /* ACÁ ESTÁ LA MAGIA: Corta todo lo que se salga de la pantalla */
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* SVGs DECORATIVOS DE FONDO (Galería) */
+  .bg-paw {
+    position: absolute;
+    color: var(--accent);
+    opacity: 0.12;
+    pointer-events: none;
+  }
+  .bg-paw-left {
+    top: 5%;
+    left: -2%;
+    transform: rotate(-30deg) scale(3);
+  }
+  .bg-paw-right {
+    top: 40%;
+    right: -2%;
+    transform: rotate(15deg) scale(4);
+  }
+  .bg-paw-bottom {
+    bottom: 5%;
+    left: 30%;
+    transform: rotate(45deg) scale(2.5);
+  }
+
+  /* MASONRY LAYOUT */
+  .gallery-masonry {
+    column-count: 3;
+    column-gap: 2rem;
+    max-width: 1300px;
     margin: 0 auto;
   }
 
   .gallery-item {
+    display: block;
+    width: 100%;
+    border: none;
+    cursor: pointer;
     background: var(--white);
     border-radius: var(--radius-lg);
-    /* Borde blanco para darle efecto "marco de foto" */
     padding: 8px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
     transition:
       transform var(--transition),
       box-shadow var(--transition);
+    break-inside: avoid;
+    margin-bottom: 2rem;
+    transform: translateZ(0);
   }
 
   .gallery-item:hover {
@@ -213,9 +369,21 @@ import Footer from "../components/Footer.astro";
   .img-wrapper {
     border-radius: calc(var(--radius-lg) - 4px);
     overflow: hidden;
-    aspect-ratio: 4/3;
     background: var(--gray-light);
     position: relative;
+  }
+
+  .gallery-item:nth-child(even) .img-wrapper {
+    aspect-ratio: 3/4;
+  }
+  .gallery-item:nth-child(odd) .img-wrapper {
+    aspect-ratio: 4/3;
+  }
+  .gallery-item:nth-child(3n) .img-wrapper {
+    aspect-ratio: 1/1;
+  }
+  .gallery-item:nth-child(5n) .img-wrapper {
+    aspect-ratio: 4/5;
   }
 
   .img-wrapper img {
@@ -223,10 +391,95 @@ import Footer from "../components/Footer.astro";
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+  }
+
+  .hover-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(27, 67, 50, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .hover-overlay svg {
+    color: var(--white);
+    background: var(--accent);
+    border-radius: 50%;
+    padding: 12px;
+    width: 48px;
+    height: 48px;
+    transform: scale(0.5);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
   .gallery-item:hover .img-wrapper img {
     transform: scale(1.08);
+  }
+  .gallery-item:hover .hover-overlay {
+    opacity: 1;
+  }
+  .gallery-item:hover .hover-overlay svg {
+    transform: scale(1);
+  }
+
+  /* --- LIGHTBOX (Pop-up nativo oscuro) --- */
+  .lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    transform: scale(0.9);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .lightbox.active img {
+    transform: scale(1);
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 3.5rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 10px;
+    z-index: 10000;
+    transition: color 0.2s ease;
+  }
+
+  .lightbox-close:hover {
+    color: var(--accent);
   }
 
   /* --- BOTÓN VOLVER --- */
@@ -256,6 +509,12 @@ import Footer from "../components/Footer.astro";
   }
 
   /* --- RESPONSIVE --- */
+  @media (max-width: 1024px) {
+    .gallery-masonry {
+      column-count: 2;
+    }
+  }
+
   @media (max-width: 768px) {
     .gallery-header {
       padding: 4rem 1rem 10rem;
@@ -263,8 +522,8 @@ import Footer from "../components/Footer.astro";
     .gallery-content {
       margin-top: -6rem;
     }
-    .gallery-grid {
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    .gallery-masonry {
+      column-count: 1;
       gap: 1.5rem;
     }
     .hide-on-mobile {
@@ -272,3 +531,42 @@ import Footer from "../components/Footer.astro";
     }
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const galleryItems = document.querySelectorAll(".gallery-item");
+    const lightbox = document.getElementById("gallery-lightbox");
+    const lightboxImg = document.getElementById(
+      "lightbox-image",
+    ) as HTMLImageElement;
+    const closeBtn = document.querySelector(".lightbox-close");
+
+    if (!lightbox) return;
+
+    galleryItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        const fullImgSrc = item.getAttribute("data-full-img");
+        if (fullImgSrc && lightboxImg) {
+          lightboxImg.src = fullImgSrc;
+          lightbox.classList.add("active");
+          document.body.style.overflow = "hidden";
+        }
+      });
+    });
+
+    const closeLightbox = () => {
+      lightbox.classList.remove("active");
+      document.body.style.overflow = "";
+    };
+
+    closeBtn?.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && lightbox.classList.contains("active")) {
+        closeLightbox();
+      }
+    });
+  });
+</script>
