@@ -13,7 +13,7 @@ const testimonios = [
     autor: "Adriana",
     año: "2002",
     mascotas: "Tchavolo, Sausalia y Dímiti",
-    foto: null, // Sin foto, mostrará la inicial "A" en grande
+    foto: null, // Solo se mostrará texto centrado
   },
   {
     texto:
@@ -29,7 +29,7 @@ const testimonios = [
     autor: "Victoria Angelillo",
     año: "2025",
     mascotas: "Duma",
-    foto: null,
+    foto: null, // Solo se mostrará texto centrado
   },
   {
     texto:
@@ -97,33 +97,28 @@ const testimonios = [
         <div class="testi-track" id="testi-track">
           {
             testimonios.map((t) => (
-              <article class="testi-card">
-                
-                <!-- NUEVO: Columna de la Imagen Gigante -->
-                <div class="testi-image-col">
-                  {t.foto ? (
+              <article class={`testi-card ${t.foto ? "has-img" : "no-img"}`}>
+                {/* Solo se renderiza la columna de imagen si t.foto existe */}
+                {t.foto && (
+                  <div class="testi-image-col">
                     <img
                       src={t.foto}
                       alt={`Foto de la mascota de ${t.autor}`}
                       class="testi-large-img"
                     />
-                  ) : (
-                    <div class="testi-fallback-img">
-                      {t.autor.charAt(0).toUpperCase()}
-                    </div>
-                  )}
-                </div>
+                  </div>
+                )}
 
-                <!-- Columna del Texto -->
                 <div class="testi-text-col">
                   <div class="testi-quote">“</div>
                   <p class="testi-text">{t.texto}</p>
                   <div class="testi-author-info">
                     <strong class="testi-autor">{t.autor}</strong>
-                    <span class="testi-meta">{t.año} - {t.mascotas}</span>
+                    <span class="testi-meta">
+                      {t.año} - {t.mascotas}
+                    </span>
                   </div>
                 </div>
-
               </article>
             ))
           }
@@ -138,7 +133,8 @@ const testimonios = [
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg
+          >
         </button>
         <div class="testi-dots" id="testi-dots"></div>
         <button class="testi-btn" id="testi-next" aria-label="Siguiente">
@@ -148,7 +144,8 @@ const testimonios = [
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg
+          >
         </button>
       </div>
     </div>
@@ -158,7 +155,7 @@ const testimonios = [
 <style>
   .testimonios {
     background: var(--green-dark); /* var(--green-dark, #1b4332) */
-    padding: 8rem 0;
+    padding: 7rem 0; /* Un poco menos de padding vertical general */
     position: relative;
     overflow: hidden;
   }
@@ -175,7 +172,7 @@ const testimonios = [
   /* --- HEADER --- */
   .testimonios__header {
     text-align: center;
-    margin-bottom: 5rem;
+    margin-bottom: 4rem; /* Menos margen inferior */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -186,7 +183,7 @@ const testimonios = [
     align-items: center;
     gap: 8px;
     padding: 8px 20px;
-    background: rgba(163, 230, 53, 0.1); 
+    background: rgba(163, 230, 53, 0.1);
     border-radius: 50px;
     color: var(--accent); /* var(--accent, #a3e635) */
     font-size: 0.85rem;
@@ -198,12 +195,13 @@ const testimonios = [
   .testimonios__header h2 {
     color: var(--white);
     max-width: 600px;
+    font-size: 2.5rem; /* Un toque más ajustado */
   }
 
   /* --- CARRUSEL --- */
   .testi-carousel {
     position: relative;
-    max-width: 1000px; /* Expandido para dar lugar a la foto grande */
+    max-width: 850px; /* ACHICADO (Antes era 1000px) */
     margin: 0 auto;
   }
 
@@ -216,23 +214,41 @@ const testimonios = [
     display: flex;
     transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     width: 100%;
-    align-items: stretch; 
+    align-items: stretch;
   }
 
-  /* --- TARJETA REDISEÑADA (Split Layout) --- */
+  /* --- TARJETA REDISEÑADA --- */
   .testi-card {
     flex: 0 0 100%;
     width: 100%;
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: var(--radius-lg);
-    
-    /* Layout tipo Grid para separar Foto de Texto */
-    display: grid;
-    grid-template-columns: 2fr 3fr; /* 40% Foto, 60% Texto */
-    gap: 0; /* Sin espacio porque el padding lo maneja el texto */
-    overflow: hidden; /* Para que la foto respete los bordes curvos de la tarjeta */
+    overflow: hidden;
     box-sizing: border-box;
+  }
+
+  /* Variante CON FOTO (Split Layout) */
+  .testi-card.has-img {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr; /* 40% Foto, 60% Texto */
+  }
+
+  /* Variante SIN FOTO (Full width text) */
+  .testi-card.no-img {
+    display: block;
+  }
+
+  .testi-card.no-img .testi-text-col {
+    align-items: center;
+    text-align: center;
+    padding: 3.5rem 3rem; /* Más balanceado para un texto centrado */
+  }
+
+  .testi-card.no-img .testi-author-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   /* --- COLUMNA DE LA IMAGEN --- */
@@ -240,7 +256,7 @@ const testimonios = [
     position: relative;
     width: 100%;
     height: 100%;
-    min-height: 350px;
+    min-height: 250px; /* Reducido para que la foto no exija tanto alto */
     background: var(--accent);
   }
 
@@ -253,21 +269,9 @@ const testimonios = [
     object-position: center;
   }
 
-  .testi-fallback-img {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 8rem;
-    font-family: var(--font-display);
-    color: var(--green-dark);
-    font-weight: 800;
-  }
-
   /* --- COLUMNA DEL TEXTO --- */
   .testi-text-col {
-    padding: 3rem 4rem;
+    padding: 2.5rem 3rem; /* ACHICADO (Antes era 3rem 4rem) */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -275,38 +279,38 @@ const testimonios = [
 
   .testi-quote {
     font-family: var(--font-display);
-    font-size: 6rem;
+    font-size: 4.5rem; /* ACHICADO (Antes era 6rem) */
     color: var(--accent);
     line-height: 1;
-    margin-bottom: -1rem;
-    margin-left: -0.5rem;
+    margin-bottom: -0.5rem;
+    margin-left: -0.2rem;
     opacity: 0.3;
   }
 
   .testi-text {
-    font-size: 1.15rem;
+    font-size: 1.05rem; /* ACHICADO (Antes era 1.15rem) */
     color: rgba(255, 255, 255, 0.9);
-    line-height: 1.7;
-    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
     font-style: italic;
-    flex-grow: 1; /* Empuja el autor hacia abajo si hay espacio */
+    flex-grow: 1;
   }
 
   .testi-author-info {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 1.5rem;
+    padding-top: 1.25rem;
   }
 
   .testi-autor {
     display: block;
     color: var(--white);
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     margin-bottom: 4px;
   }
 
   .testi-meta {
     display: block;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.6);
   }
 
@@ -316,12 +320,12 @@ const testimonios = [
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    margin-top: 2.5rem;
+    margin-top: 2rem;
   }
 
   .testi-btn {
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -341,14 +345,14 @@ const testimonios = [
 
   .testi-dots {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     align-items: center;
   }
 
   :global(.testi-dot) {
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.3);
     cursor: pointer;
@@ -363,13 +367,15 @@ const testimonios = [
 
   /* --- RESPONSIVE --- */
   @media (max-width: 900px) {
-    .testi-card {
-      /* En tablets y celulares se apila: foto arriba, texto abajo */
+    .testi-card.has-img {
       grid-template-columns: 1fr;
-      grid-template-rows: 350px auto; 
+      grid-template-rows: 250px auto;
     }
     .testi-text-col {
-      padding: 2.5rem;
+      padding: 2rem;
+    }
+    .testi-card.no-img .testi-text-col {
+      padding: 2.5rem 2rem;
     }
   }
 
@@ -378,19 +384,16 @@ const testimonios = [
       padding: 5rem 0;
     }
     .testimonios__header {
-      margin-bottom: 3.5rem;
+      margin-bottom: 3rem;
     }
-    .testi-card {
-      grid-template-rows: 280px auto; /* Foto un poco más baja en celus */
-    }
-    .testi-text-col {
-      padding: 2rem;
+    .testi-card.has-img {
+      grid-template-rows: 220px auto;
     }
     .testi-text {
-      font-size: 1.05rem;
+      font-size: 1rem;
     }
     .testi-quote {
-      font-size: 4rem;
+      font-size: 3.5rem;
     }
   }
 </style>
@@ -414,7 +417,7 @@ const testimonios = [
       d.addEventListener("click", () => {
         cur = i;
         updateSlider();
-        startAuto(); 
+        startAuto();
       });
       dotsEl.appendChild(d);
     });
@@ -442,12 +445,16 @@ const testimonios = [
 
   function startAuto() {
     clearInterval(autoTimer);
-    autoTimer = setInterval(nextSlide, 7000); 
+    autoTimer = setInterval(nextSlide, 7000);
   }
 
   if (track && slides.length > 0) {
     buildDots();
-    updateSlider();
+
+    // Necesitamos esperar un microsegundo a que las imágenes carguen
+    // para que la altura se calcule bien desde el principio
+    setTimeout(updateSlider, 100);
+
     startAuto();
 
     prevBtn?.addEventListener("click", () => {
