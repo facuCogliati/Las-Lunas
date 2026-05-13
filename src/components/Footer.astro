@@ -5,16 +5,26 @@ import logoLasLunas from "../assets/Las lunas.png";
 <footer class="footer">
   <div class="container">
     <div class="footer-content">
-      <div class="footer-logo-container">
-        <img src={logoLasLunas.src} alt="Logo Las Lunas" class="footer-logo" />
+      <!-- BRANDING: Círculo blanco + Texto -->
+      <div class="footer-brand">
+        <div class="footer-logo-circle">
+          <img
+            src={logoLasLunas.src}
+            alt="Logo Las Lunas"
+            class="footer-logo"
+          />
+        </div>
+        <!-- <span class="footer-brand-name">las lunas</span> -->
       </div>
 
+      <!-- NAVEGACIÓN -->
       <nav class="footer-nav">
         <a href="/#inicio" class="footer-link">Inicio</a>
         <span class="footer-dot">•</span>
         <a href="/galeria" class="footer-link">Galería de fotos</a>
       </nav>
 
+      <!-- REDES Y CONTACTO -->
       <div class="footer-contact-wrapper">
         <span class="footer-email-text">info@las-lunas.com.ar</span>
         <div class="footer-socials">
@@ -24,8 +34,8 @@ import logoLasLunas from "../assets/Las lunas.png";
             class="social-icon mail-icon"
           >
             <svg
-              width="22"
-              height="22"
+              width="20"
+              height="20"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -86,44 +96,62 @@ import logoLasLunas from "../assets/Las lunas.png";
 <style>
   :root {
     --green: #95bc3a; /* Verde Claro Principal */
-    --brown: #4a3f35; /* Marrón Tierra Principal */
+    --green-dark: #1b4332; /* Verde Oscuro Profundo */
     --white: #ffffff;
-    --footer-bg: #f4f1ea; /* Beige súper clarito/Gris piedra para contraste */
-    --text-dark: #2c251e; /* Texto oscuro para que lea bien sobre el beige */
   }
 
   .footer {
-    /* FONDO NUEVO: Separa de lo blanco y contrasta perfecto con el logo */
-    background: var(--footer-bg);
-    color: var(--text-dark);
-    padding-top: 3.5rem;
+    background: var(--green-dark);
+    color: var(--white);
+    padding-top: 4rem;
     position: relative;
-    border-top: 1px solid rgba(0, 0, 0, 0.05); /* Línea súper sutil por si acaso */
   }
 
-  /* --- CONTENIDO SIMPLE --- */
+  /* --- CONTENIDO --- */
   .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 0;
+    padding: 1rem 0;
   }
 
-  /* --- Logo grande --- */
-  .footer-logo-container {
+  /* --- BRANDING (Círculo + Nombre) --- */
+  .footer-brand {
     flex: 1;
     display: flex;
     align-items: center;
+    gap: 1.25rem;
   }
 
-  .footer-logo {
-    height: 85px; /* Un poco más grande para que se luzca */
-    width: auto;
+  .footer-logo-circle {
+    width: 85px;
+    height: 85px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px; /* Espacio interior para que el logo respire */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
   }
 
-  .footer-logo:hover {
-    transform: scale(1.03);
+  .footer-brand:hover .footer-logo-circle {
+    transform: scale(1.05);
+  }
+
+  .footer-logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .footer-brand-name {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--green);
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 
   /* --- Navegación --- */
@@ -136,19 +164,22 @@ import logoLasLunas from "../assets/Las lunas.png";
   }
 
   .footer-link {
-    color: var(--text-dark); /* Color oscuro para el fondo claro */
+    color: var(--white);
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1.05rem;
     transition: color 0.2s ease;
+    opacity: 0.9;
   }
 
   .footer-link:hover {
     color: var(--green);
+    opacity: 1;
   }
 
   .footer-dot {
-    color: rgba(0, 0, 0, 0.2);
+    color: var(--green);
+    opacity: 0.5;
   }
 
   /* --- Redes Sociales y Mail --- */
@@ -156,15 +187,16 @@ import logoLasLunas from "../assets/Las lunas.png";
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 0.5rem;
+    gap: 0.75rem;
     flex: 1;
   }
 
   .footer-email-text {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    opacity: 0.8;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--white);
+    opacity: 0.9;
+    letter-spacing: 0.02em;
   }
 
   .footer-socials {
@@ -174,8 +206,8 @@ import logoLasLunas from "../assets/Las lunas.png";
   }
 
   .social-icon {
-    width: 44px;
-    height: 44px;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -184,17 +216,17 @@ import logoLasLunas from "../assets/Las lunas.png";
     transition:
       transform 0.2s ease,
       box-shadow 0.2s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   }
 
   .social-icon:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
   }
 
-  /* Colores de cada ícono */
+  /* Colores exactos de tu imagen */
   .mail-icon {
-    background: var(--brown); /* Color corporativo para el mail */
+    background: var(--green);
   }
   .wa-icon {
     background: #25d366;
@@ -213,8 +245,13 @@ import logoLasLunas from "../assets/Las lunas.png";
   /* --- Divisor y Bottom --- */
   .footer-divider {
     height: 1px;
-    background: rgba(0, 0, 0, 0.08); /* Divisor oscuro pero muy transparente */
-    margin: 2rem 0;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    margin: 2.5rem 0 2rem 0;
   }
 
   .footer-bottom {
@@ -225,18 +262,15 @@ import logoLasLunas from "../assets/Las lunas.png";
   }
 
   .copyright {
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.5);
     font-size: 0.9rem;
-    font-weight: 500;
   }
 
-  /* Texto chiquito (Requisitos) */
   .requisitos-link {
     font-size: 0.9rem;
-    font-weight: 600;
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba(255, 255, 255, 0.6);
     text-decoration: underline;
-    text-decoration-color: rgba(0, 0, 0, 0.2);
+    text-decoration-color: rgba(255, 255, 255, 0.2);
     text-underline-offset: 4px;
     transition: all 0.2s ease;
   }
@@ -254,12 +288,17 @@ import logoLasLunas from "../assets/Las lunas.png";
       text-align: center;
     }
 
-    .footer-logo-container,
+    .footer-brand,
     .footer-nav,
     .footer-contact-wrapper {
       flex: unset;
-      align-items: center; /* Todo centrado */
+      align-items: center;
       justify-content: center;
+    }
+
+    .footer-brand {
+      flex-direction: column;
+      gap: 1rem;
     }
 
     .footer-socials {
@@ -268,14 +307,13 @@ import logoLasLunas from "../assets/Las lunas.png";
   }
 
   @media (max-width: 768px) {
+    .footer {
+      padding-top: 3rem;
+    }
     .footer-bottom {
       flex-direction: column;
       gap: 1.5rem;
       text-align: center;
-    }
-
-    .footer-logo {
-      height: 75px;
     }
   }
 </style>
