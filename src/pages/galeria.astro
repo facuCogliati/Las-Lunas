@@ -23,7 +23,6 @@ import img16 from "../assets/galeria/16.jpg";
 import img17 from "../assets/galeria/17.jpg";
 import img18 from "../assets/galeria/18.jpg";
 
-// Las agrupamos para mostrarlas fácilmente
 const images = [
   img1,
   img2,
@@ -51,8 +50,24 @@ const images = [
   description="Conocé nuestras instalaciones de 6000m² con fotos del predio, los animales y el equipo."
 >
   <main class="page-galeria">
-    <!-- HEADER -->
     <header class="gallery-header">
+      <a href="/" class="header-back-btn">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span class="hide-on-mobile">Volver al inicio</span>
+      </a>
+
       <svg
         class="gallery-paw header-paw-1 hide-on-mobile"
         viewBox="0 -2 60 45"
@@ -100,7 +115,7 @@ const images = [
         </div>
 
         <h1 class="reveal" style="transition-delay: 0.1s;">
-          Galería de <span class="text-accent">fotos</span>
+          ASÍ ES <span class="text-accent">LAS LUNAS</span>
         </h1>
 
         <p class="lead-text reveal" style="transition-delay: 0.2s;">
@@ -110,58 +125,40 @@ const images = [
       </div>
     </header>
 
-    <!-- SECCIÓN GALERÍA -->
     <section class="gallery-content">
-      <!-- CONTENEDOR ESTRICTO PARA SVGS DE FONDO (Acá está la solución) -->
       <div class="bg-paws-container">
-        <svg class="bg-paw bg-paw-left" viewBox="0 0 60 45" aria-hidden="true">
-          <g fill="currentColor">
-            <ellipse cx="12" cy="6" rx="5" ry="6"></ellipse><ellipse
+        <svg class="bg-paw bg-paw-left" viewBox="0 0 60 45" aria-hidden="true"
+          ><g fill="currentColor"
+            ><ellipse cx="12" cy="6" rx="5" ry="6"></ellipse><ellipse
               cx="26"
               cy="4"
               rx="4"
               ry="5"></ellipse><ellipse cx="39" cy="6" rx="4" ry="5"
             ></ellipse><ellipse cx="51" cy="8" rx="3.5" ry="4.5"
-            ></ellipse><ellipse cx="30" cy="28" rx="14" ry="13"></ellipse>
-          </g>
-        </svg>
-        <svg class="bg-paw bg-paw-right" viewBox="0 0 60 45" aria-hidden="true">
-          <g fill="currentColor">
-            <ellipse cx="12" cy="6" rx="5" ry="6"></ellipse><ellipse
-              cx="26"
-              cy="4"
-              rx="4"
-              ry="5"></ellipse><ellipse cx="39" cy="6" rx="4" ry="5"
-            ></ellipse><ellipse cx="51" cy="8" rx="3.5" ry="4.5"
-            ></ellipse><ellipse cx="30" cy="28" rx="14" ry="13"></ellipse>
-          </g>
-        </svg>
-        <svg
-          class="bg-paw bg-paw-bottom"
-          viewBox="0 0 60 45"
-          aria-hidden="true"
+            ></ellipse><ellipse cx="30" cy="28" rx="14" ry="13"></ellipse></g
+          ></svg
         >
-          <g fill="currentColor">
-            <ellipse cx="12" cy="6" rx="5" ry="6"></ellipse><ellipse
+        <svg class="bg-paw bg-paw-right" viewBox="0 0 60 45" aria-hidden="true"
+          ><g fill="currentColor"
+            ><ellipse cx="12" cy="6" rx="5" ry="6"></ellipse><ellipse
               cx="26"
               cy="4"
               rx="4"
               ry="5"></ellipse><ellipse cx="39" cy="6" rx="4" ry="5"
             ></ellipse><ellipse cx="51" cy="8" rx="3.5" ry="4.5"
-            ></ellipse><ellipse cx="30" cy="28" rx="14" ry="13"></ellipse>
-          </g>
-        </svg>
+            ></ellipse><ellipse cx="30" cy="28" rx="14" ry="13"></ellipse></g
+          ></svg
+        >
       </div>
 
       <div class="container relative-z">
-        <!-- Contenedor estilo Pinterest -->
         <div class="gallery-masonry">
           {
             images.map((img, i) => (
               <button
                 type="button"
                 class="gallery-item reveal"
-                style={`transition-delay: ${0.05 * (i % 6)}s;`}
+                style={`transition-delay: ${0.05 * (i % 4)}s;`}
                 data-full-img={img.src}
                 aria-label={`Ampliar foto ${i + 1}`}
               >
@@ -170,6 +167,7 @@ const images = [
                     src={img.src}
                     alt={`Las Lunas - foto de las instalaciones ${i + 1}`}
                     loading="lazy"
+                    class="gallery-img"
                   />
                   <div class="hover-overlay">
                     <svg
@@ -201,7 +199,6 @@ const images = [
     </section>
   </main>
 
-  <!-- POP-UP (LIGHTBOX) -->
   <div id="gallery-lightbox" class="lightbox" aria-hidden="true">
     <button class="lightbox-close" aria-label="Cerrar">&times;</button>
     <img id="lightbox-image" src="" alt="Foto ampliada" />
@@ -216,14 +213,45 @@ const images = [
     min-height: 100vh;
   }
 
-  /* --- HEADER DE PÁGINA --- */
+  /* --- HEADER --- */
   .gallery-header {
     background: var(--green-dark);
     color: var(--white);
     padding: 6rem 1rem 12rem;
     text-align: center;
     position: relative;
-    overflow: hidden; /* Esto evita que el header se rompa */
+    overflow: hidden;
+  }
+
+  /* BOTÓN VOLVER ARRIBA IZQ */
+  .header-back-btn {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 16px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .header-back-btn:hover {
+    opacity: 1;
+    background: var(--accent);
+    color: var(--brown);
+    border-color: var(--accent);
+    transform: translateX(-3px);
   }
 
   .header-badge {
@@ -288,37 +316,35 @@ const images = [
     width: 100px;
   }
 
-  /* --- CONTENIDO Y GRILLA PINTEREST --- */
+  /* --- CONTENIDO --- */
   .gallery-content {
     padding: 0 1rem 6rem;
     margin-top: -8rem;
     position: relative;
-    z-index: 2; /* Para que pase por encima del Header verde */
+    z-index: 2;
   }
 
   .relative-z {
     position: relative;
-    z-index: 3; /* Para que las fotos estén por encima de las huellas */
+    z-index: 3;
   }
 
-  /* SOLUCIÓN: CONTENEDOR ESTRICTO DE SVGs */
+  /* SVGs DECORATIVOS DE FONDO */
   .bg-paws-container {
     position: absolute;
-    top: 8rem; /* Empieza justo donde termina el verde del header */
+    top: 8rem;
     left: 0;
     width: 100%;
     height: calc(100% - 8rem);
-    overflow: hidden; /* ACÁ ESTÁ LA MAGIA: Corta todo lo que se salga de la pantalla */
+    overflow: hidden;
     pointer-events: none;
     z-index: 1;
   }
 
-  /* SVGs DECORATIVOS DE FONDO (Galería) */
   .bg-paw {
     position: absolute;
     color: var(--accent);
     opacity: 0.12;
-    pointer-events: none;
   }
   .bg-paw-left {
     top: 5%;
@@ -330,35 +356,32 @@ const images = [
     right: -2%;
     transform: rotate(15deg) scale(4);
   }
-  .bg-paw-bottom {
-    bottom: 5%;
-    left: 30%;
-    transform: rotate(45deg) scale(2.5);
-  }
 
-  /* MASONRY LAYOUT */
+  /* --- GRILLA MASONRY PURA --- */
   .gallery-masonry {
+    /* 3 columnas fluidas */
     column-count: 3;
-    column-gap: 2rem;
+    column-gap: 1.5rem;
     max-width: 1300px;
     margin: 0 auto;
   }
 
   .gallery-item {
-    display: block;
+    display: inline-block; /* Crucial para evitar que se parta entre columnas */
     width: 100%;
     border: none;
     cursor: pointer;
     background: var(--white);
     border-radius: var(--radius-lg);
-    padding: 8px;
+    padding: 8px; /* Efecto marco de foto Polaroid */
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
     transition:
       transform var(--transition),
       box-shadow var(--transition);
+    margin-bottom: 1.5rem; /* Espacio vertical entre tarjetas */
     break-inside: avoid;
-    margin-bottom: 2rem;
-    transform: translateZ(0);
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
   }
 
   .gallery-item:hover {
@@ -367,31 +390,22 @@ const images = [
   }
 
   .img-wrapper {
+    width: 100%;
     border-radius: calc(var(--radius-lg) - 4px);
     overflow: hidden;
-    background: var(--gray-light);
     position: relative;
+    /* ACÁ ESTÁ LA CLAVE: Sacamos el aspect-ratio para que la foto no se recorte nunca */
   }
 
-  .gallery-item:nth-child(even) .img-wrapper {
-    aspect-ratio: 3/4;
-  }
-  .gallery-item:nth-child(odd) .img-wrapper {
-    aspect-ratio: 4/3;
-  }
-  .gallery-item:nth-child(3n) .img-wrapper {
-    aspect-ratio: 1/1;
-  }
-  .gallery-item:nth-child(5n) .img-wrapper {
-    aspect-ratio: 4/5;
-  }
-
-  .img-wrapper img {
+  .gallery-img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    height: auto; /* La altura es automática, respeta el 100% de la foto */
     display: block;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .gallery-item:hover .gallery-img {
+    transform: scale(1.05); /* Zoom sutil interior */
   }
 
   .hover-overlay {
@@ -416,9 +430,6 @@ const images = [
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
-  .gallery-item:hover .img-wrapper img {
-    transform: scale(1.08);
-  }
   .gallery-item:hover .hover-overlay {
     opacity: 1;
   }
@@ -426,14 +437,14 @@ const images = [
     transform: scale(1);
   }
 
-  /* --- LIGHTBOX (Pop-up nativo oscuro) --- */
+  /* --- LIGHTBOX --- */
   .lightbox {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.92);
+    background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(8px);
     z-index: 9999;
     display: flex;
@@ -452,7 +463,7 @@ const images = [
   .lightbox img {
     max-width: 90vw;
     max-height: 90vh;
-    object-fit: contain;
+    object-fit: contain; /* En el pop-up se ve la foto al natural sin cortes */
     border-radius: 8px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     transform: scale(0.9);
@@ -517,17 +528,22 @@ const images = [
 
   @media (max-width: 768px) {
     .gallery-header {
-      padding: 4rem 1rem 10rem;
+      padding: 5rem 1rem 8rem;
     }
     .gallery-content {
-      margin-top: -6rem;
+      margin-top: -5rem;
     }
     .gallery-masonry {
       column-count: 1;
-      gap: 1.5rem;
     }
     .hide-on-mobile {
       display: none;
+    }
+
+    .header-back-btn {
+      top: 1rem;
+      left: 1rem;
+      padding: 8px;
     }
   }
 </style>

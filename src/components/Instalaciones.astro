@@ -16,49 +16,6 @@ import img13 from "../assets/instalaciones/13.jpg"; // Zonas techadas
 ---
 
 <section id="instalaciones" class="section instalaciones">
-  <svg
-    class="inst__deco"
-    viewBox="0 0 1440 900"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
-  >
-    <circle
-      cx="1380"
-      cy="100"
-      r="200"
-      fill="none"
-      stroke="var(--green)"
-      stroke-width="1.5"></circle>
-    <circle
-      cx="1380"
-      cy="100"
-      r="130"
-      fill="none"
-      stroke="var(--green)"
-      stroke-width="1"></circle>
-    <circle
-      cx="60"
-      cy="820"
-      r="120"
-      fill="none"
-      stroke="var(--green)"
-      stroke-width="1"></circle>
-    <g transform="translate(1280,40) rotate(-15) scale(2)" fill="var(--green)">
-      <ellipse cx="12" cy="6" rx="5" ry="6"></ellipse>
-      <ellipse cx="26" cy="4" rx="4" ry="5"></ellipse>
-      <ellipse cx="39" cy="6" rx="4" ry="5"></ellipse>
-      <ellipse cx="51" cy="8" rx="3.5" ry="4.5"></ellipse>
-      <ellipse cx="30" cy="28" rx="14" ry="13"></ellipse>
-    </g>
-    <g transform="translate(40,750) rotate(10) scale(1.5)" fill="var(--green)">
-      <ellipse cx="12" cy="6" rx="5" ry="6"></ellipse>
-      <ellipse cx="26" cy="4" rx="4" ry="5"></ellipse>
-      <ellipse cx="39" cy="6" rx="4" ry="5"></ellipse>
-      <ellipse cx="51" cy="8" rx="3.5" ry="4.5"></ellipse>
-      <ellipse cx="30" cy="28" rx="14" ry="13"></ellipse>
-    </g>
-  </svg>
-
   <div class="container Relative-z">
     <div class="inst__header reveal">
       <div class="inst__badge">
@@ -72,49 +29,36 @@ import img13 from "../assets/instalaciones/13.jpg"; // Zonas techadas
       <h2>Nuestras <span class="text-accent">Instalaciones</span></h2>
     </div>
 
-    <div class="blocks reveal" style="transition-delay:0.1s">
-      <!-- 1. Predio -->
-      <div class="block block--left">
-        <div class="block__photo">
-          <img src={img1.src} alt="Predio Las Lunas" loading="lazy" />
-        </div>
-        <div class="block__text" style="border-top: 2px solid white;">
+    <div class="bento-grid reveal" style="transition-delay:0.1s">
+      <article class="bento-item bento-item--large">
+        <img src={img1.src} alt="Predio Las Lunas" loading="lazy" />
+        <div class="bento-overlay">
           <h3>Predio 6.000 m² de área verde</h3>
         </div>
-      </div>
+      </article>
 
-      <!-- 2. Arboleda y Pileta -->
-      <div class="block block--right">
-        <div class="block__text">
+      <article class="bento-item bento-item--wide">
+        <img src={img11.src} alt="Arboleda y pileta" loading="lazy" />
+        <div class="bento-overlay">
           <h3>Arboleda y pileta</h3>
         </div>
-        <div class="block__photo">
-          <img src={img11.src} alt="Arboleda y pileta" loading="lazy" />
-        </div>
-      </div>
+      </article>
 
-      <!-- 3. Zonas Techadas -->
-      <div class="block block--left">
-        <div class="block__photo">
-          <img src={img13.src} alt="Zonas techadas" loading="lazy" />
-        </div>
-        <div class="block__text">
+      <article class="bento-item bento-item--square">
+        <img src={img13.src} alt="Zonas techadas" loading="lazy" />
+        <div class="bento-overlay">
           <h3>Zonas techadas</h3>
         </div>
-      </div>
+      </article>
 
-      <!-- 4. Gateras Ambientadas -->
-      <div class="block block--right">
-        <div class="block__text" style="border-bottom: 2px solid white;">
-          <h3>Gateras ambientadas con casitas y troncos</h3>
+      <article class="bento-item bento-item--square">
+        <img src={img12.src} alt="Gateras ambientadas" loading="lazy" />
+        <div class="bento-overlay">
+          <h3>Gateras ambientadas (casitas y troncos)</h3>
         </div>
-        <div class="block__photo">
-          <img src={img12.src} alt="Gateras ambientadas" loading="lazy" />
-        </div>
-      </div>
+      </article>
     </div>
 
-    <!-- SECCIÓN DE UBICACIÓN (Diseño Compacto) -->
     <div class="location-wrapper reveal" style="transition-delay:0.2s">
       <div class="location-header">
         <span class="location-title">
@@ -128,10 +72,9 @@ import img13 from "../assets/instalaciones/13.jpg"; // Zonas techadas
       </div>
 
       <div class="loc-compact-grid">
-        <!-- Sede Pilar -->
         <div class="loc-compact-card">
           <img
-            src={img9.src}
+            src={img10.src}
             alt="Predio en Pilar"
             class="loc-compact-img"
             loading="lazy"
@@ -149,10 +92,9 @@ import img13 from "../assets/instalaciones/13.jpg"; // Zonas techadas
           </div>
         </div>
 
-        <!-- Sede Oficina -->
         <div class="loc-compact-card">
           <img
-            src={img10.src}
+            src={img9.src}
             alt="Oficina atención al cliente"
             class="loc-compact-img"
             loading="lazy"
@@ -171,25 +113,6 @@ import img13 from "../assets/instalaciones/13.jpg"; // Zonas techadas
         </div>
       </div>
     </div>
-
-    <!-- CTA FOTOS -->
-    <div class="inst__cta reveal" style="transition-delay:0.3s">
-      <a href="/galeria" class="cta-fotos">
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-          <circle cx="8.5" cy="8.5" r="1.5"></circle>
-          <polyline points="21 15 16 10 5 21"></polyline>
-        </svg>
-        ¡Más fotos acá!
-      </a>
-    </div>
   </div>
 </section>
 
@@ -201,19 +124,9 @@ import img13 from "../assets/instalaciones/13.jpg"; // Zonas techadas
   }
 
   .instalaciones {
-    background: #1b4332; /* Fondo verde oscuro */
-    padding: 4rem 0 6rem 0;
+    background: #1b4332; /* Fondo liso, sin decoraciones SVG */
+    padding: 5rem 0 6rem 0;
     position: relative;
-    overflow: hidden;
-  }
-
-  .inst__deco {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
   }
 
   .Relative-z {
@@ -223,7 +136,7 @@ import img13 from "../assets/instalaciones/13.jpg"; // Zonas techadas
 
   /* ── HEADER ── */
   .inst__header {
-    margin-bottom: 2.5rem;
+    margin-bottom: 3.5rem;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -248,77 +161,104 @@ import img13 from "../assets/instalaciones/13.jpg"; // Zonas techadas
 
   .inst__header h2 {
     color: var(--white);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
   }
   .text-accent {
     color: var(--green);
   }
 
-  /* ── BLOQUES ORIGINALES ── */
-  .blocks {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    position: relative;
-  }
-
-  .block {
+  /* ── BENTO GRID EDITORIAL ── */
+  .bento-grid {
     display: grid;
-    grid-template-columns: 1.6fr 1fr;
-    height: 280px;
-    overflow: hidden;
+    /* Dividimos en 4 columnas lógicas para jugar con los anchos */
+    grid-template-columns: repeat(4, 1fr);
+    /* Dos filas de altura fija (Total: 560px + gap). Ultra compacto. */
+    grid-template-rows: repeat(2, 280px);
+    gap: 1.25rem;
+    max-width: 1050px;
+    margin: 0 auto;
   }
 
-  .block--right {
-    grid-template-columns: 1fr 1.6fr;
-  }
-
-  .block__photo {
+  .bento-item {
     position: relative;
+    border-radius: 20px;
     overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
 
-  .block__photo img {
+  .bento-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Distribución Tetris */
+  .bento-item--large {
+    grid-column: span 2;
+    grid-row: span 2; /* Ocupa toda la altura a la izquierda */
+  }
+  .bento-item--wide {
+    grid-column: span 2;
+    grid-row: span 1; /* Ocupa el ancho restante arriba a la derecha */
+  }
+  .bento-item--square {
+    grid-column: span 1;
+    grid-row: span 1; /* Dos cuadrados abajo a la derecha */
+  }
+
+  .bento-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
-    transition: transform 0.6s ease;
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  .block:hover .block__photo img {
-    transform: scale(1.04);
+  .bento-item:hover img {
+    transform: scale(1.06);
   }
 
-  .block__text {
+  /* Degradado oscuro para que el texto resalte siempre */
+  .bento-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(27, 67, 50, 0.9) 0%,
+      rgba(27, 67, 50, 0) 50%
+    );
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 1.5rem 2.5rem;
-    background: #1b4332;
+    align-items: flex-end;
+    padding: 1.5rem;
   }
 
-  .block--left > .block__text {
-    border-right: 2px solid white;
-  }
-
-  .block--right > .block__text {
-    border-left: 2px solid white;
-  }
-
-  .block__text h3 {
-    font-size: clamp(1.2rem, 2vw, 1.6rem);
-    font-weight: 900;
+  .bento-overlay h3 {
     color: var(--white);
-    line-height: 1.2;
-    margin-bottom: 0;
-    letter-spacing: -0.02em;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+  }
+
+  .bento-item--large .bento-overlay h3 {
+    font-size: 1.6rem; /* Título más grande para la foto principal */
+  }
+
+  .bento-item:hover .bento-overlay h3 {
+    transform: translateY(-4px);
+    color: var(--green);
   }
 
   /* ── SECCIÓN DE UBICACIÓN COMPACTA ── */
   .location-wrapper {
     max-width: 900px;
-    margin: 4rem auto 0 auto;
+    margin: 4.5rem auto 0 auto;
     padding-top: 3.5rem;
     border-top: 1px dashed rgba(255, 255, 255, 0.15);
   }
@@ -326,7 +266,7 @@ import img13 from "../assets/instalaciones/13.jpg"; // Zonas techadas
   .location-header {
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
   }
 
   .location-title {
@@ -401,60 +341,24 @@ import img13 from "../assets/instalaciones/13.jpg"; // Zonas techadas
     transform: translateX(4px);
   }
 
-  /* ── CTA FOTOS ── */
-  .inst__cta {
-    margin-top: 4rem;
-    display: flex;
-    justify-content: center;
-  }
-
-  .cta-fotos {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 1rem 2.5rem;
-    background: var(--green);
-    border-radius: 50px;
-    color: var(--brown);
-    font-size: 1.05rem;
-    font-weight: 800;
-    text-decoration: none;
-    transition:
-      background 0.2s,
-      transform 0.2s,
-      box-shadow 0.2s;
-    box-shadow: 0 4px 20px rgba(149, 188, 58, 0.3);
-  }
-
-  .cta-fotos:hover {
-    background: white;
-    color: var(--brown);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(255, 255, 255, 0.4);
-  }
-
-  .cta-fotos svg {
-    stroke: var(--brown);
-  }
-
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    .block,
-    .block--right {
-      grid-template-columns: 1fr;
-      grid-template-rows: 220px auto;
-      height: auto;
+    .bento-grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto; /* Dejamos que se adapte */
     }
 
-    .block--right .block__text {
-      order: 2;
-    }
-    .block--right .block__photo {
-      order: 1;
+    .bento-item--large,
+    .bento-item--wide,
+    .bento-item--square {
+      grid-column: span 1;
+      grid-row: span 1;
+      height: 250px; /* Altura fija para tablet */
     }
 
-    .block__text {
-      padding: 1.5rem;
+    .bento-item--large {
+      grid-column: span 2; /* Sigue siendo grande arriba */
+      height: 350px;
     }
 
     .loc-compact-grid {
@@ -463,9 +367,16 @@ import img13 from "../assets/instalaciones/13.jpg"; // Zonas techadas
     }
   }
 
-  @media (max-width: 480px) {
-    .block {
-      grid-template-rows: 180px auto;
+  @media (max-width: 600px) {
+    .bento-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .bento-item--large,
+    .bento-item--wide,
+    .bento-item--square {
+      grid-column: span 1;
+      height: 220px; /* Más bajo en celulares */
     }
   }
 </style>

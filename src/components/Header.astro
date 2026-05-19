@@ -55,7 +55,7 @@ import logoLasLunas from "../assets/Las lunas.png";
 
   <nav class="nav">
     <div class="nav__inner container">
-      <a href="#inicio" class="nav__logo">
+      <a href="/#inicio" class="nav__logo">
         <Image src={logoLasLunas} alt="Las Lunas Logo" class="nav__logo-img" />
       </a>
 
@@ -69,11 +69,14 @@ import logoLasLunas from "../assets/Las lunas.png";
       </button>
 
       <ul class="nav__links" id="nav-links">
-        <li><a href="#conocenos" class="nav__link">Conocenos</a></li>
-        <li><a href="#instalaciones" class="nav__link">Instalaciones</a></li>
-        <li><a href="#servicios" class="nav__link">Servicios</a></li>
-        <li><a href="#testimonios" class="nav__link">Testimonios</a></li>
-        <li><a href="#contacto" class="nav__link">Contacto</a></li>
+        <li><a href="/#conocenos" class="nav__link">Conocenos</a></li>
+        <li><a href="/#instalaciones" class="nav__link">Instalaciones</a></li>
+        <li><a href="/#servicios" class="nav__link">Servicios</a></li>
+        <li><a href="/#testimonios" class="nav__link">Testimonios</a></li>
+
+        <li><a href="/galeria" class="nav__link">Galería</a></li>
+
+        <li><a href="/#contacto" class="nav__link">Contacto</a></li>
         <li class="nav__cta">
           <a
             href="https://api.whatsapp.com/send?phone=5491150968576&text=Hola!%20Quiero%20reservar%20hospedaje%20para%20mi%20mascota%20en%20Las%20Lunas."
@@ -101,6 +104,7 @@ import logoLasLunas from "../assets/Las lunas.png";
     /* Variables de colores inyectadas localmente */
     --green: #95bc3a; /* Verde Claro (Principal) */
     --brown: #4a3f35; /* Marrón Tierra (Secundario) */
+    --white: #ffffff;
   }
 
   #site-header {
@@ -204,7 +208,7 @@ import logoLasLunas from "../assets/Las lunas.png";
     font-size: 1rem;
     font-weight: 600;
     color: var(--brown);
-    border-radius: var(--radius);
+    border-radius: 4px;
     text-decoration: none;
     transition:
       color 0.2s,
