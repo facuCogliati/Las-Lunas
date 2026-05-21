@@ -13,9 +13,16 @@ import img10 from "../assets/instalaciones/10.jpg";
 import img11 from "../assets/instalaciones/11.jpg"; // Arboleda y pileta
 import img12 from "../assets/instalaciones/12.jpg"; // Gateras ambientadas
 import img13 from "../assets/instalaciones/13.jpg"; // Zonas techadas
+
+import fondo from "../assets/instalaciones/fondo1.jpg";
 ---
 
 <section id="instalaciones" class="section instalaciones">
+  <div class="inst__bg">
+    <img src={fondo.src} alt="Fondo de parque verde" />
+    <div class="inst__overlay"></div>
+  </div>
+
   <div class="container Relative-z">
     <div class="inst__header reveal">
       <div class="inst__badge">
@@ -119,14 +126,45 @@ import img13 from "../assets/instalaciones/13.jpg"; // Zonas techadas
 <style>
   :root {
     --green: #95bc3a; /* Verde Claro */
+    --green-dark: #1b4332; /* Verde Oscuro */
     --brown: #4a3f35; /* Marrón Tierra */
     --white: #ffffff;
   }
 
   .instalaciones {
-    background: #1b4332; /* Fondo liso, sin decoraciones SVG */
-    padding: 5rem 0 6rem 0;
+    padding: 6rem 0 7rem 0;
     position: relative;
+    /* Evita que el fondo se salga de los límites de la sección */
+    overflow: hidden;
+  }
+
+  /* ── FONDO DE IMAGEN Y OVERLAY ── */
+  .inst__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .inst__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .inst__overlay {
+    position: absolute;
+    inset: 0;
+    /* Degradado oscuro para garantizar legibilidad.
+       Más opaco en los extremos, apenas más transparente en el medio */
+    background: linear-gradient(
+      to bottom,
+      rgba(27, 67, 50, 0.75) 0%,
+      rgba(27, 67, 50, 0.85) 40%,
+      rgba(27, 67, 50, 0.75) 100%
+    );
   }
 
   .Relative-z {
@@ -149,7 +187,7 @@ import img13 from "../assets/instalaciones/13.jpg"; // Zonas techadas
     gap: 7px;
     padding: 6px 16px;
     background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50px;
     color: var(--white);
     font-size: 0.8rem;
@@ -157,6 +195,7 @@ import img13 from "../assets/instalaciones/13.jpg"; // Zonas techadas
     letter-spacing: 0.06em;
     text-transform: uppercase;
     margin-bottom: 1rem;
+    backdrop-filter: blur(5px);
   }
 
   .inst__header h2 {
@@ -171,9 +210,7 @@ import img13 from "../assets/instalaciones/13.jpg"; // Zonas techadas
   /* ── BENTO GRID EDITORIAL ── */
   .bento-grid {
     display: grid;
-    /* Dividimos en 4 columnas lógicas para jugar con los anchos */
     grid-template-columns: repeat(4, 1fr);
-    /* Dos filas de altura fija (Total: 560px + gap). Ultra compacto. */
     grid-template-rows: repeat(2, 280px);
     gap: 1.25rem;
     max-width: 1050px;
@@ -184,29 +221,29 @@ import img13 from "../assets/instalaciones/13.jpg"; // Zonas techadas
     position: relative;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
     transition:
       transform 0.3s ease,
       box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Toque sutil de marco */
   }
 
   .bento-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
   }
 
-  /* Distribución Tetris */
   .bento-item--large {
     grid-column: span 2;
-    grid-row: span 2; /* Ocupa toda la altura a la izquierda */
+    grid-row: span 2;
   }
   .bento-item--wide {
     grid-column: span 2;
-    grid-row: span 1; /* Ocupa el ancho restante arriba a la derecha */
+    grid-row: span 1;
   }
   .bento-item--square {
     grid-column: span 1;
-    grid-row: span 1; /* Dos cuadrados abajo a la derecha */
+    grid-row: span 1;
   }
 
   .bento-item img {
@@ -222,7 +259,6 @@ import img13 from "../assets/instalaciones/13.jpg"; // Zonas techadas
     transform: scale(1.06);
   }
 
-  /* Degradado oscuro para que el texto resalte siempre */
   .bento-overlay {
     position: absolute;
     inset: 0;
@@ -247,7 +283,7 @@ import img13 from "../assets/instalaciones/13.jpg"; // Zonas techadas
   }
 
   .bento-item--large .bento-overlay h3 {
-    font-size: 1.6rem; /* Título más grande para la foto principal */
+    font-size: 1.6rem;
   }
 
   .bento-item:hover .bento-overlay h3 {
@@ -260,7 +296,7 @@ import img13 from "../assets/instalaciones/13.jpg"; // Zonas techadas
     max-width: 900px;
     margin: 4.5rem auto 0 auto;
     padding-top: 3.5rem;
-    border-top: 1px dashed rgba(255, 255, 255, 0.15);
+    border-top: 1px dashed rgba(255, 255, 255, 0.2);
   }
 
   .location-header {
@@ -287,8 +323,10 @@ import img13 from "../assets/instalaciones/13.jpg"; // Zonas techadas
   }
 
   .loc-compact-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Efecto "Vidrio" (Glassmorphism) para que el fondo respire */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 20px;
     padding: 1.25rem;
     display: flex;
@@ -296,12 +334,14 @@ import img13 from "../assets/instalaciones/13.jpg"; // Zonas techadas
     gap: 1.25rem;
     transition:
       transform 0.3s ease,
-      border-color 0.3s ease;
+      border-color 0.3s ease,
+      background 0.3s ease;
   }
 
   .loc-compact-card:hover {
     transform: translateY(-3px);
     border-color: var(--green);
+    background: rgba(255, 255, 255, 0.1);
   }
 
   .loc-compact-img {
@@ -345,7 +385,7 @@ import img13 from "../assets/instalaciones/13.jpg"; // Zonas techadas
   @media (max-width: 900px) {
     .bento-grid {
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: auto; /* Dejamos que se adapte */
+      grid-template-rows: auto;
     }
 
     .bento-item--large,
@@ -353,11 +393,11 @@ import img13 from "../assets/instalaciones/13.jpg"; // Zonas techadas
     .bento-item--square {
       grid-column: span 1;
       grid-row: span 1;
-      height: 250px; /* Altura fija para tablet */
+      height: 250px;
     }
 
     .bento-item--large {
-      grid-column: span 2; /* Sigue siendo grande arriba */
+      grid-column: span 2;
       height: 350px;
     }
 
@@ -376,7 +416,7 @@ import img13 from "../assets/instalaciones/13.jpg"; // Zonas techadas
     .bento-item--wide,
     .bento-item--square {
       grid-column: span 1;
-      height: 220px; /* Más bajo en celulares */
+      height: 220px;
     }
   }
 </style>
