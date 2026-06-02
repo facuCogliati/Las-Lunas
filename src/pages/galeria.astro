@@ -119,8 +119,8 @@ const images = [
         </h1>
 
         <p class="lead-text reveal" style="transition-delay: 0.2s;">
-          Más de 6.000 m² diseñados para el bienestar de tu mascota. Descubrí
-          los espacios donde vienen a correr, jugar y descansar.
+          Más de 6.000 m² diseñados para el bienestar de tu mascota.<br />
+          Descubrí los espacios donde vienen a correr, jugar y descansar.
         </p>
       </div>
     </header>
@@ -208,6 +208,14 @@ const images = [
 </Layout>
 
 <style>
+  :root {
+    --green: #95bc3a;
+    --green-dark: #1b4332;
+    --brown: #4a3f35;
+    --white: #ffffff;
+    --gray-light: #fbfbf9;
+  }
+
   .page-galeria {
     background: var(--gray-light);
     min-height: 100vh;
@@ -248,9 +256,9 @@ const images = [
 
   .header-back-btn:hover {
     opacity: 1;
-    background: var(--accent);
+    background: var(--green); /* Usa el verde principal de la web */
     color: var(--brown);
-    border-color: var(--accent);
+    border-color: var(--green);
     transform: translateX(-3px);
   }
 
@@ -259,10 +267,10 @@ const images = [
     align-items: center;
     gap: 8px;
     padding: 8px 20px;
-    background: rgba(82, 183, 136, 0.15);
-    border: 1px solid rgba(82, 183, 136, 0.3);
+    background: rgba(149, 188, 58, 0.15); /* Ajustado a verde transparente */
+    border: 1px solid rgba(149, 188, 58, 0.3);
     border-radius: 50px;
-    color: var(--accent);
+    color: var(--green); /* Color verde original */
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.05em;
@@ -280,8 +288,9 @@ const images = [
     z-index: 1;
   }
 
+  /* SOLUCIÓN AL COLOR DEL TÍTULO */
   .text-accent {
-    color: var(--accent);
+    color: var(--green); /* Aseguramos que sea estrictamente el #95bc3a */
   }
 
   .lead-text {
@@ -300,7 +309,7 @@ const images = [
     height: auto;
     pointer-events: none;
     z-index: 0;
-    color: var(--accent);
+    color: var(--green); /* Alineado con el color verde principal */
     opacity: 0.15;
   }
   .header-paw-1 {
@@ -343,7 +352,7 @@ const images = [
 
   .bg-paw {
     position: absolute;
-    color: var(--accent);
+    color: var(--green); /* Alineado con el color verde principal */
     opacity: 0.12;
   }
   .bg-paw-left {
@@ -359,7 +368,6 @@ const images = [
 
   /* --- GRILLA MASONRY PURA --- */
   .gallery-masonry {
-    /* 3 columnas fluidas */
     column-count: 3;
     column-gap: 1.5rem;
     max-width: 1300px;
@@ -367,18 +375,18 @@ const images = [
   }
 
   .gallery-item {
-    display: inline-block; /* Crucial para evitar que se parta entre columnas */
+    display: inline-block;
     width: 100%;
     border: none;
     cursor: pointer;
     background: var(--white);
-    border-radius: var(--radius-lg);
-    padding: 8px; /* Efecto marco de foto Polaroid */
+    border-radius: var(--radius-lg, 24px);
+    padding: 8px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
     transition:
-      transform var(--transition),
-      box-shadow var(--transition);
-    margin-bottom: 1.5rem; /* Espacio vertical entre tarjetas */
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+    margin-bottom: 1.5rem;
     break-inside: avoid;
     -webkit-column-break-inside: avoid;
     page-break-inside: avoid;
@@ -391,27 +399,31 @@ const images = [
 
   .img-wrapper {
     width: 100%;
-    border-radius: calc(var(--radius-lg) - 4px);
+    border-radius: calc(var(--radius-lg, 24px) - 4px);
     overflow: hidden;
     position: relative;
-    /* ACÁ ESTÁ LA CLAVE: Sacamos el aspect-ratio para que la foto no se recorte nunca */
   }
 
   .gallery-img {
     width: 100%;
-    height: auto; /* La altura es automática, respeta el 100% de la foto */
+    height: auto;
     display: block;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .gallery-item:hover .gallery-img {
-    transform: scale(1.05); /* Zoom sutil interior */
+    transform: scale(1.05);
   }
 
   .hover-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(27, 67, 50, 0.4);
+    background: rgba(
+      27,
+      67,
+      50,
+      0.4
+    ); /* Fondo oscuro semitransparente al hover */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -421,7 +433,7 @@ const images = [
 
   .hover-overlay svg {
     color: var(--white);
-    background: var(--accent);
+    background: var(--green); /* Icono lupa en verde */
     border-radius: 50%;
     padding: 12px;
     width: 48px;
@@ -463,7 +475,7 @@ const images = [
   .lightbox img {
     max-width: 90vw;
     max-height: 90vh;
-    object-fit: contain; /* En el pop-up se ve la foto al natural sin cortes */
+    object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     transform: scale(0.9);
@@ -490,8 +502,8 @@ const images = [
   }
 
   .lightbox-close:hover {
-    color: var(--accent);
-  }
+    color: var(--green);
+  } /* Hover X en verde */
 
   /* --- BOTÓN VOLVER --- */
   .back-action {
@@ -509,7 +521,7 @@ const images = [
     font-weight: 600;
     font-size: 1.05rem;
     text-decoration: none;
-    transition: var(--transition);
+    transition: all 0.3s ease;
   }
 
   .btn-outline:hover {

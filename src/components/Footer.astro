@@ -101,10 +101,11 @@ import logoLasLunas from "../assets/Las lunas.png";
   }
 
   .footer {
-    background: var(--green-dark);
-    color: var(--white);
-    padding-top: 4rem;
+    background: var(--white);
+    color: var(--green-dark);
+    padding-top: 2rem;
     position: relative;
+    border-top: 1px solid rgba(45, 106, 79, 0.1);
   }
 
   /* --- CONTENIDO --- */
@@ -112,7 +113,7 @@ import logoLasLunas from "../assets/Las lunas.png";
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
+    padding: 0.25rem 0;
   }
 
   /* --- BRANDING (Círculo + Nombre) --- */
@@ -124,15 +125,16 @@ import logoLasLunas from "../assets/Las lunas.png";
   }
 
   .footer-logo-circle {
-    width: 85px;
-    height: 85px;
-    background: var(--white);
+    width: 60px;
+    height: 60px;
+    background: #f0fdf4;
+    border: 1px solid rgba(45, 106, 79, 0.15);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 12px; /* Espacio interior para que el logo respire */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    box-shadow: 0 2px 8px rgba(45, 106, 79, 0.1);
     transition: transform 0.3s ease;
   }
 
@@ -164,12 +166,12 @@ import logoLasLunas from "../assets/Las lunas.png";
   }
 
   .footer-link {
-    color: var(--white);
+    color: var(--green-dark);
     text-decoration: none;
     font-weight: 600;
     font-size: 1.05rem;
     transition: color 0.2s ease;
-    opacity: 0.9;
+    opacity: 0.85;
   }
 
   .footer-link:hover {
@@ -194,8 +196,8 @@ import logoLasLunas from "../assets/Las lunas.png";
   .footer-email-text {
     font-size: 1rem;
     font-weight: 500;
-    color: var(--white);
-    opacity: 0.9;
+    color: var(--green-dark);
+    opacity: 0.75;
     letter-spacing: 0.02em;
   }
 
@@ -206,8 +208,8 @@ import logoLasLunas from "../assets/Las lunas.png";
   }
 
   .social-icon {
-    width: 46px;
-    height: 46px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -216,12 +218,12 @@ import logoLasLunas from "../assets/Las lunas.png";
     transition:
       transform 0.2s ease,
       box-shadow 0.2s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
   .social-icon:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.18);
   }
 
   /* Colores exactos de tu imagen */
@@ -248,29 +250,29 @@ import logoLasLunas from "../assets/Las lunas.png";
     background: linear-gradient(
       to right,
       transparent,
-      rgba(255, 255, 255, 0.1),
+      rgba(45, 106, 79, 0.15),
       transparent
     );
-    margin: 2.5rem 0 2rem 0;
+    margin: 1.5rem 0 1rem 0;
   }
 
   .footer-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
   }
 
   .copyright {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(27, 67, 50, 0.45);
     font-size: 0.9rem;
   }
 
   .requisitos-link {
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(27, 67, 50, 0.55);
     text-decoration: underline;
-    text-decoration-color: rgba(255, 255, 255, 0.2);
+    text-decoration-color: rgba(27, 67, 50, 0.2);
     text-underline-offset: 4px;
     transition: all 0.2s ease;
   }
@@ -308,7 +310,7 @@ import logoLasLunas from "../assets/Las lunas.png";
 
   @media (max-width: 768px) {
     .footer {
-      padding-top: 3rem;
+      padding-top: 1.75rem;
     }
     .footer-bottom {
       flex-direction: column;

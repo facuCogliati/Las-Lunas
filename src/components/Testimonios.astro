@@ -6,6 +6,8 @@ import test6 from "../assets/testimonios/test6.jpg";
 import test7 from "../assets/testimonios/test7.jpg";
 import test8 from "../assets/testimonios/test8.jpg";
 
+import Fondo from "../assets/testimonios/fondo2.png";
+
 const testimonios = [
   {
     texto:
@@ -75,6 +77,10 @@ const testimonios = [
 ---
 
 <section id="testimonios" class="section testimonios">
+  <div class="testi-bg-image">
+    <img src={Fondo.src} alt="Fondo de testimonios" />
+    <div class="bg-overlay"></div>
+  </div>
   <div class="container">
     <div class="testimonios__header reveal">
       <div class="header-badge">
@@ -153,11 +159,43 @@ const testimonios = [
 </section>
 
 <style>
+  :root {
+    --green: #95bc3a; /* Verde Claro */
+    --green-dark: #1b4332; /* Verde Oscuro Fondo */
+    --brown: #4a3f35; /* Marrón Tierra */
+    --white: #ffffff;
+  }
+
+  /* Fondo de la sección */
+  .testi-bg-image {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .testi-bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene la proporción y cubre todo */
+    object-position: center;
+  }
+
+  .bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(74, 63, 53, 0.82);
+  }
+
   .testimonios {
-    background: var(--green-dark); /* var(--green-dark, #1b4332) */
-    padding: 7rem 0; /* Un poco menos de padding vertical general */
+    background: var(--brown);
+    padding: 7rem 0;
     position: relative;
     overflow: hidden;
+  }
+
+  .testimonios > .container {
+    position: relative;
+    z-index: 2;
   }
 
   .testimonios::before {
@@ -172,7 +210,7 @@ const testimonios = [
   /* --- HEADER --- */
   .testimonios__header {
     text-align: center;
-    margin-bottom: 4rem; /* Menos margen inferior */
+    margin-bottom: 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -183,9 +221,10 @@ const testimonios = [
     align-items: center;
     gap: 8px;
     padding: 8px 20px;
-    background: rgba(163, 230, 53, 0.1);
+    background: rgba(149, 188, 58, 0.15); /* Usando var(--green) transparente */
+    border: 1px solid rgba(149, 188, 58, 0.3);
     border-radius: 50px;
-    color: var(--accent); /* var(--accent, #a3e635) */
+    color: var(--green); /* Aplicamos tu verde oficial */
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.05em;
@@ -195,19 +234,19 @@ const testimonios = [
   .testimonios__header h2 {
     color: var(--white);
     max-width: 600px;
-    font-size: 2.5rem; /* Un toque más ajustado */
+    font-size: 2.5rem;
   }
 
   /* --- CARRUSEL --- */
   .testi-carousel {
     position: relative;
-    max-width: 850px; /* ACHICADO (Antes era 1000px) */
+    max-width: 850px;
     margin: 0 auto;
   }
 
   .testi-viewport {
     overflow: hidden;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-lg, 24px);
   }
 
   .testi-track {
@@ -223,7 +262,7 @@ const testimonios = [
     width: 100%;
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-lg, 24px);
     overflow: hidden;
     box-sizing: border-box;
   }
@@ -242,7 +281,7 @@ const testimonios = [
   .testi-card.no-img .testi-text-col {
     align-items: center;
     text-align: center;
-    padding: 3.5rem 3rem; /* Más balanceado para un texto centrado */
+    padding: 3.5rem 3rem;
   }
 
   .testi-card.no-img .testi-author-info {
@@ -256,8 +295,10 @@ const testimonios = [
     position: relative;
     width: 100%;
     height: 100%;
-    min-height: 250px; /* Reducido para que la foto no exija tanto alto */
-    background: var(--accent);
+    min-height: 250px;
+    background: var(
+      --green
+    ); /* Si alguna foto tarda en cargar, se ve el verde Lunas */
   }
 
   .testi-large-img {
@@ -271,7 +312,7 @@ const testimonios = [
 
   /* --- COLUMNA DEL TEXTO --- */
   .testi-text-col {
-    padding: 2.5rem 3rem; /* ACHICADO (Antes era 3rem 4rem) */
+    padding: 2.5rem 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -279,17 +320,17 @@ const testimonios = [
 
   .testi-quote {
     font-family: var(--font-display);
-    font-size: 4.5rem; /* ACHICADO (Antes era 6rem) */
-    color: var(--accent);
+    font-size: 4.5rem;
+    color: var(--green); /* Verde Lunas para la comilla */
     line-height: 1;
     margin-bottom: -0.5rem;
     margin-left: -0.2rem;
-    opacity: 0.3;
+    opacity: 0.6;
   }
 
   .testi-text {
-    font-size: 1.05rem; /* ACHICADO (Antes era 1.15rem) */
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.95);
     line-height: 1.6;
     margin-bottom: 2rem;
     font-style: italic;
@@ -297,21 +338,22 @@ const testimonios = [
   }
 
   .testi-author-info {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
     padding-top: 1.25rem;
   }
 
   .testi-autor {
     display: block;
-    color: var(--white);
+    color: var(--green); /* Verde Lunas para el autor */
     font-size: 1.1rem;
     margin-bottom: 4px;
+    font-weight: 700;
   }
 
   .testi-meta {
     display: block;
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.7);
   }
 
   /* --- NAVEGACIÓN --- */
@@ -328,7 +370,7 @@ const testimonios = [
     height: 44px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -338,9 +380,12 @@ const testimonios = [
   }
 
   .testi-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--green); /* Flechas cambian a verde al pasar el mouse */
+    border-color: var(--green);
     transform: scale(1.05);
-    color: var(--accent);
+    color: var(
+      --brown
+    ); /* Color marrón para la flecha interna (buen contraste) */
   }
 
   .testi-dots {
@@ -360,8 +405,12 @@ const testimonios = [
     border: none;
   }
 
+  :global(.testi-dot:hover) {
+    background: rgba(255, 255, 255, 0.8);
+  }
+
   :global(.testi-dot.active) {
-    background: var(--accent);
+    background: var(--green); /* Puntito activo en verde */
     transform: scale(1.3);
   }
 
