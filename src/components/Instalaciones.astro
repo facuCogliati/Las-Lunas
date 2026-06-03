@@ -36,34 +36,50 @@ import fondo from "../assets/instalaciones/fondo3.jpg";
       <h2>Nuestras <span class="text-accent">Instalaciones</span></h2>
     </div>
 
-    <div class="bento-grid reveal" style="transition-delay:0.1s">
-      <article class="bento-item bento-item--large">
-        <img src={img1.src} alt="Predio Las Lunas" loading="lazy" />
-        <div class="bento-overlay">
-          <h3>Predio 6.000 m² de área verde</h3>
-        </div>
-      </article>
+    <div class="bento-wrapper">
+      <button class="bento-nav bento-nav--prev" id="bento-prev" aria-label="Anterior">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
 
-      <article class="bento-item bento-item--wide">
-        <img src={img11.src} alt="Arboleda y pileta" loading="lazy" />
-        <div class="bento-overlay">
-          <h3>Arboleda y pileta</h3>
-        </div>
-      </article>
+      <div class="bento-scroll" id="bento-scroll">
+        <div class="bento-grid reveal" style="transition-delay:0.1s">
+          <article class="bento-item bento-item--large">
+            <img src={img1.src} alt="Predio Las Lunas" loading="lazy" />
+            <div class="bento-overlay">
+              <h3>Predio 6.000 m² de área verde</h3>
+            </div>
+          </article>
 
-      <article class="bento-item bento-item--square">
-        <img src={img13.src} alt="Zonas techadas" loading="lazy" />
-        <div class="bento-overlay">
-          <h3>Zonas techadas</h3>
-        </div>
-      </article>
+          <article class="bento-item bento-item--wide">
+            <img src={img11.src} alt="Arboleda y pileta" loading="lazy" />
+            <div class="bento-overlay">
+              <h3>Arboleda y pileta</h3>
+            </div>
+          </article>
 
-      <article class="bento-item bento-item--square">
-        <img src={img12.src} alt="Gateras ambientadas" loading="lazy" />
-        <div class="bento-overlay">
-          <h3>Gateras ambientadas</h3>
+          <article class="bento-item bento-item--square">
+            <img src={img13.src} alt="Zonas techadas" loading="lazy" />
+            <div class="bento-overlay">
+              <h3>Zonas techadas</h3>
+            </div>
+          </article>
+
+          <article class="bento-item bento-item--square">
+            <img src={img12.src} alt="Gateras ambientadas" loading="lazy" />
+            <div class="bento-overlay">
+              <h3>Gateras ambientadas</h3>
+            </div>
+          </article>
         </div>
-      </article>
+      </div>
+
+      <button class="bento-nav bento-nav--next" id="bento-next" aria-label="Siguiente">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
     </div>
 
     <div class="location-wrapper reveal" style="transition-delay:0.2s">
@@ -407,16 +423,99 @@ import fondo from "../assets/instalaciones/fondo3.jpg";
     }
   }
 
+  /* Botones nav — ocultos en desktop */
+  .bento-nav {
+    display: none;
+  }
+
   @media (max-width: 600px) {
+    .bento-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .bento-nav {
+      display: flex;
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      color: white;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      backdrop-filter: blur(4px);
+      transition: background 0.2s, border-color 0.2s;
+      z-index: 10;
+    }
+
+    .bento-nav:hover {
+      background: var(--green);
+      border-color: var(--green);
+    }
+
+    .bento-nav:disabled {
+      opacity: 0.3;
+      cursor: default;
+    }
+
+    .bento-scroll {
+      flex: 1;
+      overflow: hidden;
+    }
+
     .bento-grid {
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: row;
+      gap: 0.75rem;
+      width: max-content;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     .bento-item--large,
     .bento-item--wide,
     .bento-item--square {
-      grid-column: span 1;
-      height: 220px;
+      flex-shrink: 0;
+      width: 75vw;
+      height: 200px;
     }
   }
 </style>
+
+<script>
+  const bentoScroll = document.getElementById("bento-scroll");
+  const bentoGrid = bentoScroll?.querySelector(".bento-grid") as HTMLElement | null;
+  const bentoPrev = document.getElementById("bento-prev") as HTMLButtonElement | null;
+  const bentoNext = document.getElementById("bento-next") as HTMLButtonElement | null;
+
+  if (bentoScroll && bentoGrid && bentoPrev && bentoNext && window.innerWidth < 600) {
+    let offset = 0;
+
+    function getStep() {
+      return bentoScroll!.clientWidth + 12;
+    }
+
+    function getMax() {
+      return bentoGrid!.scrollWidth - bentoScroll!.clientWidth;
+    }
+
+    function updateBtns() {
+      bentoPrev!.disabled = offset <= 0;
+      bentoNext!.disabled = offset >= getMax();
+    }
+
+    function slideTo(val: number) {
+      offset = Math.max(0, Math.min(val, getMax()));
+      bentoGrid!.style.transform = `translateX(-${offset}px)`;
+      updateBtns();
+    }
+
+    bentoPrev.addEventListener("click", () => slideTo(offset - getStep()));
+    bentoNext.addEventListener("click", () => slideTo(offset + getStep()));
+
+    updateBtns();
+  }
+</script>

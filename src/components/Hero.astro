@@ -1,9 +1,10 @@
 ---
 import videoHero from "../assets/video servicios3.mp4";
+import posterImg from "../assets/galeria/1.jpg";
 ---
 
 <section id="inicio" class="hero">
-  <video class="hero__video-bg" src={videoHero} autoplay muted loop playsinline
+  <video class="hero__video-bg" src={videoHero} autoplay muted loop playsinline poster={posterImg.src}
   ></video>
 
   <div class="hero__overlay"></div>
@@ -354,6 +355,25 @@ import videoHero from "../assets/video servicios3.mp4";
 
   /* ── RESPONSIVE ── */
   @media (max-width: 899px) {
+    .hero {
+      min-height: 75vh;
+      max-height: 75vh;
+    }
+
+    .hero__video-bg {
+      object-position: center top;
+    }
+
+    /* Gradiente que tapa los subtítulos del video en la parte inferior */
+    .hero__overlay {
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.45) 0%,
+        rgba(0, 0, 0, 0.45) 65%,
+        rgba(0, 0, 0, 0.97) 100%
+      );
+    }
+
     .hero__deco--desktop {
       display: none;
     }
