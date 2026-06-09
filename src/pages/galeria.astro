@@ -115,7 +115,7 @@ const images = [
         </div>
 
         <h1 class="reveal" style="transition-delay: 0.1s;">
-          ASÍ ES <span class="text-accent">LAS LUNAS</span>
+          Así es <span class="text-accent">Las Lunas</span>
         </h1>
 
         <p class="lead-text reveal" style="transition-delay: 0.2s;">
@@ -600,92 +600,85 @@ const images = [
 
     /* Carousel full-width */
     .gallery-carousel-wrapper {
-      position: relative;
       width: 100vw;
       left: 50%;
       transform: translateX(-50%);
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
     }
 
-    /* Botones de navegación reposicionados */
+    /* Scroll ocupa fila completa arriba */
+    .gallery-scroll {
+      flex: 0 0 100%;
+      order: 1;
+      overflow: hidden;
+    }
+
+    /* Botones debajo de la foto — sin superposición, sin conflicto de toque */
     .gallery-nav {
       display: flex;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 40px;
-      height: 40px;
+      position: static;
+      transform: none;
+      order: 2;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.95);
-      border: none;
-      color: var(--brown);
+      background: var(--brown);
+      border: 2px solid rgba(255,255,255,0.2);
+      color: white;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
       transition: background 0.2s;
-      z-index: 20;
-    }
-    .gallery-nav--prev {
-      left: 0.5rem;
-    }
-    .gallery-nav--next {
-      right: 0.5rem;
+      touch-action: manipulation;
     }
 
-    .gallery-nav:hover {
+    .gallery-nav:hover, .gallery-nav:active {
       background: var(--green);
-      color: white;
+      color: var(--brown);
     }
     .gallery-nav:disabled {
       opacity: 0.25;
       cursor: default;
     }
 
-    .gallery-scroll {
-      width: 100%;
-      overflow: hidden;
-    }
-
-    /* ACÁ ESTÁ EL CAMBIO CLAVE PARA MOBILE */
     .gallery-masonry {
       column-count: unset;
       display: flex;
       flex-direction: row;
-      align-items: center; /* Centra las fotos verticalmente si tienen distintos altos */
-      gap: 1rem;
-      padding: 0 1rem;
+      gap: 0;
+      padding: 0;
       width: max-content;
       transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     .gallery-item {
       flex-shrink: 0;
-      width: calc(100vw - 2rem);
       margin-bottom: 0;
-      border-radius: 20px;
+      border-radius: 16px;
       overflow: hidden;
       padding: 0;
       background: transparent;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      /* ancho seteado por JS igual al contenedor */
     }
 
-    /* ALTURA FLEXIBLE Y ADAPTATIVA (EVITA CORTES) */
     .img-wrapper {
       height: auto;
-      max-height: 65vh;
-      border-radius: 20px;
+      border-radius: 16px;
       width: 100%;
-      display: flex;
-      justify-content: center;
-      background: rgba(0, 0, 0, 0.03);
     }
 
     .gallery-img {
       height: auto;
-      max-height: 65vh;
       width: 100%;
-      object-fit: contain; /* LA CLAVE: Muestra la foto 100% completa sin recortar nada */
-      border-radius: 20px;
+      object-fit: cover;
+      border-radius: 16px;
     }
 
     .hide-on-mobile {
@@ -755,8 +748,14 @@ const images = [
       ) as HTMLButtonElement | null;
 
       if (gScroll && gTrack && gPrev && gNext) {
+        // Cada foto = ancho exacto del contenedor scroll
+        const itemW = gScroll.clientWidth;
+        gTrack.querySelectorAll<HTMLElement>(".gallery-item").forEach((el) => {
+          el.style.width = itemW + "px";
+        });
+
         let gOffset = 0;
-        const STEP = () => gScroll.clientWidth - 12;
+        const STEP = () => gScroll.clientWidth;
         const MAX = () => gTrack.scrollWidth - gScroll.clientWidth;
 
         function gUpdate() {

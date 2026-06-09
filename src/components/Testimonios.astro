@@ -91,7 +91,7 @@ const testimonios = [
         </svg>
         <span>OPINIONES REALES</span>
       </div>
-      <h2>TESTIMONIOS</h2>
+      <h2>Testimonios</h2>
     </div>
 
     <div
@@ -444,6 +444,62 @@ const testimonios = [
     }
     .testi-quote {
       font-size: 3.5rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .testimonios {
+      padding: 2.5rem 0;
+    }
+    .testimonios__header {
+      margin-bottom: 1.25rem;
+    }
+    .testimonios__header h2 {
+      font-size: 1.6rem;
+    }
+    .header-badge {
+      padding: 5px 12px;
+      font-size: 0.72rem;
+      margin-bottom: 0.6rem;
+    }
+    .testi-card.has-img {
+      grid-template-rows: 200px auto;
+    }
+    .testi-image-col {
+      min-height: 0;
+      height: 200px;
+      background: #4a3f35;
+    }
+    .testi-large-img {
+      object-fit: contain;
+    }
+    .testi-text-col {
+      padding: 1.5rem;
+    }
+    .testi-card.no-img .testi-text-col {
+      padding: 1.5rem;
+    }
+    .testi-quote {
+      font-size: 2.5rem;
+      margin-bottom: -0.25rem;
+    }
+    .testi-text {
+      font-size: 0.88rem;
+      margin-bottom: 1rem;
+    }
+    .testi-autor {
+      font-size: 0.95rem;
+    }
+    .testi-meta {
+      font-size: 0.78rem;
+    }
+    .testi-nav {
+      margin-top: 1rem;
+      gap: 1rem;
+    }
+    .testi-btn {
+      width: 38px;
+      height: 38px;
     }
   }
 </style>

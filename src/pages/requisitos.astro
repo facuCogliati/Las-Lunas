@@ -142,7 +142,7 @@ import Footer from "../components/Footer.astro";
                     height="40"
                     viewBox="0 0 24 24"
                     fill="none"
-                    stroke="var(--green-dark)"
+                    stroke="#95bc3a"
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -248,7 +248,7 @@ import Footer from "../components/Footer.astro";
                     height="40"
                     viewBox="0 0 24 24"
                     fill="none"
-                    stroke="var(--green-dark)"
+                    stroke="#95bc3a"
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -351,7 +351,7 @@ import Footer from "../components/Footer.astro";
 
   /* --- HEADER DE PÁGINA --- */
   .page-header {
-    background: var(--green-dark);
+    background: #4a3f35;
     color: var(--white);
     padding: 6rem 1rem 10rem;
     text-align: center;
@@ -364,10 +364,10 @@ import Footer from "../components/Footer.astro";
     align-items: center;
     gap: 8px;
     padding: 8px 20px;
-    background: rgba(82, 183, 136, 0.15);
-    border: 1px solid rgba(82, 183, 136, 0.3);
+    background: rgba(149, 188, 58, 0.2);
+    border: 1px solid rgba(149, 188, 58, 0.4);
     border-radius: 50px;
-    color: var(--accent);
+    color: #95bc3a;
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.05em;
@@ -386,7 +386,7 @@ import Footer from "../components/Footer.astro";
   }
 
   .text-accent {
-    color: var(--accent);
+    color: #95bc3a;
   }
 
   .lead-text {
@@ -402,7 +402,7 @@ import Footer from "../components/Footer.astro";
   .gracias-text {
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--accent);
+    color: #95bc3a;
     position: relative;
     z-index: 1;
   }
@@ -417,7 +417,7 @@ import Footer from "../components/Footer.astro";
   }
 
   .header-paw {
-    color: var(--accent);
+    color: #95bc3a;
   }
   .header-paw-1 {
     top: 15%;
@@ -441,7 +441,7 @@ import Footer from "../components/Footer.astro";
   }
 
   .content-paw {
-    color: var(--accent);
+    color: #95bc3a;
     z-index: -1;
   }
   .content-paw-1 {
@@ -461,14 +461,14 @@ import Footer from "../components/Footer.astro";
     left: 15%;
     transform: rotate(-10deg);
     width: 120px;
-    color: var(--green-dark);
+    color: #95bc3a;
   }
   .content-paw-4 {
     bottom: 5%;
     right: 10%;
     transform: rotate(20deg);
     width: 120px;
-    color: var(--green-dark);
+    color: #95bc3a;
   }
 
   .container-wide {
@@ -486,24 +486,24 @@ import Footer from "../components/Footer.astro";
   .req-side-image {
     display: none;
     flex: 1;
-    max-width: 450px;
-    height: 600px;
+    max-width: 420px;
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 150px;
+    align-self: flex-start;
   }
 
   .req-side-image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    display: block;
     transition: transform var(--transition);
   }
 
   .req-side-image:hover img {
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
 
   /* --- TARJETAS --- */
@@ -567,7 +567,7 @@ import Footer from "../components/Footer.astro";
 
   .req-card-body h2 {
     font-size: 2rem;
-    color: var(--green-dark);
+    color: #95bc3a;
     margin: 0;
   }
 
@@ -600,7 +600,7 @@ import Footer from "../components/Footer.astro";
   .check-icon {
     width: 20px;
     height: 20px;
-    color: var(--accent);
+    color: #95bc3a;
     flex-shrink: 0;
     margin-top: 2px;
   }
@@ -609,14 +609,14 @@ import Footer from "../components/Footer.astro";
     background: var(--gray-light);
     padding: 1.25rem;
     border-radius: var(--radius);
-    border-left: 4px solid var(--accent);
+    border-left: 4px solid #95bc3a;
     margin-top: 0.5rem;
   }
 
   .info-icon {
     width: 20px;
     height: 20px;
-    color: var(--green-light);
+    color: #95bc3a;
     flex-shrink: 0;
     margin-top: 2px;
   }
@@ -656,16 +656,16 @@ import Footer from "../components/Footer.astro";
   }
 
   .alert-info {
-    background: var(--green-pale);
-    border: 1px solid rgba(82, 183, 136, 0.3);
+    background: rgba(149, 188, 58, 0.08);
+    border: 1px solid rgba(149, 188, 58, 0.3);
   }
   .alert-info h3 {
-    color: var(--green-dark);
+    color: #95bc3a;
   }
 
   .alert-thanks {
     font-weight: 600;
-    color: var(--green-dark) !important;
+    color: #95bc3a !important;
     margin-top: 1rem !important;
   }
 
@@ -681,8 +681,8 @@ import Footer from "../components/Footer.astro";
     display: inline-flex;
     align-items: center;
     padding: 1rem 2rem;
-    border: 2px solid var(--green-dark);
-    color: var(--green-dark);
+    border: 2px solid #4a3f35;
+    color: #4a3f35;
     border-radius: 50px;
     font-weight: 600;
     font-size: 1.05rem;
@@ -691,7 +691,7 @@ import Footer from "../components/Footer.astro";
   }
 
   .btn-outline:hover {
-    background: var(--green-dark);
+    background: #4a3f35;
     color: var(--white);
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(27, 67, 50, 0.15);
