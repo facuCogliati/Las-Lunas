@@ -659,13 +659,13 @@ const images = [
 
     .gallery-item {
       flex-shrink: 0;
+      width: 100vw;
       margin-bottom: 0;
       border-radius: 16px;
       overflow: hidden;
       padding: 0;
       background: transparent;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-      /* ancho seteado por JS igual al contenedor */
     }
 
     .img-wrapper {
@@ -748,12 +748,6 @@ const images = [
       ) as HTMLButtonElement | null;
 
       if (gScroll && gTrack && gPrev && gNext) {
-        // Cada foto = ancho exacto del contenedor scroll
-        const itemW = gScroll.clientWidth;
-        gTrack.querySelectorAll<HTMLElement>(".gallery-item").forEach((el) => {
-          el.style.width = itemW + "px";
-        });
-
         let gOffset = 0;
         const STEP = () => gScroll.clientWidth;
         const MAX = () => gTrack.scrollWidth - gScroll.clientWidth;

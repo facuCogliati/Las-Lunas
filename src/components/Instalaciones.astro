@@ -1,12 +1,5 @@
 ---
 import img1 from "../assets/instalaciones/1.jpg";
-import img2 from "../assets/instalaciones/2.jpg";
-import img3 from "../assets/instalaciones/3.png";
-import img4 from "../assets/instalaciones/4.png";
-import img5 from "../assets/instalaciones/5.png";
-import img6 from "../assets/instalaciones/6.png";
-import img7 from "../assets/instalaciones/7.jpg";
-import img8 from "../assets/instalaciones/8.jpg";
 import img9 from "../assets/instalaciones/9.jpg";
 import img10 from "../assets/instalaciones/10.jpg";
 
@@ -495,10 +488,15 @@ import fondo from "../assets/instalaciones/fondo3.jpg";
   const bentoNext = document.getElementById("bento-next") as HTMLButtonElement | null;
 
   if (bentoScroll && bentoGrid && bentoPrev && bentoNext && window.innerWidth < 600) {
-    // Ajustar cada item al ancho exacto del contenedor
-    const itemWidth = bentoScroll.clientWidth;
-    const items = bentoGrid.querySelectorAll<HTMLElement>(".bento-item");
-    items.forEach((item) => { item.style.width = itemWidth + "px"; });
+    // Doble RAF garantiza que el layout esté calculado antes de medir
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const itemWidth = bentoScroll!.clientWidth;
+        const items = bentoGrid!.querySelectorAll<HTMLElement>(".bento-item");
+        items.forEach((item) => { item.style.width = itemWidth + "px"; });
+        updateBtns();
+      });
+    });
 
     let offset = 0;
 
