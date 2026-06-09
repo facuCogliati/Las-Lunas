@@ -628,7 +628,7 @@ const images = [
       height: 48px;
       border-radius: 50%;
       background: var(--brown);
-      border: 2px solid rgba(255,255,255,0.2);
+      border: 2px solid rgba(255, 255, 255, 0.2);
       color: white;
       align-items: center;
       justify-content: center;
@@ -638,7 +638,8 @@ const images = [
       touch-action: manipulation;
     }
 
-    .gallery-nav:hover, .gallery-nav:active {
+    .gallery-nav:hover,
+    .gallery-nav:active {
       background: var(--green);
       color: var(--brown);
     }
@@ -659,7 +660,7 @@ const images = [
 
     .gallery-item {
       flex-shrink: 0;
-      width: 100vw;
+      width: 100%; /* fallback — JS lo sobreescribe con el valor exacto */
       margin-bottom: 0;
       border-radius: 16px;
       overflow: hidden;
@@ -748,23 +749,44 @@ const images = [
       ) as HTMLButtonElement | null;
 
       if (gScroll && gTrack && gPrev && gNext) {
+        // Safari: sacar lazy loading — las imágenes en carousel se consideran off-screen
+        gTrack.querySelectorAll("img").forEach((img) => {
+          img.removeAttribute("loading");
+        });
+
         let gOffset = 0;
-        const STEP = () => gScroll.clientWidth;
-        const MAX = () => gTrack.scrollWidth - gScroll.clientWidth;
 
         function gUpdate() {
           gPrev!.disabled = gOffset <= 0;
-          gNext!.disabled = gOffset >= MAX();
+          gNext!.disabled =
+            gOffset >= gTrack!.scrollWidth - gScroll!.clientWidth;
         }
         function gSlide(val: number) {
-          gOffset = Math.max(0, Math.min(val, MAX()));
+          const max = gTrack!.scrollWidth - gScroll!.clientWidth;
+          gOffset = Math.max(0, Math.min(val, max));
           gTrack!.style.transform = `translateX(-${gOffset}px)`;
           gUpdate();
         }
 
-        gPrev.addEventListener("click", () => gSlide(gOffset - STEP()));
-        gNext.addEventListener("click", () => gSlide(gOffset + STEP()));
-        gUpdate();
+        // Doble RAF: espera que Safari calcule el layout antes de medir
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            const itemW = gScroll!.clientWidth;
+            gTrack!
+              .querySelectorAll<HTMLElement>(".gallery-item")
+              .forEach((el) => {
+                el.style.width = itemW + "px";
+              });
+            gUpdate();
+          });
+        });
+
+        gPrev.addEventListener("click", () =>
+          gSlide(gOffset - gScroll!.clientWidth),
+        );
+        gNext.addEventListener("click", () =>
+          gSlide(gOffset + gScroll!.clientWidth),
+        );
       }
     }
   });
