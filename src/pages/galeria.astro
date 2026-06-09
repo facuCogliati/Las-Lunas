@@ -670,15 +670,21 @@ const images = [
     }
 
     .img-wrapper {
-      height: auto;
-      border-radius: 16px;
       width: 100%;
+      border-radius: 16px;
+      min-height: 220px;
+      max-height: 62vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
     }
 
     .gallery-img {
-      height: auto;
       width: 100%;
-      object-fit: cover;
+      min-height: 220px;
+      max-height: 62vh;
+      object-fit: contain;
       border-radius: 16px;
     }
 
