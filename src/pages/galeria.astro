@@ -155,25 +155,6 @@ const images = [
 
       <div class="container relative-z">
         <div class="gallery-carousel-wrapper">
-          <button
-            class="gallery-nav gallery-nav--prev"
-            id="gallery-prev"
-            aria-label="Anterior"
-          >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-          </button>
-
           <div class="gallery-scroll" id="gallery-scroll">
             <div class="gallery-masonry" id="gallery-track">
               {
@@ -215,25 +196,6 @@ const images = [
               }
             </div>
           </div>
-
-          <button
-            class="gallery-nav gallery-nav--next"
-            id="gallery-next"
-            aria-label="Siguiente"
-          >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          </button>
         </div>
 
         <div class="back-action reveal" style="transition-delay: 0.4s;">
@@ -576,11 +538,6 @@ const images = [
     }
   }
 
-  /* Botones nav galería — ocultos en desktop */
-  .gallery-nav {
-    display: none;
-  }
-
   /* --- RESPONSIVE MOBILE OPTIMIZADO CON IMÁGENES CONTAIN --- */
   @media (max-width: 768px) {
     .gallery-header {
@@ -598,54 +555,25 @@ const images = [
       padding-bottom: 2rem;
     }
 
-    /* Carousel full-width */
+    /* Carousel full-width con swipe nativo */
     .gallery-carousel-wrapper {
       width: 100vw;
       left: 50%;
       transform: translateX(-50%);
       position: relative;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
     }
 
-    /* Scroll ocupa fila completa arriba */
     .gallery-scroll {
-      flex: 0 0 100%;
-      order: 1;
-      overflow: hidden;
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
     }
 
-    /* Botones debajo de la foto — sin superposición, sin conflicto de toque */
-    .gallery-nav {
-      display: flex;
-      position: static;
-      transform: none;
-      order: 2;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--brown);
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      color: white;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      transition: background 0.2s;
-      touch-action: manipulation;
-    }
-
-    .gallery-nav:hover,
-    .gallery-nav:active {
-      background: var(--green);
-      color: var(--brown);
-    }
-    .gallery-nav:disabled {
-      opacity: 0.25;
-      cursor: default;
+    .gallery-scroll::-webkit-scrollbar {
+      display: none;
     }
 
     .gallery-masonry {
@@ -655,7 +583,6 @@ const images = [
       gap: 0;
       padding: 0;
       width: max-content;
-      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     .gallery-item {
@@ -667,6 +594,7 @@ const images = [
       padding: 0;
       background: transparent;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      scroll-snap-align: center;
     }
 
     .img-wrapper {
@@ -741,38 +669,18 @@ const images = [
       }
     });
 
-    // Carousel con botones (solo mobile)
+    // Carousel con swipe nativo (solo mobile)
     if (window.innerWidth <= 768) {
       const gScroll = document.getElementById("gallery-scroll");
       const gTrack = document.getElementById(
         "gallery-track",
       ) as HTMLElement | null;
-      const gPrev = document.getElementById(
-        "gallery-prev",
-      ) as HTMLButtonElement | null;
-      const gNext = document.getElementById(
-        "gallery-next",
-      ) as HTMLButtonElement | null;
 
-      if (gScroll && gTrack && gPrev && gNext) {
+      if (gScroll && gTrack) {
         // Safari: sacar lazy loading — las imágenes en carousel se consideran off-screen
         gTrack.querySelectorAll("img").forEach((img) => {
           img.removeAttribute("loading");
         });
-
-        let gOffset = 0;
-
-        function gUpdate() {
-          gPrev!.disabled = gOffset <= 0;
-          gNext!.disabled =
-            gOffset >= gTrack!.scrollWidth - gScroll!.clientWidth;
-        }
-        function gSlide(val: number) {
-          const max = gTrack!.scrollWidth - gScroll!.clientWidth;
-          gOffset = Math.max(0, Math.min(val, max));
-          gTrack!.style.transform = `translateX(-${gOffset}px)`;
-          gUpdate();
-        }
 
         // Doble RAF: espera que Safari calcule el layout antes de medir
         requestAnimationFrame(() => {
@@ -783,16 +691,8 @@ const images = [
               .forEach((el) => {
                 el.style.width = itemW + "px";
               });
-            gUpdate();
           });
         });
-
-        gPrev.addEventListener("click", () =>
-          gSlide(gOffset - gScroll!.clientWidth),
-        );
-        gNext.addEventListener("click", () =>
-          gSlide(gOffset + gScroll!.clientWidth),
-        );
       }
     }
   });

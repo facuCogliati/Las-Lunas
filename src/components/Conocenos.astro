@@ -164,25 +164,6 @@ const collageImages = [
     </div>
 
     <div class="collage-wrapper reveal">
-      <button
-        class="collage-nav collage-nav--prev"
-        id="collage-prev"
-        aria-label="Anterior"
-      >
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <polyline points="15 18 9 12 15 6"></polyline>
-        </svg>
-      </button>
-
       <div class="collage-scroll" id="collage-scroll">
         <div class="collage-grid">
           {
@@ -209,25 +190,6 @@ const collageImages = [
           }
         </div>
       </div>
-
-      <button
-        class="collage-nav collage-nav--next"
-        id="collage-next"
-        aria-label="Siguiente"
-      >
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <polyline points="9 18 15 12 9 6"></polyline>
-        </svg>
-      </button>
     </div>
 
     <div class="video-section reveal">
@@ -413,11 +375,6 @@ const collageImages = [
     color: var(--green) !important;
   }
 
-  /* Botones nav del collage — ocultos en desktop */
-  .collage-nav {
-    display: none;
-  }
-
   /* ── COLLAGE POLAROID ── */
   .collage-wrapper {
     margin: 4rem 0 8rem;
@@ -593,18 +550,22 @@ const collageImages = [
       line-height: 1.3;
     }
 
-    /* Collage: carousel con botones */
+    /* Collage: carrusel con swipe nativo */
     .collage-wrapper {
       position: relative;
       margin: 1rem 0 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
     }
 
     .collage-scroll {
-      flex: 1;
-      overflow: hidden;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .collage-scroll::-webkit-scrollbar {
+      display: none;
     }
 
     .collage-grid {
@@ -613,9 +574,8 @@ const collageImages = [
       flex-direction: row;
       align-items: center;
       gap: 1.25rem;
-      padding: 1.5rem 0.5rem;
+      padding: 1.5rem 1.5rem;
       width: max-content;
-      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     .polaroid {
@@ -626,39 +586,11 @@ const collageImages = [
       top: auto !important;
       left: auto !important;
       transform: rotate(var(--rot));
+      scroll-snap-align: center;
     }
 
     .polaroid:hover {
       transform: rotate(0deg) scale(1.03);
-    }
-
-    .collage-nav {
-      display: flex;
-      flex-shrink: 0;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: white;
-      border: 2px solid var(--green);
-      color: var(--green);
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      transition:
-        background 0.2s,
-        color 0.2s;
-      z-index: 10;
-    }
-
-    .collage-nav:hover {
-      background: var(--green);
-      color: white;
-    }
-
-    .collage-nav:disabled {
-      opacity: 0.3;
-      cursor: default;
     }
   }
 
@@ -677,33 +609,3 @@ const collageImages = [
     }
   }
 </style>
-
-<script>
-  const scroll = document.getElementById("collage-scroll") as HTMLElement;
-  const grid = scroll?.querySelector(".collage-grid") as HTMLElement;
-  const prevBtn = document.getElementById("collage-prev") as HTMLButtonElement;
-  const nextBtn = document.getElementById("collage-next") as HTMLButtonElement;
-
-  if (scroll && grid && prevBtn && nextBtn && window.innerWidth < 992) {
-    let offset = 0;
-    const STEP = 220; // ancho aprox de 1 polaroid + gap
-
-    function updateButtons() {
-      const maxOffset = grid.scrollWidth - scroll.clientWidth;
-      prevBtn!.disabled = offset <= 0;
-      nextBtn!.disabled = offset >= maxOffset;
-    }
-
-    function slideTo(newOffset: number) {
-      const maxOffset = grid.scrollWidth - scroll.clientWidth;
-      offset = Math.max(0, Math.min(newOffset, maxOffset));
-      grid.style.transform = `translateX(-${offset}px)`;
-      updateButtons();
-    }
-
-    prevBtn.addEventListener("click", () => slideTo(offset - STEP));
-    nextBtn.addEventListener("click", () => slideTo(offset + STEP));
-
-    updateButtons();
-  }
-</script>

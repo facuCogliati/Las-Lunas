@@ -497,79 +497,128 @@ const testimonios = [
       margin-top: 1rem;
       gap: 1rem;
     }
+
+    /* Carrusel con swipe nativo en mobile — se ocultan las flechas */
     .testi-btn {
-      width: 38px;
-      height: 38px;
+      display: none;
+    }
+
+    .testi-viewport {
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .testi-viewport::-webkit-scrollbar {
+      display: none;
+    }
+
+    .testi-track {
+      transition: none;
+    }
+
+    .testi-card {
+      scroll-snap-align: center;
     }
   }
 </style>
 
 <script>
   const track = document.getElementById("testi-track");
-  const slides = document.querySelectorAll(".testi-card");
+  const viewport = document.querySelector(".testi-viewport") as HTMLElement | null;
+  const slides = document.querySelectorAll<HTMLElement>(".testi-card");
   const dotsEl = document.getElementById("testi-dots");
   const prevBtn = document.getElementById("testi-prev");
   const nextBtn = document.getElementById("testi-next");
 
-  let cur = 0;
-  let autoTimer: ReturnType<typeof setInterval>;
+  if (track && slides.length > 0) {
+    const isMobile = window.matchMedia("(max-width: 600px)").matches;
+    let cur = 0;
 
-  function buildDots() {
-    if (!dotsEl) return;
-    slides.forEach((_, i) => {
-      const d = document.createElement("button");
-      d.className = `testi-dot ${i === 0 ? "active" : ""}`;
-      d.setAttribute("aria-label", `Ir al testimonio ${i + 1}`);
-      d.addEventListener("click", () => {
+    function setActiveDot(i: number) {
+      dotsEl?.querySelectorAll(".testi-dot").forEach((d, idx) => {
+        d.classList.toggle("active", idx === i);
+      });
+    }
+
+    function buildDots(onSelect: (i: number) => void) {
+      if (!dotsEl) return;
+      slides.forEach((_, i) => {
+        const d = document.createElement("button");
+        d.className = `testi-dot ${i === 0 ? "active" : ""}`;
+        d.setAttribute("aria-label", `Ir al testimonio ${i + 1}`);
+        d.addEventListener("click", () => onSelect(i));
+        dotsEl.appendChild(d);
+      });
+    }
+
+    if (isMobile && viewport) {
+      // Mobile: swipe nativo con scroll-snap, los dots solo indican/navegan
+      buildDots((i) => {
+        slides[i].scrollIntoView({
+          behavior: "smooth",
+          inline: "center",
+          block: "nearest",
+        });
+      });
+
+      let scrollTimeout: ReturnType<typeof setTimeout>;
+      viewport.addEventListener("scroll", () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          const idx = Math.round(viewport.scrollLeft / viewport.clientWidth);
+          cur = Math.max(0, Math.min(idx, slides.length - 1));
+          setActiveDot(cur);
+        }, 100);
+      });
+    } else {
+      // Desktop/tablet: flechas + autoplay con transform
+      let autoTimer: ReturnType<typeof setInterval>;
+
+      function updateSlider() {
+        if (!track) return;
+        track.style.transform = `translateX(-${cur * 100}%)`;
+        setActiveDot(cur);
+        track.style.height = slides[cur].scrollHeight + "px";
+      }
+
+      function nextSlide() {
+        cur = (cur + 1) % slides.length;
+        updateSlider();
+      }
+
+      function prevSlide() {
+        cur = (cur - 1 + slides.length) % slides.length;
+        updateSlider();
+      }
+
+      function startAuto() {
+        clearInterval(autoTimer);
+        autoTimer = setInterval(nextSlide, 7000);
+      }
+
+      buildDots((i) => {
         cur = i;
         updateSlider();
         startAuto();
       });
-      dotsEl.appendChild(d);
-    });
-  }
 
-  function updateSlider() {
-    if (!track || !dotsEl) return;
-    track.style.transform = `translateX(-${cur * 100}%)`;
-    dotsEl.querySelectorAll(".testi-dot").forEach((d, i) => {
-      if (i === cur) d.classList.add("active");
-      else d.classList.remove("active");
-    });
-    track.style.height = slides[cur].scrollHeight + "px";
-  }
+      // Necesitamos esperar un microsegundo a que las imágenes carguen
+      // para que la altura se calcule bien desde el principio
+      setTimeout(updateSlider, 100);
 
-  function nextSlide() {
-    cur = (cur + 1) % slides.length;
-    updateSlider();
-  }
-
-  function prevSlide() {
-    cur = (cur - 1 + slides.length) % slides.length;
-    updateSlider();
-  }
-
-  function startAuto() {
-    clearInterval(autoTimer);
-    autoTimer = setInterval(nextSlide, 7000);
-  }
-
-  if (track && slides.length > 0) {
-    buildDots();
-
-    // Necesitamos esperar un microsegundo a que las imágenes carguen
-    // para que la altura se calcule bien desde el principio
-    setTimeout(updateSlider, 100);
-
-    startAuto();
-
-    prevBtn?.addEventListener("click", () => {
-      prevSlide();
       startAuto();
-    });
-    nextBtn?.addEventListener("click", () => {
-      nextSlide();
-      startAuto();
-    });
+
+      prevBtn?.addEventListener("click", () => {
+        prevSlide();
+        startAuto();
+      });
+      nextBtn?.addEventListener("click", () => {
+        nextSlide();
+        startAuto();
+      });
+    }
   }
 </script>
