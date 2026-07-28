@@ -1,29 +1,93 @@
 ---
+import logo from "../assets/Las lunas.png";
+import defaultOgImage from "../assets/hero-poster.jpg";
+
 export interface Props {
   title?: string;
   description?: string;
+  image?: ImageMetadata;
+  noindex?: boolean;
 }
+
 const {
-  title = "Las Lunas — Hospedaje para Mascotas",
-  description = "Hospedaje profesional y seguro para tu mascota en Pilar. Perros, gatos, traslados y adiestramiento.",
+  title = "Las Lunas — Hospedaje para Mascotas en Pilar",
+  description = "Hospedaje profesional y seguro para tu mascota en Pilar, Buenos Aires. Perros, gatos, traslados a domicilio y adiestramiento en un predio de 6.000 m².",
+  image = defaultOgImage,
+  noindex = false,
 } = Astro.props;
+
+const siteName = "Las Lunas";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialImageURL = new URL(image.src, Astro.site);
+const logoURL = new URL(logo.src, Astro.site);
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: siteName,
+  description,
+  url: Astro.site?.toString(),
+  image: socialImageURL.toString(),
+  logo: logoURL.toString(),
+  email: "info@las-lunas.com.ar",
+  telephone: "+54-9-11-5096-8576",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Pilar",
+    addressRegion: "Buenos Aires",
+    addressCountry: "AR",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: -34.4621712,
+    longitude: -58.8166836,
+  },
+  sameAs: [
+    "https://www.instagram.com/hospedaje.laslunas/",
+    "https://api.whatsapp.com/send?phone=5491150968576",
+  ],
+};
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es-AR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
+    <link rel="canonical" href={canonicalURL} />
     <title>{title}</title>
-    <!-- <link rel="icon" href="/favicon.svg" type="image/svg+xml" /> -->
-    <link rel="icon" href="/Las lunas.png" type="image/png" />
+
+    <link rel="icon" href={logo.src} type="image/png" />
+    <link rel="apple-touch-icon" href={logo.src} />
+    <meta name="theme-color" content="#95bc3a" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImageURL} />
+    <meta property="og:image:width" content={String(image.width)} />
+    <meta property="og:image:height" content={String(image.height)} />
+    <meta property="og:locale" content="es_AR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageURL} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap"
     />
+
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} is:inline />
   </head>
   <body>
     <slot />
