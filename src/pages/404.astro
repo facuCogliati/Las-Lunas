@@ -1,0 +1,153 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout
+  title="Página no encontrada | Las Lunas"
+  description="La página que buscás no existe o fue movida."
+  noindex={true}
+>
+  <Header />
+  <main class="page-404">
+    <section class="not-found">
+      <svg class="paw-deco paw-1" viewBox="0 -2 60 45" aria-hidden="true"
+        ><g fill="currentColor"
+          ><ellipse cx="12" cy="6" rx="5" ry="6"></ellipse><ellipse
+            cx="26"
+            cy="4"
+            rx="4"
+            ry="5"></ellipse><ellipse cx="39" cy="6" rx="4" ry="5"
+          ></ellipse><ellipse cx="51" cy="8" rx="3.5" ry="4.5"
+          ></ellipse><ellipse cx="30" cy="28" rx="14" ry="13"></ellipse></g
+        ></svg
+      >
+      <svg class="paw-deco paw-2" viewBox="0 -2 60 45" aria-hidden="true"
+        ><g fill="currentColor"
+          ><ellipse cx="12" cy="6" rx="5" ry="6"></ellipse><ellipse
+            cx="26"
+            cy="4"
+            rx="4"
+            ry="5"></ellipse><ellipse cx="39" cy="6" rx="4" ry="5"
+          ></ellipse><ellipse cx="51" cy="8" rx="3.5" ry="4.5"
+          ></ellipse><ellipse cx="30" cy="28" rx="14" ry="13"></ellipse></g
+        ></svg
+      >
+
+      <div class="container not-found__content">
+        <span class="not-found__code">404</span>
+        <h1>Esta página se fue a pasear</h1>
+        <p>
+          La página que buscás no existe o fue movida. Volvé al inicio y
+          seguí conociendo Las Lunas.
+        </p>
+        <a href="/" class="btn-outline">← Volver al inicio</a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  :root {
+    --green: #95bc3a;
+    --brown: #4a3f35;
+    --gray-light: #fbfbf9;
+  }
+
+  .page-404 {
+    background: var(--gray-light);
+    min-height: 100vh;
+  }
+
+  .not-found {
+    position: relative;
+    overflow: hidden;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 1rem;
+  }
+
+  .paw-deco {
+    position: absolute;
+    width: 140px;
+    height: auto;
+    color: var(--green);
+    opacity: 0.12;
+    pointer-events: none;
+  }
+  .paw-1 {
+    top: 12%;
+    left: 8%;
+    transform: rotate(-20deg);
+  }
+  .paw-2 {
+    bottom: 12%;
+    right: 8%;
+    transform: rotate(15deg);
+  }
+
+  .not-found__content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 560px;
+  }
+
+  .not-found__code {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(5rem, 12vw, 8rem);
+    font-weight: 800;
+    line-height: 1;
+    color: var(--green);
+    margin-bottom: 1rem;
+  }
+
+  .not-found h1 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    color: var(--brown);
+    margin-bottom: 1rem;
+  }
+
+  .not-found p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--brown);
+    opacity: 0.75;
+    margin-bottom: 2.5rem;
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    border: 2px solid var(--brown);
+    color: var(--brown);
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-outline:hover {
+    background: var(--brown);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(74, 63, 53, 0.15);
+  }
+
+  @media (max-width: 600px) {
+    .paw-deco {
+      display: none;
+    }
+    .not-found {
+      padding: 4rem 1rem;
+    }
+  }
+</style>
